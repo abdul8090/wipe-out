@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
@@ -29,33 +38,32 @@
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
         "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
         "desktop_content_alignment": "center",
+        "show_text_box": false,
         "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
         "show_text_below": false
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
+        "collection": "all",
+        "products_to_show": 8,
         "title": "Featured products",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -63,13 +71,258 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
+      }
+    },
+    "wipeout_hero_carousel_NmFbfW": {
+      "type": "wipeout-hero-carousel",
+      "blocks": {
+        "slide_hH44A6": {
+          "type": "slide",
+          "settings": {
+            "slide_bg_color": "#fdf4f3",
+            "link": "",
+            "eyebrow": "",
+            "eyebrow_color": "#9b1f1f",
+            "heading": "",
+            "heading_color": "#181512",
+            "subheading": "",
+            "subheading_color": "#6b6864",
+            "button_label": "",
+            "button_bg": "#9b1f1f",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "slide_kLzhiP": {
+          "type": "slide",
+          "settings": {
+            "slide_bg_color": "#fdf4f3",
+            "link": "",
+            "eyebrow": "",
+            "eyebrow_color": "#9b1f1f",
+            "heading": "",
+            "heading_color": "#181512",
+            "subheading": "",
+            "subheading_color": "#6b6864",
+            "button_label": "",
+            "button_bg": "#9b1f1f",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "slide_yAU4ww": {
+          "type": "slide",
+          "settings": {
+            "slide_bg_color": "#fdf4f3",
+            "link": "",
+            "eyebrow": "",
+            "eyebrow_color": "#9b1f1f",
+            "heading": "",
+            "heading_color": "#181512",
+            "subheading": "",
+            "subheading_color": "#6b6864",
+            "button_label": "",
+            "button_bg": "#9b1f1f",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "slide_hH44A6",
+        "slide_kLzhiP",
+        "slide_yAU4ww"
+      ],
+      "name": "WipeOut Hero Carousel",
+      "settings": {
+        "bg_color": "#ffffff",
+        "slide_height": 540,
+        "autoplay": false,
+        "autoplay_speed": 5
+      }
+    },
+    "wipeout_trust_strip_jPg363": {
+      "type": "wipeout-trust-strip",
+      "blocks": {
+        "item_gPJTVD": {
+          "type": "item",
+          "settings": {
+            "icon": "lightning",
+            "title": "Rapid Action",
+            "subtitle": "Knocks down on contact"
+          }
+        },
+        "item_8TB7Q6": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "title": "Long-Lasting",
+            "subtitle": "Protective barrier"
+          }
+        },
+        "item_znmgxq": {
+          "type": "item",
+          "settings": {
+            "icon": "wind",
+            "title": "Odourless",
+            "subtitle": "No harsh fumes"
+          }
+        },
+        "item_APGr8q": {
+          "type": "item",
+          "settings": {
+            "icon": "home",
+            "title": "Home Safe",
+            "subtitle": "Kids & pets friendly"
+          }
+        }
+      },
+      "block_order": [
+        "item_gPJTVD",
+        "item_8TB7Q6",
+        "item_znmgxq",
+        "item_APGr8q"
+      ],
+      "name": "WipeOut Trust Strip",
+      "settings": {
+        "bg_color": "#ffffff",
+        "border_color": "#ebe9e6",
+        "icon_color": "#181512",
+        "title_color": "#181512",
+        "subtitle_color": "#8a857f"
+      }
+    },
+    "wipeout_shop_by_pest_gaCizL": {
+      "type": "wipeout-shop-by-pest",
+      "blocks": {
+        "product_card_KG43q3": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "fallback_title": "Bed Bug Killer Spray",
+            "description": "Kills bed bugs & eggs on contact. Protects mattresses, seams, headboards and frames.",
+            "price": "£14.99",
+            "compare_price": "£19.99",
+            "save_label": "SAVE 25%",
+            "badge_text": "Bed Bug",
+            "secondary_badge": "",
+            "button_label": "Add to cart",
+            "accent_color": "#6a3aa0",
+            "card_bg": "#faf8fc"
+          }
+        },
+        "product_card_BD8Bwa": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "fallback_title": "Termite Killer Spray",
+            "description": "Stops and repels termites before damage begins. For wood, furniture, doors and interiors.",
+            "price": "£14.99",
+            "compare_price": "£19.99",
+            "save_label": "SAVE 25%",
+            "badge_text": "Termite",
+            "secondary_badge": "",
+            "button_label": "Add to cart",
+            "accent_color": "#9a5a23",
+            "card_bg": "#fcf8f2"
+          }
+        },
+        "product_card_xFdeej": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "fallback_title": "Cockroach Complete Kit",
+            "description": "4-way defence: spray, drainage liquid, gel & tablets. Reaches what you can't see.",
+            "price": "£24.99",
+            "compare_price": "£39.99",
+            "save_label": "+3 FREE",
+            "badge_text": "Cockroach",
+            "secondary_badge": "Best Seller",
+            "button_label": "Add to cart",
+            "accent_color": "#9b1f1f",
+            "card_bg": "#fcf5f4"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_KG43q3",
+        "product_card_BD8Bwa",
+        "product_card_xFdeej"
+      ],
+      "name": "WipeOut Shop by Pest",
+      "settings": {
+        "eyebrow": "The Range",
+        "heading": "Shop by pest",
+        "description": "Pick your problem. Every WipeOut spray is super-strength, ready to use and completely odourless.",
+        "bg_color": "#ffffff",
+        "text_color": "#181512",
+        "muted_color": "#6b6864",
+        "eyebrow_color": "#9b1f1f",
+        "border_color": "#ebe9e6"
+      }
+    },
+    "wipeout_featured_bundle_bPtVJL": {
+      "type": "wipeout-featured-bundle",
+      "blocks": {
+        "feature_EiPd9h": {
+          "type": "feature",
+          "settings": {
+            "feature": "Cockroach Killer Spray 500ml",
+            "detail": "odourless, ready to use",
+            "is_free": false
+          }
+        },
+        "feature_thj8jy": {
+          "type": "feature",
+          "settings": {
+            "feature": "Drainage Treatment Liquid",
+            "detail": "FREE",
+            "is_free": true
+          }
+        },
+        "feature_YiUNr6": {
+          "type": "feature",
+          "settings": {
+            "feature": "Killer Gel + Tablets",
+            "detail": "FREE",
+            "is_free": true
+          }
+        }
+      },
+      "block_order": [
+        "feature_EiPd9h",
+        "feature_thj8jy",
+        "feature_YiUNr6"
+      ],
+      "name": "WipeOut Featured Bundle",
+      "settings": {
+        "product": "",
+        "eyebrow": "Complete 4-Way Defence",
+        "heading": "Protect what you can't see",
+        "description": "One system for visible activity, hidden corners, cracks and drains.",
+        "price": "£24.99",
+        "compare_price": "",
+        "save_badge": "SAVE £15.00",
+        "button_label": "Add complete kit",
+        "secondary_button_label": "",
+        "secondary_button_link": "",
+        "bg_color": "#ffffff",
+        "image_bg": "#fdf6f5",
+        "text_color": "#181512",
+        "muted_color": "#6b6864",
+        "accent_color": "#9b1f1f",
+        "border_color": "#ebe9e6",
+        "button_text_color": "#ffffff",
+        "secondary_btn_border": "#d9d4cd"
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "wipeout_hero_carousel_NmFbfW",
+    "wipeout_trust_strip_jPg363",
+    "wipeout_shop_by_pest_gaCizL",
+    "wipeout_featured_bundle_bPtVJL"
   ]
 }
