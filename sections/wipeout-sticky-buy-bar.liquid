@@ -134,10 +134,11 @@
     <div class="wo-sticky__product">
       <div class="wo-sticky__img-wrap">
         {%- if sticky_product != blank and sticky_product.featured_image != blank -%}
+          {%- assign sticky_alt = sticky_product.title | escape -%}
           {{
             sticky_product.featured_image
             | image_url: width: 92
-            | image_tag: alt: sticky_product.title | escape, loading: 'lazy'
+            | image_tag: alt: sticky_alt, loading: 'lazy'
           }}
         {%- endif -%}
       </div>

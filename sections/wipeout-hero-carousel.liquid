@@ -191,6 +191,9 @@
       {%- for block in section.blocks -%}
         <div class="wo-hero__slide" {{ block.shopify_attributes }}>
           {%- if block.settings.image != blank -%}
+            {%- assign slide_alt = block.settings.image.alt | escape -%}
+            {%- assign slide_loading = 'lazy' -%}
+            {%- if forloop.first -%}{%- assign slide_loading = 'eager' -%}{%- endif -%}
             {%- if block.settings.link != blank -%}
               <a class="wo-hero__slide-link" href="{{ block.settings.link }}">
             {%- endif -%}
@@ -198,8 +201,8 @@
               block.settings.image
               | image_url: width: 1600
               | image_tag:
-                alt: block.settings.image.alt | escape,
-                loading: forloop.first | unless: 'lazy' | endunless,
+                alt: slide_alt,
+                loading: slide_loading,
                 widths: '480, 768, 1024, 1280, 1600'
             }}
             {%- if block.settings.link != blank -%}

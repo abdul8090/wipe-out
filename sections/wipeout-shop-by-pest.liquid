@@ -229,11 +229,12 @@
           <a class="wo-shop__card" href="{% if product != blank %}{{ product.url }}{% else %}#{% endif %}">
             <div class="wo-shop__card-image-wrap">
               {%- if product != blank and product.featured_image != blank -%}
+                {%- assign card_alt = product.title | escape -%}
                 {{
                   product.featured_image
                   | image_url: width: 600
                   | image_tag:
-                    alt: product.title | escape,
+                    alt: card_alt,
                     loading: 'lazy',
                     widths: '300, 450, 600'
                 }}

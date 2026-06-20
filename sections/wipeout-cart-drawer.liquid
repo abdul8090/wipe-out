@@ -329,7 +329,8 @@
         <div class="wo-cd__item" data-key="{{ item.key }}">
           <div class="wo-cd__item-img">
             {%- if item.image != blank -%}
-              {{ item.image | image_url: width: 132 | image_tag: alt: item.title | escape, loading: 'lazy' }}
+              {%- assign item_alt = item.title | escape -%}
+              {{ item.image | image_url: width: 132 | image_tag: alt: item_alt, loading: 'lazy' }}
             {%- endif -%}
           </div>
           <div class="wo-cd__item-body">
