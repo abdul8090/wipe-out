@@ -1,0 +1,372 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --wo-ft-bg: {{ section.settings.bg_color }};
+    --wo-ft-text: {{ section.settings.text_color }};
+    --wo-ft-muted: {{ section.settings.muted_color }};
+    --wo-ft-border: {{ section.settings.border_color }};
+    --wo-ft-link-hover: {{ section.settings.link_hover_color }};
+    --wo-ft-brand-accent: {{ section.settings.brand_accent }};
+  }
+
+  .wo-ft {
+    background: var(--wo-ft-bg);
+    border-top: 1px solid var(--wo-ft-border);
+    color: var(--wo-ft-text);
+  }
+
+  .wo-ft__main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: clamp(48px, 6vw, 72px) 24px 28px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  .wo-ft__brand-name {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: 0.04em;
+    display: block;
+    margin-bottom: 4px;
+    color: var(--wo-ft-text);
+    text-decoration: none;
+  }
+
+  .wo-ft__brand-sub {
+    font-size: 8.5px;
+    letter-spacing: 0.34em;
+    color: var(--wo-ft-muted);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .wo-ft__brand-desc {
+    font-size: 13.5px;
+    color: var(--wo-ft-muted);
+    line-height: 1.6;
+    max-width: 280px;
+    margin: 0;
+  }
+
+  .wo-ft__col-title {
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    color: var(--wo-ft-text);
+  }
+
+  .wo-ft__links {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .wo-ft__link {
+    font-size: 14px;
+    color: var(--wo-ft-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .wo-ft__link:hover {
+    color: var(--wo-ft-link-hover);
+  }
+
+  .wo-ft__bottom {
+    border-top: 1px solid var(--wo-ft-border);
+  }
+
+  .wo-ft__bottom-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 12.5px;
+    color: var(--wo-ft-muted);
+  }
+
+  .wo-ft__payment {
+    display: flex;
+    gap: 14px;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--wo-ft-muted);
+  }
+
+  @media (max-width: 1023px) {
+    .wo-ft__main {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 599px) {
+    .wo-ft__main {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .wo-ft__bottom-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+  }
+</style>
+
+<footer class="wo-ft">
+  <div class="wo-ft__main">
+    <div>
+      <a class="wo-ft__brand-name" href="{{ routes.root_url }}">{{ section.settings.brand_name }}</a>
+      <span class="wo-ft__brand-sub">{{ section.settings.brand_tagline }}</span>
+      {%- if section.settings.brand_desc != blank -%}
+        <p class="wo-ft__brand-desc">{{ section.settings.brand_desc }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- for block in section.blocks -%}
+      <div {{ block.shopify_attributes }}>
+        <div class="wo-ft__col-title">{{ block.settings.column_title }}</div>
+        {%- if block.settings.links != blank -%}
+          <ul class="wo-ft__links">
+            {%- assign link_list = linklists[block.settings.links] -%}
+            {%- if link_list.links.size > 0 -%}
+              {%- for link in link_list.links -%}
+                <li><a class="wo-ft__link" href="{{ link.url }}">{{ link.title }}</a></li>
+              {%- endfor -%}
+            {%- else -%}
+              {%- if block.settings.link_1_label != blank -%}
+                <li><a class="wo-ft__link" href="{{ block.settings.link_1_url }}">{{ block.settings.link_1_label }}</a></li>
+              {%- endif -%}
+              {%- if block.settings.link_2_label != blank -%}
+                <li><a class="wo-ft__link" href="{{ block.settings.link_2_url }}">{{ block.settings.link_2_label }}</a></li>
+              {%- endif -%}
+              {%- if block.settings.link_3_label != blank -%}
+                <li><a class="wo-ft__link" href="{{ block.settings.link_3_url }}">{{ block.settings.link_3_label }}</a></li>
+              {%- endif -%}
+              {%- if block.settings.link_4_label != blank -%}
+                <li><a class="wo-ft__link" href="{{ block.settings.link_4_url }}">{{ block.settings.link_4_label }}</a></li>
+              {%- endif -%}
+            {%- endif -%}
+          </ul>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+
+  <div class="wo-ft__bottom">
+    <div class="wo-ft__bottom-inner">
+      <span>{{ section.settings.copyright }}</span>
+      {%- if section.settings.show_payment_icons -%}
+        <div class="wo-ft__payment">
+          {%- if shop.enabled_payment_types != empty -%}
+            {%- for type in shop.enabled_payment_types -%}
+              {{ type | payment_type_svg_tag: class: 'wo-ft__payment-icon' }}
+            {%- endfor -%}
+          {%- else -%}
+            <span>VISA</span><span>MASTERCARD</span><span>AMEX</span><span>PAYPAL</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "WipeOut Footer",
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Brand"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand name",
+      "default": "WIPEOUT"
+    },
+    {
+      "type": "text",
+      "id": "brand_tagline",
+      "label": "Brand tagline",
+      "default": "Advanced Insect Killer+"
+    },
+    {
+      "type": "textarea",
+      "id": "brand_desc",
+      "label": "Brand description",
+      "default": "Super-strength, odourless insect control for the modern home. Kills & repels — safe for kids and pets."
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright text",
+      "default": "© 2026 WipeOut. Advanced Insect Killer+. All rights reserved."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show payment icons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border colour",
+      "default": "#ebe9e6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour",
+      "default": "#181512"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Muted / link colour",
+      "default": "#6b6864"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Link hover colour",
+      "default": "#181512"
+    },
+    {
+      "type": "color",
+      "id": "brand_accent",
+      "label": "Brand accent colour",
+      "default": "#9b1f1f"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_column",
+      "name": "Link column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "column_title",
+          "label": "Column title",
+          "default": "Shop"
+        },
+        {
+          "type": "link_list",
+          "id": "links",
+          "label": "Navigation menu (optional)"
+        },
+        {
+          "type": "header",
+          "content": "Manual links (if no menu selected)"
+        },
+        {
+          "type": "text",
+          "id": "link_1_label",
+          "label": "Link 1 label"
+        },
+        {
+          "type": "url",
+          "id": "link_1_url",
+          "label": "Link 1 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_2_label",
+          "label": "Link 2 label"
+        },
+        {
+          "type": "url",
+          "id": "link_2_url",
+          "label": "Link 2 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_3_label",
+          "label": "Link 3 label"
+        },
+        {
+          "type": "url",
+          "id": "link_3_url",
+          "label": "Link 3 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_4_label",
+          "label": "Link 4 label"
+        },
+        {
+          "type": "url",
+          "id": "link_4_url",
+          "label": "Link 4 URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WipeOut Footer",
+      "blocks": [
+        {
+          "type": "link_column",
+          "settings": {
+            "column_title": "Shop",
+            "link_1_label": "Bed Bug Killer",
+            "link_2_label": "Termite Killer",
+            "link_3_label": "Cockroach Kit",
+            "link_4_label": "All products"
+          }
+        },
+        {
+          "type": "link_column",
+          "settings": {
+            "column_title": "Help",
+            "link_1_label": "Track my order",
+            "link_2_label": "Delivery & returns",
+            "link_3_label": "How to use",
+            "link_4_label": "Contact us"
+          }
+        },
+        {
+          "type": "link_column",
+          "settings": {
+            "column_title": "Company",
+            "link_1_label": "Our story",
+            "link_2_label": "Ingredients & safety",
+            "link_3_label": "Reviews",
+            "link_4_label": "Trade enquiries"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

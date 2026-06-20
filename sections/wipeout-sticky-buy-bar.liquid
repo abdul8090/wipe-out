@@ -1,0 +1,310 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --wo-sticky-bg: {{ section.settings.bg_color }};
+    --wo-sticky-text: {{ section.settings.text_color }};
+    --wo-sticky-muted: {{ section.settings.muted_color }};
+    --wo-sticky-border: {{ section.settings.border_color }};
+    --wo-sticky-btn-bg: {{ section.settings.button_bg }};
+    --wo-sticky-btn-text: {{ section.settings.button_text_color }};
+    --wo-sticky-img-bg: {{ section.settings.image_bg }};
+  }
+
+  .wo-sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 55;
+    background: var(--wo-sticky-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--wo-sticky-border);
+    box-shadow: 0 -10px 30px -20px rgba(24, 21, 18, 0.4);
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.7, 0, 0.2, 1);
+    color: var(--wo-sticky-text);
+  }
+
+  .wo-sticky.is-visible {
+    transform: translateY(0);
+  }
+
+  .wo-sticky__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 13px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .wo-sticky__product {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+  }
+
+  .wo-sticky__img-wrap {
+    width: 46px;
+    height: 46px;
+    border-radius: 6px;
+    background: var(--wo-sticky-img-bg);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .wo-sticky__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .wo-sticky__name {
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .wo-sticky__price {
+    font-size: 13px;
+    color: var(--wo-sticky-muted);
+  }
+
+  .wo-sticky__price-current {
+    color: var(--wo-sticky-text);
+    font-weight: 700;
+  }
+
+  .wo-sticky__price-compare {
+    text-decoration: line-through;
+    color: #b3aea7;
+    font-size: 12px;
+    margin-left: 4px;
+  }
+
+  .wo-sticky__btn {
+    background: var(--wo-sticky-btn-bg);
+    color: var(--wo-sticky-btn-text);
+    border: none;
+    border-radius: 4px;
+    padding: 14px 30px;
+    font-weight: 700;
+    font-size: 14.5px;
+    font-family: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s;
+  }
+
+  .wo-sticky__btn:hover {
+    opacity: 0.88;
+  }
+
+  @media (max-width: 599px) {
+    .wo-sticky__inner {
+      padding: 10px 16px;
+      gap: 12px;
+    }
+
+    .wo-sticky__name {
+      font-size: 13px;
+    }
+
+    .wo-sticky__btn {
+      padding: 12px 18px;
+      font-size: 13.5px;
+    }
+  }
+</style>
+
+{%- assign sticky_product = section.settings.product -%}
+
+<div class="wo-sticky" id="wo-sticky-{{ section.id }}" aria-hidden="true">
+  <div class="wo-sticky__inner">
+    <div class="wo-sticky__product">
+      <div class="wo-sticky__img-wrap">
+        {%- if sticky_product != blank and sticky_product.featured_image != blank -%}
+          {{
+            sticky_product.featured_image
+            | image_url: width: 92
+            | image_tag: alt: sticky_product.title | escape, loading: 'lazy'
+          }}
+        {%- endif -%}
+      </div>
+      <div>
+        <div class="wo-sticky__name">
+          {%- if sticky_product != blank -%}{{ sticky_product.title }}{%- else -%}{{ section.settings.product_name }}{%- endif -%}
+        </div>
+        <div class="wo-sticky__price">
+          <span class="wo-sticky__price-current">
+            {%- if sticky_product != blank -%}{{ sticky_product.price | money }}{%- else -%}{{ section.settings.price }}{%- endif -%}
+          </span>
+          {%- if sticky_product != blank and sticky_product.compare_at_price > sticky_product.price -%}
+            <span class="wo-sticky__price-compare">{{ sticky_product.compare_at_price | money }}</span>
+          {%- elsif section.settings.compare_price != blank -%}
+            <span class="wo-sticky__price-compare">{{ section.settings.compare_price }}</span>
+          {%- endif -%}
+          {%- if section.settings.price_suffix != blank -%}
+            &nbsp;&middot; {{ section.settings.price_suffix }}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+
+    <a
+      class="wo-sticky__btn"
+      href="{% if sticky_product != blank %}{{ sticky_product.url }}{% else %}{{ section.settings.button_url }}{% endif %}"
+    >{{ section.settings.button_label }}</a>
+  </div>
+</div>
+
+<script>
+(function () {
+  var bar = document.getElementById('wo-sticky-{{ section.id }}');
+  if (!bar) return;
+
+  var threshold = {{ section.settings.show_after_px }};
+  var lastY = 0;
+  var ticking = false;
+
+  function update() {
+    var y = window.scrollY || window.pageYOffset;
+    if (y > threshold) {
+      bar.classList.add('is-visible');
+      bar.setAttribute('aria-hidden', 'false');
+    } else {
+      bar.classList.remove('is-visible');
+      bar.setAttribute('aria-hidden', 'true');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "WipeOut Sticky Buy Bar",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "product_name",
+      "label": "Product name (if no product selected)",
+      "default": "Cockroach Complete Kit"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price (if no product selected)",
+      "default": "£24.99"
+    },
+    {
+      "type": "text",
+      "id": "compare_price",
+      "label": "Compare-at price (if no product selected)"
+    },
+    {
+      "type": "text",
+      "id": "price_suffix",
+      "label": "Price suffix (e.g. +3 FREE)"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Add to cart"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL (if no product selected)"
+    },
+    {
+      "type": "range",
+      "id": "show_after_px",
+      "min": 100,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "label": "Show bar after scrolling",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border colour",
+      "default": "#ebe9e6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour",
+      "default": "#181512"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Muted text colour",
+      "default": "#6b6864"
+    },
+    {
+      "type": "color",
+      "id": "image_bg",
+      "label": "Image background colour",
+      "default": "#fcf5f4"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background colour",
+      "default": "#9b1f1f"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text colour",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "WipeOut Sticky Buy Bar"
+    }
+  ]
+}
+{% endschema %}

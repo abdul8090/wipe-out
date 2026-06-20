@@ -1,0 +1,458 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --wo-shop-bg: {{ section.settings.bg_color }};
+    --wo-shop-text: {{ section.settings.text_color }};
+    --wo-shop-muted: {{ section.settings.muted_color }};
+    --wo-shop-eyebrow: {{ section.settings.eyebrow_color }};
+    --wo-shop-border: {{ section.settings.border_color }};
+  }
+
+  .wo-shop {
+    background: var(--wo-shop-bg);
+    color: var(--wo-shop-text);
+  }
+
+  .wo-shop__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: clamp(64px, 8vw, 108px) 24px;
+  }
+
+  .wo-shop__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 42px;
+    flex-wrap: wrap;
+  }
+
+  .wo-shop__eyebrow {
+    font-size: 12.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--wo-shop-eyebrow);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .wo-shop__heading {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    font-size: clamp(30px, 4.4vw, 52px);
+    line-height: 0.98;
+    margin: 0;
+  }
+
+  .wo-shop__desc {
+    max-width: 340px;
+    font-size: 15px;
+    color: var(--wo-shop-muted);
+    margin: 0 0 6px;
+  }
+
+  .wo-shop__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .wo-shop__card {
+    border: 1px solid var(--wo-shop-border);
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s, transform 0.3s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .wo-shop__card:hover {
+    box-shadow: 0 18px 50px -28px rgba(24, 21, 18, 0.35);
+    transform: translateY(-4px);
+  }
+
+  .wo-shop__card-image-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .wo-shop__card-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .wo-shop__card-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    color: #fff;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 9px;
+    border-radius: 3px;
+  }
+
+  .wo-shop__card-badge--secondary {
+    left: auto;
+    right: 14px;
+    background: #181512;
+  }
+
+  .wo-shop__card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    flex: 1;
+  }
+
+  .wo-shop__card-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+
+  .wo-shop__card-desc {
+    font-size: 13.5px;
+    color: var(--wo-shop-muted);
+    margin: 0;
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .wo-shop__card-price {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+  }
+
+  .wo-shop__price-current {
+    font-weight: 800;
+    font-size: 20px;
+  }
+
+  .wo-shop__price-compare {
+    font-size: 14px;
+    color: #b3aea7;
+    text-decoration: line-through;
+  }
+
+  .wo-shop__price-save {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .wo-shop__card-btn {
+    margin-top: 6px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 13px;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+    width: 100%;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+  }
+
+  .wo-shop__card-btn:hover {
+    opacity: 0.88;
+  }
+
+  @media (max-width: 1023px) {
+    .wo-shop__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 599px) {
+    .wo-shop__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .wo-shop__header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .wo-shop__desc {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<section class="wo-shop">
+  <div class="wo-shop__inner">
+    <div class="wo-shop__header">
+      <div>
+        {%- if section.settings.eyebrow != blank -%}
+          <div class="wo-shop__eyebrow">{{ section.settings.eyebrow }}</div>
+        {%- endif -%}
+        <h2 class="wo-shop__heading">{{ section.settings.heading }}</h2>
+      </div>
+      {%- if section.settings.description != blank -%}
+        <p class="wo-shop__desc">{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="wo-shop__grid">
+      {%- for block in section.blocks -%}
+        {%- assign product = block.settings.product -%}
+        {%- style -%}
+          #wo-shop-card-{{ section.id }}-{{ forloop.index }} .wo-shop__card-image-wrap { background: {{ block.settings.card_bg }}; }
+          #wo-shop-card-{{ section.id }}-{{ forloop.index }} .wo-shop__card-badge { background: {{ block.settings.accent_color }}; }
+          #wo-shop-card-{{ section.id }}-{{ forloop.index }} .wo-shop__price-save { color: {{ block.settings.accent_color }}; }
+          #wo-shop-card-{{ section.id }}-{{ forloop.index }} .wo-shop__card-btn { background: {{ block.settings.accent_color }}; }
+        {%- endstyle -%}
+        <div id="wo-shop-card-{{ section.id }}-{{ forloop.index }}" {{ block.shopify_attributes }}>
+          <a class="wo-shop__card" href="{% if product != blank %}{{ product.url }}{% else %}#{% endif %}">
+            <div class="wo-shop__card-image-wrap">
+              {%- if product != blank and product.featured_image != blank -%}
+                {{
+                  product.featured_image
+                  | image_url: width: 600
+                  | image_tag:
+                    alt: product.title | escape,
+                    loading: 'lazy',
+                    widths: '300, 450, 600'
+                }}
+              {%- endif -%}
+              {%- if block.settings.badge_text != blank -%}
+                <span class="wo-shop__card-badge">{{ block.settings.badge_text }}</span>
+              {%- endif -%}
+              {%- if block.settings.secondary_badge != blank -%}
+                <span class="wo-shop__card-badge wo-shop__card-badge--secondary">{{ block.settings.secondary_badge }}</span>
+              {%- endif -%}
+            </div>
+            <div class="wo-shop__card-body">
+              <h3 class="wo-shop__card-title">
+                {%- if product != blank -%}{{ product.title }}{%- else -%}{{ block.settings.fallback_title }}{%- endif -%}
+              </h3>
+              <p class="wo-shop__card-desc">{{ block.settings.description }}</p>
+              <div class="wo-shop__card-price">
+                <span class="wo-shop__price-current">
+                  {%- if product != blank -%}{{ product.price | money }}{%- else -%}{{ block.settings.price }}{%- endif -%}
+                </span>
+                {%- if product != blank and product.compare_at_price > product.price -%}
+                  <span class="wo-shop__price-compare">{{ product.compare_at_price | money }}</span>
+                {%- elsif block.settings.compare_price != blank -%}
+                  <span class="wo-shop__price-compare">{{ block.settings.compare_price }}</span>
+                {%- endif -%}
+                {%- if block.settings.save_label != blank -%}
+                  <span class="wo-shop__price-save">{{ block.settings.save_label }}</span>
+                {%- endif -%}
+              </div>
+            </div>
+          </a>
+          <div style="padding: 0 22px 22px;">
+            <a
+              class="wo-shop__card-btn"
+              href="{% if product != blank %}{{ product.url }}{% else %}#{% endif %}"
+            >{{ block.settings.button_label | default: 'Add to cart' }}</a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "WipeOut Shop by Pest",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section text"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "The Range"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by pest"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Pick your problem. Every WipeOut spray is super-strength, ready to use and completely odourless."
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour",
+      "default": "#181512"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Muted text colour",
+      "default": "#6b6864"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow colour",
+      "default": "#9b1f1f"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Card border colour",
+      "default": "#ebe9e6"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Product card",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "fallback_title",
+          "label": "Title (if no product selected)",
+          "default": "Killer Spray"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Card description",
+          "default": "Kills insects on contact. Protects your home."
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price (if no product selected)",
+          "default": "£14.99"
+        },
+        {
+          "type": "text",
+          "id": "compare_price",
+          "label": "Compare-at price (if no product selected)"
+        },
+        {
+          "type": "text",
+          "id": "save_label",
+          "label": "Save label (e.g. SAVE 25%)"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text (e.g. Bed Bug)"
+        },
+        {
+          "type": "text",
+          "id": "secondary_badge",
+          "label": "Secondary badge (e.g. Best Seller)"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Add to cart"
+        },
+        {
+          "type": "color",
+          "id": "accent_color",
+          "label": "Accent colour (badge, button, save label)",
+          "default": "#9b1f1f"
+        },
+        {
+          "type": "color",
+          "id": "card_bg",
+          "label": "Image background colour",
+          "default": "#faf8f7"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WipeOut Shop by Pest",
+      "blocks": [
+        {
+          "type": "product_card",
+          "settings": {
+            "badge_text": "Bed Bug",
+            "accent_color": "#6a3aa0",
+            "card_bg": "#faf8fc",
+            "fallback_title": "Bed Bug Killer Spray",
+            "description": "Kills bed bugs & eggs on contact. Protects mattresses, seams, headboards and frames.",
+            "price": "£14.99",
+            "compare_price": "£19.99",
+            "save_label": "SAVE 25%"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "badge_text": "Termite",
+            "accent_color": "#9a5a23",
+            "card_bg": "#fcf8f2",
+            "fallback_title": "Termite Killer Spray",
+            "description": "Stops and repels termites before damage begins. For wood, furniture, doors and interiors.",
+            "price": "£14.99",
+            "compare_price": "£19.99",
+            "save_label": "SAVE 25%"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "badge_text": "Cockroach",
+            "secondary_badge": "Best Seller",
+            "accent_color": "#9b1f1f",
+            "card_bg": "#fcf5f4",
+            "fallback_title": "Cockroach Complete Kit",
+            "description": "4-way defence: spray, drainage liquid, gel & tablets. Reaches what you can't see.",
+            "price": "£24.99",
+            "compare_price": "£39.99",
+            "save_label": "+3 FREE"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

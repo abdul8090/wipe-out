@@ -1,0 +1,122 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --wo-ann-bg: {{ section.settings.bg_color }};
+    --wo-ann-text: {{ section.settings.text_color }};
+  }
+
+  .wo-ann-bar {
+    background: var(--wo-ann-bg);
+    color: var(--wo-ann-text);
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .wo-ann-bar__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 9px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .wo-ann-bar__sep {
+    opacity: 0.35;
+  }
+
+  @media (max-width: 767px) {
+    .wo-ann-bar__sep {
+      display: none;
+    }
+
+    .wo-ann-bar__inner {
+      flex-direction: column;
+      gap: 4px;
+      text-align: center;
+    }
+  }
+</style>
+
+<div class="wo-ann-bar">
+  <div class="wo-ann-bar__inner">
+    {%- if section.settings.message_1 != blank -%}
+      <span>{{ section.settings.message_1 }}</span>
+    {%- endif -%}
+    {%- if section.settings.message_2 != blank -%}
+      <span class="wo-ann-bar__sep">&#9679;</span>
+      <span>{{ section.settings.message_2 }}</span>
+    {%- endif -%}
+    {%- if section.settings.message_3 != blank -%}
+      <span class="wo-ann-bar__sep">&#9679;</span>
+      <span>{{ section.settings.message_3 }}</span>
+    {%- endif -%}
+    {%- if section.settings.message_4 != blank -%}
+      <span class="wo-ann-bar__sep">&#9679;</span>
+      <span>{{ section.settings.message_4 }}</span>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "WipeOut Announcement Bar",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background colour",
+      "default": "#181512"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Messages"
+    },
+    {
+      "type": "text",
+      "id": "message_1",
+      "label": "Message 1",
+      "default": "Free UK delivery over £25"
+    },
+    {
+      "type": "text",
+      "id": "message_2",
+      "label": "Message 2",
+      "default": "Odourless formula"
+    },
+    {
+      "type": "text",
+      "id": "message_3",
+      "label": "Message 3",
+      "default": "Kills & repels"
+    },
+    {
+      "type": "text",
+      "id": "message_4",
+      "label": "Message 4",
+      "default": "Safe for kids & pets"
+    }
+  ],
+  "presets": [
+    {
+      "name": "WipeOut Announcement Bar"
+    }
+  ]
+}
+{% endschema %}

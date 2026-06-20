@@ -1,0 +1,255 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --wo-faq-bg: {{ section.settings.bg_color }};
+    --wo-faq-text: {{ section.settings.text_color }};
+    --wo-faq-muted: {{ section.settings.muted_color }};
+    --wo-faq-border: {{ section.settings.border_color }};
+    --wo-faq-icon: {{ section.settings.icon_color }};
+  }
+
+  .wo-faq {
+    border-top: 1px solid var(--wo-faq-border);
+    background: var(--wo-faq-bg);
+    color: var(--wo-faq-text);
+  }
+
+  .wo-faq__inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: clamp(64px, 8vw, 108px) 24px;
+  }
+
+  .wo-faq__heading {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    font-size: clamp(28px, 4.2vw, 50px);
+    line-height: 0.98;
+    margin: 0 0 38px;
+    text-align: center;
+  }
+
+  .wo-faq__list {
+    border-top: 1px solid var(--wo-faq-border);
+  }
+
+  .wo-faq__item {
+    border-bottom: 1px solid var(--wo-faq-border);
+  }
+
+  .wo-faq__question {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 4px;
+    text-align: left;
+    color: var(--wo-faq-text);
+  }
+
+  .wo-faq__question-text {
+    font-weight: 700;
+    font-size: 16.5px;
+    line-height: 1.3;
+  }
+
+  .wo-faq__icon {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+    color: var(--wo-faq-icon);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+  }
+
+  .wo-faq__item.is-open .wo-faq__icon {
+    transform: rotate(45deg);
+  }
+
+  .wo-faq__answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+  }
+
+  .wo-faq__item.is-open .wo-faq__answer {
+    max-height: 400px;
+  }
+
+  .wo-faq__answer-text {
+    font-size: 14.5px;
+    color: var(--wo-faq-muted);
+    line-height: 1.65;
+    margin: 0;
+    padding: 0 4px 24px;
+    max-width: 660px;
+  }
+
+  @media (max-width: 599px) {
+    .wo-faq__question-text {
+      font-size: 15px;
+    }
+  }
+</style>
+
+<section class="wo-faq">
+  <div class="wo-faq__inner">
+    <h2 class="wo-faq__heading">{{ section.settings.heading }}</h2>
+    <div class="wo-faq__list" id="wo-faq-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <div class="wo-faq__item" {{ block.shopify_attributes }}>
+          <button class="wo-faq__question" aria-expanded="false" aria-controls="wo-faq-answer-{{ section.id }}-{{ forloop.index }}">
+            <span class="wo-faq__question-text">{{ block.settings.question }}</span>
+            <span class="wo-faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="wo-faq__answer" id="wo-faq-answer-{{ section.id }}-{{ forloop.index }}" role="region">
+            <p class="wo-faq__answer-text">{{ block.settings.answer }}</p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var list = document.getElementById('wo-faq-{{ section.id }}');
+  if (!list) return;
+  list.querySelectorAll('.wo-faq__question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.wo-faq__item');
+      var isOpen = item.classList.contains('is-open');
+      list.querySelectorAll('.wo-faq__item').forEach(function (i) {
+        i.classList.remove('is-open');
+        i.querySelector('.wo-faq__question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "WipeOut FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Questions, answered"
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border colour",
+      "default": "#ebe9e6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Question text colour",
+      "default": "#181512"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Answer text colour",
+      "default": "#6b6864"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Plus / minus icon colour",
+      "default": "#9b1f1f"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Is WipeOut safe to use around children and pets?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Yes. WipeOut is a non-toxic, odourless formula specifically designed for indoor use. It is safe to use around children and pets once the treated surface has dried."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WipeOut FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is WipeOut safe to use around children and pets?",
+            "answer": "Yes. WipeOut is a non-toxic, odourless formula specifically designed for indoor use. It is safe to use around children and pets once the treated surface has dried."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does WipeOut keep working after application?",
+            "answer": "WipeOut creates a long-lasting repellent barrier that keeps working for several weeks. For severe infestations, we recommend a second application after 7–10 days."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does WipeOut have a smell?",
+            "answer": "No. WipeOut is completely odourless. There are no harsh chemical fumes, making it comfortable to use in bedrooms, kitchens, and living spaces."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Which WipeOut product should I buy?",
+            "answer": "Choose by pest type: Bed Bug Killer for mattresses and soft furnishings, Termite Killer for wood and timber, or the Cockroach Complete Kit for the most comprehensive 4-way protection."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How quickly does WipeOut work?",
+            "answer": "WipeOut knocks down insects on contact — you'll see results within minutes of application."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

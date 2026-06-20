@@ -1,0 +1,206 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --wo-trust-bg: {{ section.settings.bg_color }};
+    --wo-trust-border: {{ section.settings.border_color }};
+    --wo-trust-icon: {{ section.settings.icon_color }};
+    --wo-trust-title: {{ section.settings.title_color }};
+    --wo-trust-sub: {{ section.settings.subtitle_color }};
+  }
+
+  .wo-trust {
+    background: var(--wo-trust-bg);
+    border-bottom: 1px solid var(--wo-trust-border);
+  }
+
+  .wo-trust__grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .wo-trust__item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 24px 18px;
+    border-right: 1px solid var(--wo-trust-border);
+  }
+
+  .wo-trust__item:last-child {
+    border-right: none;
+  }
+
+  .wo-trust__icon {
+    flex-shrink: 0;
+    color: var(--wo-trust-icon);
+  }
+
+  .wo-trust__title {
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--wo-trust-title);
+  }
+
+  .wo-trust__subtitle {
+    font-size: 12.5px;
+    color: var(--wo-trust-sub);
+    margin-top: 2px;
+  }
+
+  @media (max-width: 1023px) {
+    .wo-trust__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wo-trust__item:nth-child(2) {
+      border-right: none;
+    }
+
+    .wo-trust__item:nth-child(3) {
+      border-top: 1px solid var(--wo-trust-border);
+    }
+
+    .wo-trust__item:nth-child(4) {
+      border-top: 1px solid var(--wo-trust-border);
+      border-right: none;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .wo-trust__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .wo-trust__item {
+      border-right: none;
+      border-top: 1px solid var(--wo-trust-border);
+    }
+
+    .wo-trust__item:first-child {
+      border-top: none;
+    }
+  }
+</style>
+
+<section class="wo-trust">
+  <div class="wo-trust__grid">
+    {%- for block in section.blocks -%}
+      <div class="wo-trust__item" {{ block.shopify_attributes }}>
+        <div class="wo-trust__icon">
+          {%- case block.settings.icon -%}
+            {%- when 'lightning' -%}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"></path></svg>
+            {%- when 'shield' -%}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 7.6-7 9-4-1.4-7-4.4-7-9V6l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            {%- when 'wind' -%}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10a2.5 2.5 0 1 0-2.5-2.5"></path><path d="M3 12h14a2.5 2.5 0 1 1-2.5 2.5"></path><path d="M3 16h8a2.5 2.5 0 1 1-2.5 2.5"></path></svg>
+            {%- when 'home' -%}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"></path><path d="M5 10v9h14v-9"></path></svg>
+            {%- when 'truck' -%}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"></rect><path d="M16 8h5l3 5v3h-8V8z"></path><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            {%- when 'star' -%}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+            {%- when 'leaf' -%}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+            {%- else -%}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
+          {%- endcase -%}
+        </div>
+        <div>
+          <div class="wo-trust__title">{{ block.settings.title }}</div>
+          <div class="wo-trust__subtitle">{{ block.settings.subtitle }}</div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "WipeOut Trust Strip",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border colour",
+      "default": "#ebe9e6"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon colour",
+      "default": "#181512"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title colour",
+      "default": "#181512"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle colour",
+      "default": "#8a857f"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Trust item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "lightning", "label": "Lightning bolt" },
+            { "value": "shield", "label": "Shield / Protection" },
+            { "value": "wind", "label": "Wind / Odourless" },
+            { "value": "home", "label": "Home" },
+            { "value": "truck", "label": "Delivery truck" },
+            { "value": "star", "label": "Star" },
+            { "value": "leaf", "label": "Leaf / Natural" }
+          ],
+          "default": "lightning"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Rapid Action"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Knocks down on contact"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WipeOut Trust Strip",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "lightning", "title": "Rapid Action", "subtitle": "Knocks down on contact" } },
+        { "type": "item", "settings": { "icon": "shield", "title": "Long-Lasting", "subtitle": "Protective barrier" } },
+        { "type": "item", "settings": { "icon": "wind", "title": "Odourless", "subtitle": "No harsh fumes" } },
+        { "type": "item", "settings": { "icon": "home", "title": "Home Safe", "subtitle": "Kids & pets friendly" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

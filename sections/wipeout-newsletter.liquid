@@ -1,0 +1,232 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --wo-nl-bg: {{ section.settings.bg_color }};
+    --wo-nl-text: {{ section.settings.text_color }};
+    --wo-nl-muted: {{ section.settings.muted_color }};
+    --wo-nl-input-bg: {{ section.settings.input_bg }};
+    --wo-nl-input-border: {{ section.settings.input_border }};
+    --wo-nl-btn-bg: {{ section.settings.button_bg }};
+    --wo-nl-btn-text: {{ section.settings.button_text_color }};
+  }
+
+  .wo-nl {
+    background: var(--wo-nl-bg);
+    color: var(--wo-nl-text);
+  }
+
+  .wo-nl__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: clamp(56px, 7vw, 88px) 24px;
+    text-align: center;
+  }
+
+  .wo-nl__heading {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    font-size: clamp(26px, 3.6vw, 42px);
+    line-height: 1;
+    margin: 0 0 12px;
+  }
+
+  .wo-nl__sub {
+    color: var(--wo-nl-muted);
+    font-size: 15px;
+    margin: 0 0 28px;
+  }
+
+  .wo-nl__form {
+    display: flex;
+    gap: 10px;
+    max-width: 460px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .wo-nl__input {
+    flex: 1;
+    min-width: 200px;
+    background: var(--wo-nl-input-bg);
+    border: 1px solid var(--wo-nl-input-border);
+    color: var(--wo-nl-text);
+    border-radius: 4px;
+    padding: 15px 18px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+  }
+
+  .wo-nl__input::placeholder {
+    color: var(--wo-nl-muted);
+  }
+
+  .wo-nl__input:focus {
+    border-color: var(--wo-nl-btn-bg);
+  }
+
+  .wo-nl__btn {
+    background: var(--wo-nl-btn-bg);
+    color: var(--wo-nl-btn-text);
+    border: none;
+    border-radius: 4px;
+    padding: 15px 28px;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+  }
+
+  .wo-nl__btn:hover {
+    opacity: 0.9;
+  }
+
+  .wo-nl__success {
+    display: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--wo-nl-muted);
+    margin-top: 16px;
+  }
+
+  .wo-nl__form.is-submitted + .wo-nl__success {
+    display: block;
+  }
+
+  @media (max-width: 479px) {
+    .wo-nl__form {
+      flex-direction: column;
+    }
+
+    .wo-nl__input,
+    .wo-nl__btn {
+      width: 100%;
+    }
+  }
+</style>
+
+<section class="wo-nl">
+  <div class="wo-nl__inner">
+    <h2 class="wo-nl__heading">{{ section.settings.heading }}</h2>
+    {%- if section.settings.subtext != blank -%}
+      <p class="wo-nl__sub">{{ section.settings.subtext }}</p>
+    {%- endif -%}
+
+    {%- form 'customer', class: 'wo-nl__form', id: 'wo-nl-form-{{ section.id }}' -%}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <input
+        class="wo-nl__input"
+        type="email"
+        name="contact[email]"
+        placeholder="{{ section.settings.placeholder }}"
+        required
+        autocomplete="email"
+        aria-label="{{ section.settings.placeholder }}"
+      >
+      <button class="wo-nl__btn" type="submit">{{ section.settings.button_label }}</button>
+    {%- endform -%}
+    <p class="wo-nl__success">{{ section.settings.success_message }}</p>
+  </div>
+</section>
+
+<script>
+(function () {
+  var form = document.getElementById('wo-nl-form-{{ section.id }}');
+  if (!form) return;
+  form.addEventListener('submit', function () {
+    setTimeout(function () { form.classList.add('is-submitted'); }, 100);
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "WipeOut Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get 10% off your first order"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Join the WipeOut list for protection tips and member-only offers."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Email placeholder",
+      "default": "Enter your email"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Subscribe"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thanks for subscribing!"
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background colour",
+      "default": "#181512"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Subtext colour",
+      "default": "#b8b3ab"
+    },
+    {
+      "type": "color",
+      "id": "input_bg",
+      "label": "Input background colour",
+      "default": "#26221d"
+    },
+    {
+      "type": "color",
+      "id": "input_border",
+      "label": "Input border colour",
+      "default": "#3a352e"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text colour",
+      "default": "#181512"
+    }
+  ],
+  "presets": [
+    {
+      "name": "WipeOut Newsletter"
+    }
+  ]
+}
+{% endschema %}

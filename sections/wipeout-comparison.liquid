@@ -1,0 +1,284 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --wo-cmp-bg: {{ section.settings.bg_color }};
+    --wo-cmp-text: {{ section.settings.text_color }};
+    --wo-cmp-muted: {{ section.settings.muted_color }};
+    --wo-cmp-eyebrow: {{ section.settings.eyebrow_color }};
+    --wo-cmp-border: {{ section.settings.border_color }};
+    --wo-cmp-left-bg: {{ section.settings.left_col_bg }};
+    --wo-cmp-check: {{ section.settings.check_color }};
+  }
+
+  .wo-cmp {
+    border-top: 1px solid var(--wo-cmp-border);
+    background: var(--wo-cmp-bg);
+    color: var(--wo-cmp-text);
+  }
+
+  .wo-cmp__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: clamp(64px, 8vw, 108px) 24px;
+  }
+
+  .wo-cmp__header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .wo-cmp__eyebrow {
+    font-size: 12.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--wo-cmp-eyebrow);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .wo-cmp__heading {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    font-size: clamp(30px, 4.4vw, 52px);
+    line-height: 0.98;
+    margin: 0;
+  }
+
+  .wo-cmp__table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--wo-cmp-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .wo-cmp__col-header {
+    padding: 26px 30px;
+    border-bottom: 1px solid var(--wo-cmp-border);
+  }
+
+  .wo-cmp__col-header--left {
+    background: var(--wo-cmp-left-bg);
+    border-right: 1px solid var(--wo-cmp-border);
+  }
+
+  .wo-cmp__col-label {
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--wo-cmp-muted);
+  }
+
+  .wo-cmp__brand {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .wo-cmp__row {
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--wo-cmp-border);
+    font-size: 14.5px;
+  }
+
+  .wo-cmp__row:last-child,
+  .wo-cmp__row:nth-last-child(2) {
+    border-bottom: none;
+  }
+
+  .wo-cmp__row--left {
+    background: var(--wo-cmp-left-bg);
+    border-right: 1px solid var(--wo-cmp-border);
+    color: var(--wo-cmp-muted);
+  }
+
+  .wo-cmp__row--right {
+    font-weight: 600;
+  }
+
+  .wo-cmp__icon-cross {
+    flex-shrink: 0;
+    color: #c7c0b8;
+  }
+
+  .wo-cmp__icon-check {
+    flex-shrink: 0;
+    color: var(--wo-cmp-check);
+  }
+
+  @media (max-width: 599px) {
+    .wo-cmp__table {
+      grid-template-columns: 1fr;
+      border-radius: 6px;
+    }
+
+    .wo-cmp__col-header--left,
+    .wo-cmp__row--left {
+      border-right: none;
+      border-bottom: 1px solid var(--wo-cmp-border);
+    }
+
+    .wo-cmp__col-header--right {
+      border-top: 3px solid var(--wo-cmp-check);
+    }
+
+    .wo-cmp__row:last-child {
+      border-bottom: 1px solid var(--wo-cmp-border);
+    }
+
+    .wo-cmp__row--right:last-child {
+      border-bottom: none;
+    }
+  }
+</style>
+
+<section class="wo-cmp">
+  <div class="wo-cmp__inner">
+    <div class="wo-cmp__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="wo-cmp__eyebrow">{{ section.settings.eyebrow }}</div>
+      {%- endif -%}
+      <h2 class="wo-cmp__heading">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="wo-cmp__table">
+      <div class="wo-cmp__col-header wo-cmp__col-header--left">
+        <div class="wo-cmp__col-label">{{ section.settings.left_col_label }}</div>
+      </div>
+      <div class="wo-cmp__col-header wo-cmp__col-header--right">
+        <div class="wo-cmp__brand">{{ section.settings.brand_name }}</div>
+      </div>
+
+      {%- for block in section.blocks -%}
+        <div class="wo-cmp__row wo-cmp__row--left" {{ block.shopify_attributes }}>
+          <span class="wo-cmp__icon-cross">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+          </span>
+          <span>{{ block.settings.negative }}</span>
+        </div>
+        <div class="wo-cmp__row wo-cmp__row--right">
+          <span class="wo-cmp__icon-check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"></path></svg>
+          </span>
+          <span>{{ block.settings.positive }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "WipeOut Comparison",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "The difference"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why choose WipeOut"
+    },
+    {
+      "type": "text",
+      "id": "left_col_label",
+      "label": "Left column label",
+      "default": "Traditional methods"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Right column brand name",
+      "default": "WIPEOUT"
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour",
+      "default": "#181512"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Muted text colour",
+      "default": "#8a857f"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow colour",
+      "default": "#9b1f1f"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border colour",
+      "default": "#ebe9e6"
+    },
+    {
+      "type": "color",
+      "id": "left_col_bg",
+      "label": "Left column background",
+      "default": "#faf9f7"
+    },
+    {
+      "type": "color",
+      "id": "check_color",
+      "label": "Checkmark colour",
+      "default": "#9b1f1f"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Comparison row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "negative",
+          "label": "Traditional method (negative)",
+          "default": "Mixing & multiple steps"
+        },
+        {
+          "type": "text",
+          "id": "positive",
+          "label": "WipeOut advantage (positive)",
+          "default": "Ready to use — zero mixing"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WipeOut Comparison",
+      "blocks": [
+        { "type": "row", "settings": { "negative": "Mixing & multiple steps", "positive": "Ready to use — zero mixing" } },
+        { "type": "row", "settings": { "negative": "Strong chemical smell", "positive": "Completely odourless" } },
+        { "type": "row", "settings": { "negative": "Harsh & unsafe indoors", "positive": "Safe around kids & pets" } },
+        { "type": "row", "settings": { "negative": "Short-lived effectiveness", "positive": "Protects for weeks" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

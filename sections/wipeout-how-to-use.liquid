@@ -1,0 +1,198 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --wo-htu-bg: {{ section.settings.bg_color }};
+    --wo-htu-text: {{ section.settings.text_color }};
+    --wo-htu-muted: {{ section.settings.muted_color }};
+    --wo-htu-eyebrow: {{ section.settings.eyebrow_color }};
+    --wo-htu-accent: {{ section.settings.accent_color }};
+  }
+
+  .wo-htu {
+    background: var(--wo-htu-bg);
+    color: var(--wo-htu-text);
+  }
+
+  .wo-htu__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: clamp(64px, 8vw, 108px) 24px;
+  }
+
+  .wo-htu__header {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+
+  .wo-htu__eyebrow {
+    font-size: 12.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--wo-htu-eyebrow);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .wo-htu__heading {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    font-size: clamp(30px, 4.4vw, 52px);
+    line-height: 0.98;
+    margin: 0;
+  }
+
+  .wo-htu__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .wo-htu__step {
+    padding-top: 26px;
+    border-top: 2px solid var(--wo-htu-accent);
+  }
+
+  .wo-htu__number {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 1;
+    color: var(--wo-htu-accent);
+    margin-bottom: 14px;
+  }
+
+  .wo-htu__step-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+  }
+
+  .wo-htu__step-desc {
+    font-size: 13.5px;
+    color: var(--wo-htu-muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 1023px) {
+    .wo-htu__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 599px) {
+    .wo-htu__grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+</style>
+
+<section class="wo-htu">
+  <div class="wo-htu__inner">
+    <div class="wo-htu__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="wo-htu__eyebrow">{{ section.settings.eyebrow }}</div>
+      {%- endif -%}
+      <h2 class="wo-htu__heading">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="wo-htu__grid">
+      {%- for block in section.blocks -%}
+        <div class="wo-htu__step" {{ block.shopify_attributes }}>
+          <div class="wo-htu__number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+          <h3 class="wo-htu__step-title">{{ block.settings.title }}</h3>
+          <p class="wo-htu__step-desc">{{ block.settings.description }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "WipeOut How to Use",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Simple to use"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Four steps to total control"
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour",
+      "default": "#181512"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Muted text colour",
+      "default": "#6b6864"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow colour",
+      "default": "#9b1f1f"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Step number & border colour",
+      "default": "#181512"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step title",
+          "default": "Inspect"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Step description",
+          "default": "Find active areas, entry points and the dark corners where pests hide."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WipeOut How to Use",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Inspect", "description": "Find active areas, entry points and the dark corners where pests hide." } },
+        { "type": "step", "settings": { "title": "Spray", "description": "Apply directly to insects and along surfaces for instant knockdown." } },
+        { "type": "step", "settings": { "title": "Gel & Tablets", "description": "Place gel in cracks and tablets in hidden spaces for round-the-clock defence." } },
+        { "type": "step", "settings": { "title": "Treat Drains", "description": "Pour drainage liquid down pipes to stop infestations at the source." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

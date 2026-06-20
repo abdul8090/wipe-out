@@ -1,0 +1,449 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --wo-bundle-bg: {{ section.settings.bg_color }};
+    --wo-bundle-text: {{ section.settings.text_color }};
+    --wo-bundle-muted: {{ section.settings.muted_color }};
+    --wo-bundle-accent: {{ section.settings.accent_color }};
+    --wo-bundle-border: {{ section.settings.border_color }};
+    --wo-bundle-img-bg: {{ section.settings.image_bg }};
+    --wo-bundle-btn-text: {{ section.settings.button_text_color }};
+    --wo-bundle-btn2-border: {{ section.settings.secondary_btn_border }};
+  }
+
+  .wo-bundle {
+    border-top: 1px solid var(--wo-bundle-border);
+    border-bottom: 1px solid var(--wo-bundle-border);
+    background: var(--wo-bundle-bg);
+    color: var(--wo-bundle-text);
+  }
+
+  .wo-bundle__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .wo-bundle__image-col {
+    background: var(--wo-bundle-img-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(28px, 4vw, 56px);
+    border-right: 1px solid var(--wo-bundle-border);
+  }
+
+  .wo-bundle__image-col img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+  }
+
+  .wo-bundle__content-col {
+    padding: clamp(40px, 5vw, 80px) clamp(24px, 4vw, 64px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .wo-bundle__eyebrow {
+    font-size: 12.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--wo-bundle-accent);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .wo-bundle__heading {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    font-size: clamp(30px, 3.6vw, 50px);
+    line-height: 0.96;
+    margin: 0 0 18px;
+  }
+
+  .wo-bundle__desc {
+    font-size: 15.5px;
+    color: var(--wo-bundle-muted);
+    line-height: 1.6;
+    margin: 0 0 24px;
+    max-width: 440px;
+  }
+
+  .wo-bundle__features {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-bottom: 26px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .wo-bundle__feature {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 14.5px;
+  }
+
+  .wo-bundle__feature-icon {
+    flex-shrink: 0;
+    color: var(--wo-bundle-accent);
+  }
+
+  .wo-bundle__free {
+    color: var(--wo-bundle-accent);
+    font-weight: 700;
+  }
+
+  .wo-bundle__price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .wo-bundle__price {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 34px;
+  }
+
+  .wo-bundle__compare {
+    font-size: 17px;
+    color: #b3aea7;
+    text-decoration: line-through;
+  }
+
+  .wo-bundle__save-badge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 9px;
+    border-radius: 3px;
+    letter-spacing: 0.04em;
+    background: #fdeceb;
+    color: var(--wo-bundle-accent);
+  }
+
+  .wo-bundle__cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .wo-bundle__btn {
+    background: var(--wo-bundle-accent);
+    color: var(--wo-bundle-btn-text);
+    border: none;
+    border-radius: 4px;
+    padding: 16px 34px;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .wo-bundle__btn:hover {
+    opacity: 0.88;
+  }
+
+  .wo-bundle__btn--secondary {
+    background: transparent;
+    color: var(--wo-bundle-text);
+    border: 1px solid var(--wo-bundle-btn2-border);
+  }
+
+  .wo-bundle__btn--secondary:hover {
+    border-color: var(--wo-bundle-text);
+    opacity: 1;
+  }
+
+  @media (max-width: 1023px) {
+    .wo-bundle__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .wo-bundle__image-col {
+      border-right: none;
+      border-bottom: 1px solid var(--wo-bundle-border);
+      padding: clamp(24px, 4vw, 40px);
+    }
+  }
+
+  @media (max-width: 479px) {
+    .wo-bundle__cta-row {
+      flex-direction: column;
+    }
+
+    .wo-bundle__btn {
+      text-align: center;
+    }
+  }
+</style>
+
+{%- assign featured_product = section.settings.product -%}
+
+<section class="wo-bundle">
+  <div class="wo-bundle__inner">
+    <div class="wo-bundle__image-col">
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 1040
+          | image_tag:
+            alt: section.settings.image.alt | escape,
+            loading: 'lazy',
+            widths: '400, 600, 800, 1040'
+        }}
+      {%- elsif featured_product != blank and featured_product.featured_image != blank -%}
+        {{
+          featured_product.featured_image
+          | image_url: width: 1040
+          | image_tag:
+            alt: featured_product.title | escape,
+            loading: 'lazy',
+            widths: '400, 600, 800, 1040'
+        }}
+      {%- endif -%}
+    </div>
+
+    <div class="wo-bundle__content-col">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="wo-bundle__eyebrow">{{ section.settings.eyebrow }}</div>
+      {%- endif -%}
+
+      <h2 class="wo-bundle__heading">{{ section.settings.heading }}</h2>
+
+      {%- if section.settings.description != blank -%}
+        <p class="wo-bundle__desc">{{ section.settings.description }}</p>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="wo-bundle__features">
+          {%- for block in section.blocks -%}
+            <li class="wo-bundle__feature" {{ block.shopify_attributes }}>
+              <span class="wo-bundle__feature-icon">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"></path></svg>
+              </span>
+              <span>
+                <b>{{ block.settings.feature }}</b>
+                {%- if block.settings.detail != blank -%}
+                  &mdash;
+                  {%- if block.settings.is_free -%}
+                    <span class="wo-bundle__free">{{ block.settings.detail }}</span>
+                  {%- else -%}
+                    {{ block.settings.detail }}
+                  {%- endif -%}
+                {%- endif -%}
+              </span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      <div class="wo-bundle__price-row">
+        <span class="wo-bundle__price">
+          {%- if featured_product != blank -%}
+            {{ featured_product.price | money }}
+          {%- else -%}
+            {{ section.settings.price }}
+          {%- endif -%}
+        </span>
+        {%- if featured_product != blank and featured_product.compare_at_price > featured_product.price -%}
+          <span class="wo-bundle__compare">{{ featured_product.compare_at_price | money }}</span>
+        {%- elsif section.settings.compare_price != blank -%}
+          <span class="wo-bundle__compare">{{ section.settings.compare_price }}</span>
+        {%- endif -%}
+        {%- if section.settings.save_badge != blank -%}
+          <span class="wo-bundle__save-badge">{{ section.settings.save_badge }}</span>
+        {%- endif -%}
+      </div>
+
+      <div class="wo-bundle__cta-row">
+        <a
+          class="wo-bundle__btn"
+          href="{% if featured_product != blank %}{{ featured_product.url }}{% else %}#{% endif %}"
+        >{{ section.settings.button_label }}</a>
+        {%- if section.settings.secondary_button_label != blank and section.settings.secondary_button_link != blank -%}
+          <a class="wo-bundle__btn wo-bundle__btn--secondary" href="{{ section.settings.secondary_button_link }}">{{ section.settings.secondary_button_label }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "WipeOut Featured Bundle",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Custom image (overrides product image)"
+    },
+    {
+      "type": "header",
+      "content": "Section text"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Complete 4-Way Defence"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Protect what you can't see"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "One system for visible activity, hidden corners, cracks and drains."
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price (if no product selected)",
+      "default": "£24.99"
+    },
+    {
+      "type": "text",
+      "id": "compare_price",
+      "label": "Compare-at price (if no product selected)"
+    },
+    {
+      "type": "text",
+      "id": "save_badge",
+      "label": "Save badge text",
+      "default": "SAVE £15.00"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Primary button label",
+      "default": "Add complete kit"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "label": "Secondary button label"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary button link"
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "image_bg",
+      "label": "Image column background",
+      "default": "#fdf6f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour",
+      "default": "#181512"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Muted text colour",
+      "default": "#6b6864"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent colour",
+      "default": "#9b1f1f"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border colour",
+      "default": "#ebe9e6"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_border",
+      "label": "Secondary button border colour",
+      "default": "#d9d4cd"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature",
+          "label": "Feature name",
+          "default": "Killer Spray 500ml"
+        },
+        {
+          "type": "text",
+          "id": "detail",
+          "label": "Detail text"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_free",
+          "label": "Mark as FREE",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WipeOut Featured Bundle",
+      "blocks": [
+        { "type": "feature", "settings": { "feature": "Cockroach Killer Spray 500ml", "detail": "odourless, ready to use" } },
+        { "type": "feature", "settings": { "feature": "Drainage Treatment Liquid", "detail": "FREE", "is_free": true } },
+        { "type": "feature", "settings": { "feature": "Killer Gel + Tablets", "detail": "FREE", "is_free": true } }
+      ]
+    }
+  ]
+}
+{% endschema %}
