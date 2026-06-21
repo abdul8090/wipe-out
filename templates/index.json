@@ -9,22 +9,6 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "settings": {
-        "image": "shopify://shop_images/cockroach_set_dsk_banner.avif",
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "image_behavior": "none",
-        "desktop_content_position": "bottom-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-3",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
-      }
-    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -59,6 +43,7 @@
         "slide_hH44A6": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/cockroach_set_dsk_banner.avif",
             "slide_bg_color": "#fdf4f3",
             "link": "",
             "eyebrow": "",
@@ -295,9 +280,8 @@
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection",
     "wipeout_hero_carousel_NmFbfW",
+    "featured_collection",
     "wipeout_trust_strip_jPg363",
     "wipeout_shop_by_pest_gaCizL",
     "wipeout_featured_bundle_bPtVJL"
