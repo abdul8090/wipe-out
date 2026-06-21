@@ -9,6 +9,74 @@
  */
 {
   "sections": {
+    "wipeout_hero_carousel_NmFbfW": {
+      "type": "wipeout-hero-carousel",
+      "blocks": {
+        "slide_hH44A6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/cockroach_set_dsk_banner.avif",
+            "slide_bg_color": "#fdf4f3",
+            "link": "",
+            "eyebrow": "",
+            "eyebrow_color": "#9b1f1f",
+            "heading": "",
+            "heading_color": "#181512",
+            "subheading": "",
+            "subheading_color": "#6b6864",
+            "button_label": "",
+            "button_bg": "#9b1f1f",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "slide_kLzhiP": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/termite_killer_spray_dsk_banner.webp",
+            "slide_bg_color": "#fdf4f3",
+            "link": "",
+            "eyebrow": "",
+            "eyebrow_color": "#9b1f1f",
+            "heading": "",
+            "heading_color": "#181512",
+            "subheading": "",
+            "subheading_color": "#6b6864",
+            "button_label": "",
+            "button_bg": "#9b1f1f",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "slide_yAU4ww": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/bedbug_spray_dsk_banner.webp",
+            "slide_bg_color": "#fdf4f3",
+            "link": "",
+            "eyebrow": "",
+            "eyebrow_color": "#9b1f1f",
+            "heading": "",
+            "heading_color": "#181512",
+            "subheading": "",
+            "subheading_color": "#6b6864",
+            "button_label": "",
+            "button_bg": "#9b1f1f",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "slide_hH44A6",
+        "slide_kLzhiP",
+        "slide_yAU4ww"
+      ],
+      "name": "WipeOut Hero Carousel",
+      "settings": {
+        "bg_color": "#ffffff",
+        "slide_height": 540,
+        "autoplay": false,
+        "autoplay_speed": 5
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -35,72 +103,6 @@
         "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
-      }
-    },
-    "wipeout_hero_carousel_NmFbfW": {
-      "type": "wipeout-hero-carousel",
-      "blocks": {
-        "slide_hH44A6": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/cockroach_set_dsk_banner.avif",
-            "slide_bg_color": "#fdf4f3",
-            "link": "",
-            "eyebrow": "",
-            "eyebrow_color": "#9b1f1f",
-            "heading": "",
-            "heading_color": "#181512",
-            "subheading": "",
-            "subheading_color": "#6b6864",
-            "button_label": "",
-            "button_bg": "#9b1f1f",
-            "button_text_color": "#ffffff"
-          }
-        },
-        "slide_kLzhiP": {
-          "type": "slide",
-          "settings": {
-            "slide_bg_color": "#fdf4f3",
-            "link": "",
-            "eyebrow": "",
-            "eyebrow_color": "#9b1f1f",
-            "heading": "",
-            "heading_color": "#181512",
-            "subheading": "",
-            "subheading_color": "#6b6864",
-            "button_label": "",
-            "button_bg": "#9b1f1f",
-            "button_text_color": "#ffffff"
-          }
-        },
-        "slide_yAU4ww": {
-          "type": "slide",
-          "settings": {
-            "slide_bg_color": "#fdf4f3",
-            "link": "",
-            "eyebrow": "",
-            "eyebrow_color": "#9b1f1f",
-            "heading": "",
-            "heading_color": "#181512",
-            "subheading": "",
-            "subheading_color": "#6b6864",
-            "button_label": "",
-            "button_bg": "#9b1f1f",
-            "button_text_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "slide_hH44A6",
-        "slide_kLzhiP",
-        "slide_yAU4ww"
-      ],
-      "name": "WipeOut Hero Carousel",
-      "settings": {
-        "bg_color": "#ffffff",
-        "slide_height": 540,
-        "autoplay": false,
-        "autoplay_speed": 5
       }
     },
     "wipeout_trust_strip_jPg363": {
