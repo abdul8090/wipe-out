@@ -77,34 +77,6 @@
         "autoplay_speed": 5
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
-      }
-    },
     "wipeout_trust_strip_jPg363": {
       "type": "wipeout-trust-strip",
       "blocks": {
@@ -156,13 +128,42 @@
         "subtitle_color": "#8a857f"
       }
     },
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "collection": "all",
+        "products_to_show": 8,
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
     "wipeout_shop_by_pest_gaCizL": {
       "type": "wipeout-shop-by-pest",
       "blocks": {
         "product_card_KG43q3": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "wipeout-bedbug-killer-spray",
             "fallback_title": "Bed Bug Killer Spray",
             "description": "Kills bed bugs & eggs on contact. Protects mattresses, seams, headboards and frames.",
             "price": "£14.99",
@@ -178,7 +179,7 @@
         "product_card_BD8Bwa": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "wipeout-bedbug-killer-spray-copy",
             "fallback_title": "Termite Killer Spray",
             "description": "Stops and repels termites before damage begins. For wood, furniture, doors and interiors.",
             "price": "£14.99",
@@ -194,7 +195,7 @@
         "product_card_xFdeej": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "wipeout-termite-killer-spray-copy",
             "fallback_title": "Cockroach Complete Kit",
             "description": "4-way defence: spray, drainage liquid, gel & tablets. Reaches what you can't see.",
             "price": "£24.99",
@@ -260,7 +261,7 @@
       ],
       "name": "WipeOut Featured Bundle",
       "settings": {
-        "product": "",
+        "product": "wipeout-termite-killer-spray-copy",
         "eyebrow": "Complete 4-Way Defence",
         "heading": "Protect what you can't see",
         "description": "One system for visible activity, hidden corners, cracks and drains.",
@@ -283,8 +284,8 @@
   },
   "order": [
     "wipeout_hero_carousel_NmFbfW",
-    "featured_collection",
     "wipeout_trust_strip_jPg363",
+    "featured_collection",
     "wipeout_shop_by_pest_gaCizL",
     "wipeout_featured_bundle_bPtVJL"
   ]
