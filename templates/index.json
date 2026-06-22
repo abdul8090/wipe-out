@@ -280,6 +280,322 @@
         "button_text_color": "#ffffff",
         "secondary_btn_border": "#d9d4cd"
       }
+    },
+    "wipeout_kills_repels_7Yfjz7": {
+      "type": "wipeout-kills-repels",
+      "blocks": {
+        "feature_64zYKy": {
+          "type": "feature",
+          "settings": {
+            "icon": "lightning",
+            "title": "Instant Knockdown",
+            "description": "Super-strength formula drops insects on contact — no waiting, no mixing."
+          }
+        },
+        "feature_N67gWN": {
+          "type": "feature",
+          "settings": {
+            "icon": "shield",
+            "title": "Lasting Barrier",
+            "description": "Leaves a repellent layer on surfaces that keeps working for weeks after spraying."
+          }
+        },
+        "feature_9AHkYH": {
+          "type": "feature",
+          "settings": {
+            "icon": "wind",
+            "title": "Odourless",
+            "description": "No bad smell, no harsh fumes — comfortable to use anywhere in the home."
+          }
+        }
+      },
+      "block_order": [
+        "feature_64zYKy",
+        "feature_N67gWN",
+        "feature_9AHkYH"
+      ],
+      "name": "WipeOut Kills & Repels",
+      "settings": {
+        "eyebrow": "How it works",
+        "heading": "Kills on contact. Repels for weeks.",
+        "subtext": "Instant knockdown, then a long-lasting protective barrier that keeps insects from coming back — with zero smell.",
+        "bg_color": "#ffffff",
+        "text_color": "#181512",
+        "muted_color": "#6b6864",
+        "eyebrow_color": "#9b1f1f",
+        "border_color": "#ebe9e6",
+        "icon_bg": "#f5f2ee",
+        "icon_color": "#181512"
+      }
+    },
+    "wipeout_comparison_LxTqcB": {
+      "type": "wipeout-comparison",
+      "blocks": {
+        "row_WVLWRg": {
+          "type": "row",
+          "settings": {
+            "negative": "Mixing & multiple steps",
+            "positive": "Ready to use — zero mixing"
+          }
+        },
+        "row_m67tni": {
+          "type": "row",
+          "settings": {
+            "negative": "Strong chemical smell",
+            "positive": "Completely odourless"
+          }
+        },
+        "row_w8yNyk": {
+          "type": "row",
+          "settings": {
+            "negative": "Harsh & unsafe indoors",
+            "positive": "Safe around kids & pets"
+          }
+        },
+        "row_tGYB8i": {
+          "type": "row",
+          "settings": {
+            "negative": "Short-lived effectiveness",
+            "positive": "Protects for weeks"
+          }
+        }
+      },
+      "block_order": [
+        "row_WVLWRg",
+        "row_m67tni",
+        "row_w8yNyk",
+        "row_tGYB8i"
+      ],
+      "name": "WipeOut Comparison",
+      "settings": {
+        "eyebrow": "The difference",
+        "heading": "Why choose WipeOut",
+        "left_col_label": "Traditional methods",
+        "brand_name": "WIPEOUT",
+        "bg_color": "#ffffff",
+        "text_color": "#181512",
+        "muted_color": "#8a857f",
+        "eyebrow_color": "#9b1f1f",
+        "border_color": "#ebe9e6",
+        "left_col_bg": "#faf9f7",
+        "check_color": "#9b1f1f"
+      }
+    },
+    "wipeout_how_to_use_ieQLx8": {
+      "type": "wipeout-how-to-use",
+      "blocks": {
+        "step_B8w6ie": {
+          "type": "step",
+          "settings": {
+            "title": "Inspect",
+            "description": "Find active areas, entry points and the dark corners where pests hide."
+          }
+        },
+        "step_rk8Naa": {
+          "type": "step",
+          "settings": {
+            "title": "Spray",
+            "description": "Apply directly to insects and along surfaces for instant knockdown."
+          }
+        },
+        "step_CimQG7": {
+          "type": "step",
+          "settings": {
+            "title": "Gel & Tablets",
+            "description": "Place gel in cracks and tablets in hidden spaces for round-the-clock defence."
+          }
+        },
+        "step_CkNi6X": {
+          "type": "step",
+          "settings": {
+            "title": "Treat Drains",
+            "description": "Pour drainage liquid down pipes to stop infestations at the source."
+          }
+        }
+      },
+      "block_order": [
+        "step_B8w6ie",
+        "step_rk8Naa",
+        "step_CimQG7",
+        "step_CkNi6X"
+      ],
+      "name": "WipeOut How to Use",
+      "settings": {
+        "eyebrow": "Simple to use",
+        "heading": "Four steps to total control",
+        "bg_color": "#ffffff",
+        "text_color": "#181512",
+        "muted_color": "#6b6864",
+        "eyebrow_color": "#9b1f1f",
+        "accent_color": "#181512"
+      }
+    },
+    "wipeout_safe_zVjffT": {
+      "type": "wipeout-safe",
+      "blocks": {
+        "pill_WrC3W6": {
+          "type": "pill",
+          "settings": {
+            "label": "Non-toxic formula"
+          }
+        },
+        "pill_CChBmM": {
+          "type": "pill",
+          "settings": {
+            "label": "Safe around kids"
+          }
+        },
+        "pill_nxaPDn": {
+          "type": "pill",
+          "settings": {
+            "label": "Safe for pets"
+          }
+        },
+        "pill_4M4nJT": {
+          "type": "pill",
+          "settings": {
+            "label": "Odourless"
+          }
+        }
+      },
+      "block_order": [
+        "pill_WrC3W6",
+        "pill_CChBmM",
+        "pill_nxaPDn",
+        "pill_4M4nJT"
+      ],
+      "name": "WipeOut Safe Section",
+      "settings": {
+        "heading": "Safe for home, kids & pets",
+        "description": "A non-toxic, odourless formula designed for indoor use. Powerful on pests, gentle on the home you share.",
+        "bg_color": "#ffffff",
+        "border_color": "#ebe9e6",
+        "text_color": "#181512",
+        "muted_color": "#6b6864",
+        "icon_color": "#181512",
+        "pill_border": "#d9d4cd"
+      }
+    },
+    "wipeout_reviews_eQPQdp": {
+      "type": "wipeout-reviews",
+      "blocks": {
+        "review_4kYDDD": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review": "Saw results within minutes. No smell at all — sprayed the kitchen before bed and woke up to zero roaches.",
+            "author": "Priya M.",
+            "verified": true
+          }
+        },
+        "review_JW87xV": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review": "Used the termite spray on our skirting boards and old furniture. Three months on, still nothing. Brilliant.",
+            "author": "David R.",
+            "verified": true
+          }
+        },
+        "review_nBW8Rc": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review": "Finally something safe to use with a toddler and two cats in the house. The bed bug kit saved us.",
+            "author": "Hannah K.",
+            "verified": true
+          }
+        }
+      },
+      "block_order": [
+        "review_4kYDDD",
+        "review_JW87xV",
+        "review_nBW8Rc"
+      ],
+      "name": "WipeOut Reviews",
+      "settings": {
+        "heading": "Loved by 12,000+ homes",
+        "bg_color": "#ffffff",
+        "text_color": "#181512",
+        "muted_color": "#6b6864",
+        "border_color": "#ebe9e6",
+        "star_color": "#e0a32e",
+        "verified_color": "#9b1f1f"
+      }
+    },
+    "wipeout_faq_xgEKWp": {
+      "type": "wipeout-faq",
+      "blocks": {
+        "faq_item_xWyzJb": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is WipeOut safe to use around children and pets?",
+            "answer": "Yes. WipeOut is a non-toxic, odourless formula specifically designed for indoor use. It is safe to use around children and pets once the treated surface has dried."
+          }
+        },
+        "faq_item_3jHrB9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does WipeOut keep working after application?",
+            "answer": "WipeOut creates a long-lasting repellent barrier that keeps working for several weeks. For severe infestations, we recommend a second application after 7–10 days."
+          }
+        },
+        "faq_item_DFEy74": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does WipeOut have a smell?",
+            "answer": "No. WipeOut is completely odourless. There are no harsh chemical fumes, making it comfortable to use in bedrooms, kitchens, and living spaces."
+          }
+        },
+        "faq_item_kDUrQG": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Which WipeOut product should I buy?",
+            "answer": "Choose by pest type: Bed Bug Killer for mattresses and soft furnishings, Termite Killer for wood and timber, or the Cockroach Complete Kit for the most comprehensive 4-way protection."
+          }
+        },
+        "faq_item_6PxEfG": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How quickly does WipeOut work?",
+            "answer": "WipeOut knocks down insects on contact — you'll see results within minutes of application."
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_xWyzJb",
+        "faq_item_3jHrB9",
+        "faq_item_DFEy74",
+        "faq_item_kDUrQG",
+        "faq_item_6PxEfG"
+      ],
+      "name": "WipeOut FAQ",
+      "settings": {
+        "heading": "Questions, answered",
+        "bg_color": "#ffffff",
+        "border_color": "#ebe9e6",
+        "text_color": "#181512",
+        "muted_color": "#6b6864",
+        "icon_color": "#9b1f1f"
+      }
+    },
+    "wipeout_newsletter_EydzzY": {
+      "type": "wipeout-newsletter",
+      "name": "WipeOut Newsletter",
+      "settings": {
+        "heading": "Get 10% off your first order",
+        "subtext": "Join the WipeOut list for protection tips and member-only offers.",
+        "placeholder": "Enter your email",
+        "button_label": "Subscribe",
+        "success_message": "Thanks for subscribing!",
+        "bg_color": "#181512",
+        "text_color": "#ffffff",
+        "muted_color": "#b8b3ab",
+        "input_bg": "#26221d",
+        "input_border": "#3a352e",
+        "button_bg": "#ffffff",
+        "button_text_color": "#181512"
+      }
     }
   },
   "order": [
@@ -287,6 +603,13 @@
     "wipeout_trust_strip_jPg363",
     "featured_collection",
     "wipeout_shop_by_pest_gaCizL",
-    "wipeout_featured_bundle_bPtVJL"
+    "wipeout_featured_bundle_bPtVJL",
+    "wipeout_kills_repels_7Yfjz7",
+    "wipeout_comparison_LxTqcB",
+    "wipeout_how_to_use_ieQLx8",
+    "wipeout_safe_zVjffT",
+    "wipeout_reviews_eQPQdp",
+    "wipeout_faq_xgEKWp",
+    "wipeout_newsletter_EydzzY"
   ]
 }

@@ -1,1 +1,106 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"footer":{"type":"footer","settings":{"color_scheme":"scheme-1","newsletter_enable":true,"newsletter_heading":"Subscribe to our emails","enable_follow_on_shop":true,"show_social":true,"enable_country_selector":true,"enable_language_selector":true,"payment_enable":true,"show_policy":true,"margin_top":0,"padding_top":36,"padding_bottom":36}}},"order":["footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "wipeout_footer_3NHDfK": {
+      "type": "wipeout-footer",
+      "blocks": {
+        "link_column_yNA7aH": {
+          "type": "link_column",
+          "settings": {
+            "column_title": "Shop",
+            "links": "",
+            "link_1_label": "Bed Bug Killer",
+            "link_1_url": "",
+            "link_2_label": "Termite Killer",
+            "link_2_url": "",
+            "link_3_label": "Cockroach Kit",
+            "link_3_url": "",
+            "link_4_label": "All products",
+            "link_4_url": ""
+          }
+        },
+        "link_column_4FNGbb": {
+          "type": "link_column",
+          "settings": {
+            "column_title": "Help",
+            "links": "",
+            "link_1_label": "Track my order",
+            "link_1_url": "",
+            "link_2_label": "Delivery & returns",
+            "link_2_url": "",
+            "link_3_label": "How to use",
+            "link_3_url": "",
+            "link_4_label": "Contact us",
+            "link_4_url": ""
+          }
+        },
+        "link_column_3raB8R": {
+          "type": "link_column",
+          "settings": {
+            "column_title": "Company",
+            "links": "",
+            "link_1_label": "Our story",
+            "link_1_url": "",
+            "link_2_label": "Ingredients & safety",
+            "link_2_url": "",
+            "link_3_label": "Reviews",
+            "link_3_url": "",
+            "link_4_label": "Trade enquiries",
+            "link_4_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "link_column_yNA7aH",
+        "link_column_4FNGbb",
+        "link_column_3raB8R"
+      ],
+      "name": "WipeOut Footer",
+      "settings": {
+        "brand_name": "WIPEOUT",
+        "brand_tagline": "Advanced Insect Killer+",
+        "brand_desc": "Super-strength, odourless insect control for the modern home. Kills & repels — safe for kids and pets.",
+        "copyright": "© 2026 WipeOut. Advanced Insect Killer+. All rights reserved.",
+        "show_payment_icons": true,
+        "bg_color": "#ffffff",
+        "border_color": "#ebe9e6",
+        "text_color": "#181512",
+        "muted_color": "#6b6864",
+        "link_hover_color": "#181512",
+        "brand_accent": "#9b1f1f"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "wipeout_footer_3NHDfK",
+    "footer"
+  ]
+}
