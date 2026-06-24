@@ -334,7 +334,7 @@
         "comparison_item_JEP8YQ": {
           "type": "comparison_item",
           "settings": {
-            "feature": "100% Natural Ingredients",
+            "feature": "Ready to use — zero mixing",
             "your_brand_has": true,
             "others_have": false
           }
@@ -342,7 +342,7 @@
         "comparison_item_JwpMGR": {
           "type": "comparison_item",
           "settings": {
-            "feature": "Grass Fed, Grass Finished",
+            "feature": "Completely odourless",
             "your_brand_has": true,
             "others_have": false
           }
@@ -350,7 +350,7 @@
         "comparison_item_nKDWbR": {
           "type": "comparison_item",
           "settings": {
-            "feature": "No Preservatives",
+            "feature": "Safe around kids & pets",
             "your_brand_has": true,
             "others_have": false
           }
@@ -358,23 +358,7 @@
         "comparison_item_wCH6TN": {
           "type": "comparison_item",
           "settings": {
-            "feature": "Feature",
-            "your_brand_has": true,
-            "others_have": false
-          }
-        },
-        "comparison_item_gXzraY": {
-          "type": "comparison_item",
-          "settings": {
-            "feature": "Feature",
-            "your_brand_has": true,
-            "others_have": false
-          }
-        },
-        "comparison_item_Qyzjyw": {
-          "type": "comparison_item",
-          "settings": {
-            "feature": "Feature",
+            "feature": "Protects for weeks",
             "your_brand_has": true,
             "others_have": false
           }
@@ -384,17 +368,15 @@
         "comparison_item_JEP8YQ",
         "comparison_item_JwpMGR",
         "comparison_item_nKDWbR",
-        "comparison_item_wCH6TN",
-        "comparison_item_gXzraY",
-        "comparison_item_Qyzjyw"
+        "comparison_item_wCH6TN"
       ],
       "custom_css": [
+        "div:empty{display: block;}",
         "{border-top: 1px solid #2c2609;}"
       ],
       "name": "Comparison Table",
       "settings": {
         "heading": "SUPERIOR IN EVERY WAY",
-        "logo": "shopify://shop_images/wipeoutlogo.avif",
         "brand_heading": "Wipe out",
         "others_heading": "OTHERS"
       }
