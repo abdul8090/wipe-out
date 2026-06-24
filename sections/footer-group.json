@@ -71,7 +71,7 @@
         "brand_tagline": "Advanced Insect Killer+",
         "brand_desc": "Super-strength, odourless insect control for the modern home. Kills & repels — safe for kids and pets.",
         "copyright": "© 2026 WipeOut. Advanced Insect Killer+. All rights reserved.",
-        "show_payment_icons": true,
+        "show_payment_icons": false,
         "bg_color": "#ffffff",
         "border_color": "#ebe9e6",
         "text_color": "#181512",
