@@ -82,6 +82,18 @@
     },
     "footer": {
       "type": "footer",
+      "blocks": {
+        "image_BfB9LV": {
+          "type": "image",
+          "settings": {
+            "image_width": 100,
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_BfB9LV"
+      ],
       "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
