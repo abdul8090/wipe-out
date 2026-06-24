@@ -281,53 +281,6 @@
         "secondary_btn_border": "#d9d4cd"
       }
     },
-    "wipeout_kills_repels_7Yfjz7": {
-      "type": "wipeout-kills-repels",
-      "blocks": {
-        "feature_64zYKy": {
-          "type": "feature",
-          "settings": {
-            "icon": "lightning",
-            "title": "Instant Knockdown",
-            "description": "Super-strength formula drops insects on contact — no waiting, no mixing."
-          }
-        },
-        "feature_N67gWN": {
-          "type": "feature",
-          "settings": {
-            "icon": "shield",
-            "title": "Lasting Barrier",
-            "description": "Leaves a repellent layer on surfaces that keeps working for weeks after spraying."
-          }
-        },
-        "feature_9AHkYH": {
-          "type": "feature",
-          "settings": {
-            "icon": "wind",
-            "title": "Odourless",
-            "description": "No bad smell, no harsh fumes — comfortable to use anywhere in the home."
-          }
-        }
-      },
-      "block_order": [
-        "feature_64zYKy",
-        "feature_N67gWN",
-        "feature_9AHkYH"
-      ],
-      "name": "WipeOut Kills & Repels",
-      "settings": {
-        "eyebrow": "How it works",
-        "heading": "Kills on contact. Repels for weeks.",
-        "subtext": "Instant knockdown, then a long-lasting protective barrier that keeps insects from coming back — with zero smell.",
-        "bg_color": "#ffffff",
-        "text_color": "#181512",
-        "muted_color": "#6b6864",
-        "eyebrow_color": "#9b1f1f",
-        "border_color": "#ebe9e6",
-        "icon_bg": "#f5f2ee",
-        "icon_color": "#181512"
-      }
-    },
     "maison_step_how_NL6jbe": {
       "type": "maison-step-how",
       "blocks": {
@@ -372,9 +325,9 @@
       ],
       "name": "How It Works Steps",
       "settings": {
-        "section_bg_color": "#FFFFFF",
+        "section_bg_color": "#ffffff",
         "subtitle": "HOW IT WORKS",
-        "subtitle_color": "#FF0000",
+        "subtitle_color": "#ff0000",
         "heading": "Kills on contact. Repels for weeks.",
         "description": "<p>Instant knockdown, then a long-lasting protective barrier that keeps insects from coming back — with zero smell.<br/><br/></p>",
         "button_link": "",
@@ -433,65 +386,15 @@
         "heading": "Why choose WipeOut",
         "brand_heading": "Wipe out",
         "others_heading": "OTHERS",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_horizontal": 0,
         "bg_color": "#fdf6f5",
         "accent_color": "#c57272",
         "border_color": "#2c2609",
         "text_color": "#1d211e",
         "cell_bg": "#ffffff",
         "icon_color": "#2c2609"
-      }
-    },
-    "wipeout_comparison_LxTqcB": {
-      "type": "wipeout-comparison",
-      "blocks": {
-        "row_WVLWRg": {
-          "type": "row",
-          "settings": {
-            "negative": "Mixing & multiple steps",
-            "positive": "Ready to use — zero mixing"
-          }
-        },
-        "row_m67tni": {
-          "type": "row",
-          "settings": {
-            "negative": "Strong chemical smell",
-            "positive": "Completely odourless"
-          }
-        },
-        "row_w8yNyk": {
-          "type": "row",
-          "settings": {
-            "negative": "Harsh & unsafe indoors",
-            "positive": "Safe around kids & pets"
-          }
-        },
-        "row_tGYB8i": {
-          "type": "row",
-          "settings": {
-            "negative": "Short-lived effectiveness",
-            "positive": "Protects for weeks"
-          }
-        }
-      },
-      "block_order": [
-        "row_WVLWRg",
-        "row_m67tni",
-        "row_w8yNyk",
-        "row_tGYB8i"
-      ],
-      "name": "WipeOut Comparison",
-      "settings": {
-        "eyebrow": "The difference",
-        "heading": "Why choose WipeOut",
-        "left_col_label": "Traditional methods",
-        "brand_name": "WIPEOUT",
-        "bg_color": "#ffffff",
-        "text_color": "#181512",
-        "muted_color": "#8a857f",
-        "eyebrow_color": "#9b1f1f",
-        "border_color": "#ebe9e6",
-        "left_col_bg": "#faf9f7",
-        "check_color": "#9b1f1f"
       }
     },
     "wipeout_how_to_use_ieQLx8": {
@@ -717,10 +620,8 @@
     "featured_collection",
     "wipeout_shop_by_pest_gaCizL",
     "wipeout_featured_bundle_bPtVJL",
-    "wipeout_kills_repels_7Yfjz7",
     "maison_step_how_NL6jbe",
     "maison_comparison_DHWrMK",
-    "wipeout_comparison_LxTqcB",
     "wipeout_how_to_use_ieQLx8",
     "wipeout_safe_zVjffT",
     "wipeout_reviews_eQPQdp",
