@@ -282,8 +282,8 @@
         "secondary_btn_border": "#d9d4cd"
       }
     },
-    "maison_step_how_NL6jbe": {
-      "type": "maison-step-how",
+    "how_it_works_NL6jbe": {
+      "type": "how-it-works",
       "blocks": {
         "step_prffDx": {
           "type": "step",
@@ -350,8 +350,8 @@
         "btn_border": "#2c2609"
       }
     },
-    "maison_comparison_DHWrMK": {
-      "type": "maison-comparison",
+    "product_comparison_DHWrMK": {
+      "type": "product-comparison",
       "blocks": {
         "comparison_item_JEP8YQ": {
           "type": "comparison_item",
@@ -421,8 +421,8 @@
         "icon_color": "#2c2609"
       }
     },
-    "tab_care_q78dtC": {
-      "type": "tab-care",
+    "product_benefits_q78dtC": {
+      "type": "product-benefits",
       "blocks": {
         "product_tab_emGQF8": {
           "type": "product_tab",
@@ -698,9 +698,9 @@
     "featured_collection",
     "wipeout_shop_by_pest_gaCizL",
     "wipeout_featured_bundle_bPtVJL",
-    "maison_step_how_NL6jbe",
-    "maison_comparison_DHWrMK",
-    "tab_care_q78dtC",
+    "how_it_works_NL6jbe",
+    "product_comparison_DHWrMK",
+    "product_benefits_q78dtC",
     "wipeout_how_to_use_ieQLx8",
     "wipeout_safe_zVjffT",
     "wipeout_reviews_eQPQdp",

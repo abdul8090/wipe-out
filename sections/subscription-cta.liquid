@@ -11,7 +11,7 @@
   }
 
   /* Section wrapper */
-  #shopify-section-{{ section.id }} .maison-cta_section {
+  #shopify-section-{{ section.id }} .wo-cta_section {
     position: relative;
     overflow: hidden;
     font-family: {{ settings.type_body_font_family }}, sans-serif;
@@ -22,14 +22,14 @@
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_container {
+  #shopify-section-{{ section.id }} .wo-cta_container {
     max-width: 1100px;
     margin: 0 auto;
     position: relative;
     padding: 0 1em;
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_content {
+  #shopify-section-{{ section.id }} .wo-cta_content {
     text-align: center;
     max-width: 700px;
     margin: 0 auto;
@@ -38,7 +38,7 @@
   }
 
   /* Badge */
-  #shopify-section-{{ section.id }} .maison-cta_badge {
+  #shopify-section-{{ section.id }} .wo-cta_badge {
     display: inline-flex;
     flex-direction: row;
     align-items: center;
@@ -51,12 +51,12 @@
     padding: 4px 12px 4px 4px;
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_avatars {
+  #shopify-section-{{ section.id }} .wo-cta_avatars {
     display: flex;
     align-items: center;
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_avatar {
+  #shopify-section-{{ section.id }} .wo-cta_avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -65,11 +65,11 @@
     object-fit: cover;
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_avatar:first-child {
+  #shopify-section-{{ section.id }} .wo-cta_avatar:first-child {
     margin-left: 0;
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_badge-text {
+  #shopify-section-{{ section.id }} .wo-cta_badge-text {
     font-size: {{ section.settings.badge_text_size }}px;
     font-style: normal;
     font-weight: 400;
@@ -78,7 +78,7 @@
   }
 
   /* Heading */
-  #shopify-section-{{ section.id }} .maison-cta_heading {
+  #shopify-section-{{ section.id }} .wo-cta_heading {
     font-size: {{ section.settings.heading_size }}px;
     font-weight: 700;
     margin-bottom: 0.5em;
@@ -87,12 +87,12 @@
     color: var(--cta-text);
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_highlight {
+  #shopify-section-{{ section.id }} .wo-cta_highlight {
     color: var(--cta-highlight);
   }
 
   /* Description */
-  #shopify-section-{{ section.id }} .maison-cta_description {
+  #shopify-section-{{ section.id }} .wo-cta_description {
     font-size: {{ section.settings.description_size }}px;
     line-height: 1.5;
     margin-bottom: 20px;
@@ -100,7 +100,7 @@
   }
 
   /* Button */
-  #shopify-section-{{ section.id }} .maison-cta_button {
+  #shopify-section-{{ section.id }} .wo-cta_button {
     display: inline-block;
     font-weight: 700;
     font-size: {{ section.settings.button_size }}px;
@@ -116,17 +116,17 @@
     box-shadow: 0px 4px 0px 0px var(--cta-btn-shadow);
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_button:hover {
+  #shopify-section-{{ section.id }} .wo-cta_button:hover {
     transform: translateY(-2px);
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_button:active {
+  #shopify-section-{{ section.id }} .wo-cta_button:active {
     transform: translateY(2px);
     box-shadow: 0px 2px 0px -1px var(--cta-btn-shadow);
   }
 
   /* Benefits */
-  #shopify-section-{{ section.id }} .maison-cta_benefits {
+  #shopify-section-{{ section.id }} .wo-cta_benefits {
     display: flex;
     justify-content: center;
     gap: 2em;
@@ -134,13 +134,13 @@
     flex-wrap: wrap;
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_benefit {
+  #shopify-section-{{ section.id }} .wo-cta_benefit {
     display: flex;
     align-items: center;
     gap: 0.5em;
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_icon {
+  #shopify-section-{{ section.id }} .wo-cta_icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,15 +153,15 @@
     border: 1px solid var(--cta-border);
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_text {
+  #shopify-section-{{ section.id }} .wo-cta_text {
     font-size: {{ section.settings.benefit_text_size }}px;
     font-weight: 500;
     color: var(--cta-text);
   }
 
   /* Positioned images */
-  #shopify-section-{{ section.id }} .maison-cta_image-left,
-  #shopify-section-{{ section.id }} .maison-cta_image-right {
+  #shopify-section-{{ section.id }} .wo-cta_image-left,
+  #shopify-section-{{ section.id }} .wo-cta_image-right {
     position: absolute;
     top: 0;
     height: 100%;
@@ -169,27 +169,27 @@
     align-items: center;
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_image-left {
+  #shopify-section-{{ section.id }} .wo-cta_image-left {
     left: 0;
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_image-right {
+  #shopify-section-{{ section.id }} .wo-cta_image-right {
     right: 0;
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_image-left img,
-  #shopify-section-{{ section.id }} .maison-cta_image-right img {
+  #shopify-section-{{ section.id }} .wo-cta_image-left img,
+  #shopify-section-{{ section.id }} .wo-cta_image-right img {
     max-height: 100%;
     width: auto;
     object-fit: contain;
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_image-mobile {
+  #shopify-section-{{ section.id }} .wo-cta_image-mobile {
     display: none;
     width: 100%;
   }
 
-  #shopify-section-{{ section.id }} .maison-cta_image-mobile img {
+  #shopify-section-{{ section.id }} .wo-cta_image-mobile img {
     max-height: 100%;
     max-width: 100%;
     width: auto;
@@ -200,56 +200,56 @@
 
   /* Responsive */
   @media (max-width: 1315px) {
-    #shopify-section-{{ section.id }} .maison-cta_image-left  { left: -8px; }
-    #shopify-section-{{ section.id }} .maison-cta_image-right { right: -80px; }
+    #shopify-section-{{ section.id }} .wo-cta_image-left  { left: -8px; }
+    #shopify-section-{{ section.id }} .wo-cta_image-right { right: -80px; }
   }
 
   @media (max-width: 1300px) {
-    #shopify-section-{{ section.id }} .maison-cta_image-left  { left: -100px; }
-    #shopify-section-{{ section.id }} .maison-cta_image-right { right: -100px; }
+    #shopify-section-{{ section.id }} .wo-cta_image-left  { left: -100px; }
+    #shopify-section-{{ section.id }} .wo-cta_image-right { right: -100px; }
   }
 
   @media (min-width: 750px) and (max-width: 1415px) {
-    #shopify-section-{{ section.id }} .maison-cta_content { max-width: 540px; }
+    #shopify-section-{{ section.id }} .wo-cta_content { max-width: 540px; }
   }
 
   @media (max-width: 1100px) {
-    #shopify-section-{{ section.id }} .maison-cta_image-left  { left: -80px; }
-    #shopify-section-{{ section.id }} .maison-cta_image-right { right: -80px; }
+    #shopify-section-{{ section.id }} .wo-cta_image-left  { left: -80px; }
+    #shopify-section-{{ section.id }} .wo-cta_image-right { right: -80px; }
 
-    #shopify-section-{{ section.id }} .maison-cta_image-left img,
-    #shopify-section-{{ section.id }} .maison-cta_image-right img {
+    #shopify-section-{{ section.id }} .wo-cta_image-left img,
+    #shopify-section-{{ section.id }} .wo-cta_image-right img {
       max-width: 250px;
     }
   }
 
   /* Mobile — images swap, padding from settings */
   @media (max-width: 768px) {
-    #shopify-section-{{ section.id }} .maison-cta_section {
+    #shopify-section-{{ section.id }} .wo-cta_section {
       padding-top: {{ section.settings.padding_top_mobile }}px;
       padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
     }
 
-    #shopify-section-{{ section.id }} .maison-cta_heading {
+    #shopify-section-{{ section.id }} .wo-cta_heading {
       font-size: {{ section.settings.heading_size_mobile }}px;
       margin-bottom: 12px;
     }
 
-    #shopify-section-{{ section.id }} .maison-cta_description {
+    #shopify-section-{{ section.id }} .wo-cta_description {
       font-size: {{ section.settings.description_size_mobile }}px;
       margin-bottom: 12px;
     }
 
-    #shopify-section-{{ section.id }} .maison-cta_image-left,
-    #shopify-section-{{ section.id }} .maison-cta_image-right {
+    #shopify-section-{{ section.id }} .wo-cta_image-left,
+    #shopify-section-{{ section.id }} .wo-cta_image-right {
       display: none;
     }
 
-    #shopify-section-{{ section.id }} .maison-cta_image-mobile {
+    #shopify-section-{{ section.id }} .wo-cta_image-mobile {
       display: block;
     }
 
-    #shopify-section-{{ section.id }} .maison-cta_benefits {
+    #shopify-section-{{ section.id }} .wo-cta_benefits {
       justify-content: center;
       align-items: center;
       gap: 9px;
@@ -257,25 +257,25 @@
       margin-top: 12px;
     }
 
-    #shopify-section-{{ section.id }} .maison-cta_avatar {
+    #shopify-section-{{ section.id }} .wo-cta_avatar {
       width: 30px;
       height: 30px;
     }
 
-    #shopify-section-{{ section.id }} .maison-cta_badge {
+    #shopify-section-{{ section.id }} .wo-cta_badge {
       gap: 4px;
     }
 
-    #shopify-section-{{ section.id }} .maison-cta_button {
+    #shopify-section-{{ section.id }} .wo-cta_button {
       width: 100%;
       padding: 0.75em 1.5em;
     }
   }
 </style>
 
-<div class="maison-cta_section">
+<div class="wo-cta_section">
   {%- if section.settings.image_mobile != blank -%}
-    <div class="maison-cta_image-mobile">
+    <div class="wo-cta_image-mobile">
       {%- assign mob_alt = section.settings.button_text | default: 'Product Image' | escape -%}
       {{
         section.settings.image_mobile
@@ -284,7 +284,7 @@
       }}
     </div>
   {%- else -%}
-    <div class="maison-cta_image-mobile">
+    <div class="wo-cta_image-mobile">
       <img
         src="https://placehold.co/800x300/{{ section.settings.background_color | remove: '#' }}/1d211e?text=Product+Image"
         alt="Product Image"
@@ -295,80 +295,80 @@
     </div>
   {%- endif -%}
 
-  <div class="maison-cta_container">
-    <div class="maison-cta_content">
+  <div class="wo-cta_container">
+    <div class="wo-cta_content">
 
       {%- if section.settings.show_customer_badge -%}
-        <div class="maison-cta_badge">
-          <div class="maison-cta_avatars">
+        <div class="wo-cta_badge">
+          <div class="wo-cta_avatars">
             {%- if section.settings.avatar_1 != blank -%}
               {{
                 section.settings.avatar_1
                 | image_url: width: 80, height: 80, crop: 'center'
-                | image_tag: loading: 'lazy', alt: 'Customer', class: 'maison-cta_avatar', width: 40, height: 40
+                | image_tag: loading: 'lazy', alt: 'Customer', class: 'wo-cta_avatar', width: 40, height: 40
               }}
             {%- else -%}
-              <img class="maison-cta_avatar" src="https://placehold.co/40x40/1d211e/ffffff" alt="Customer" width="40" height="40">
+              <img class="wo-cta_avatar" src="https://placehold.co/40x40/1d211e/ffffff" alt="Customer" width="40" height="40">
             {%- endif -%}
 
             {%- if section.settings.avatar_2 != blank -%}
               {{
                 section.settings.avatar_2
                 | image_url: width: 80, height: 80, crop: 'center'
-                | image_tag: loading: 'lazy', alt: 'Customer', class: 'maison-cta_avatar', width: 40, height: 40
+                | image_tag: loading: 'lazy', alt: 'Customer', class: 'wo-cta_avatar', width: 40, height: 40
               }}
             {%- else -%}
-              <img class="maison-cta_avatar" src="https://placehold.co/40x40/1d211e/ffffff" alt="Customer" width="40" height="40">
+              <img class="wo-cta_avatar" src="https://placehold.co/40x40/1d211e/ffffff" alt="Customer" width="40" height="40">
             {%- endif -%}
 
             {%- if section.settings.avatar_3 != blank -%}
               {{
                 section.settings.avatar_3
                 | image_url: width: 80, height: 80, crop: 'center'
-                | image_tag: loading: 'lazy', alt: 'Customer', class: 'maison-cta_avatar', width: 40, height: 40
+                | image_tag: loading: 'lazy', alt: 'Customer', class: 'wo-cta_avatar', width: 40, height: 40
               }}
             {%- else -%}
-              <img class="maison-cta_avatar" src="https://placehold.co/40x40/1d211e/ffffff" alt="Customer" width="40" height="40">
+              <img class="wo-cta_avatar" src="https://placehold.co/40x40/1d211e/ffffff" alt="Customer" width="40" height="40">
             {%- endif -%}
           </div>
-          <span class="maison-cta_badge-text">{{- section.settings.badge_text -}}</span>
+          <span class="wo-cta_badge-text">{{- section.settings.badge_text -}}</span>
         </div>
       {%- endif -%}
 
-      <h2 class="maison-cta_heading">
+      <h2 class="wo-cta_heading">
         {%- if section.settings.highlight_text != blank -%}
-          <span class="maison-cta_highlight">{{- section.settings.highlight_text -}}</span>
+          <span class="wo-cta_highlight">{{- section.settings.highlight_text -}}</span>
         {%- endif -%}
         {{ section.settings.heading }}
       </h2>
 
-      <p class="maison-cta_description">{{ section.settings.description }}</p>
+      <p class="wo-cta_description">{{ section.settings.description }}</p>
 
       <a
         href="{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}#{% endif %}"
-        class="maison-cta_button"
+        class="wo-cta_button"
         {% unless section.settings.button_link != blank %}onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"{% endunless %}
       >
         {{- section.settings.button_text -}}
       </a>
 
-      <div class="maison-cta_benefits">
+      <div class="wo-cta_benefits">
         {%- if section.settings.benefit_1 != blank -%}
-          <div class="maison-cta_benefit">
-            <span class="maison-cta_icon">✓</span>
-            <span class="maison-cta_text">{{- section.settings.benefit_1 -}}</span>
+          <div class="wo-cta_benefit">
+            <span class="wo-cta_icon">✓</span>
+            <span class="wo-cta_text">{{- section.settings.benefit_1 -}}</span>
           </div>
         {%- endif -%}
         {%- if section.settings.benefit_2 != blank -%}
-          <div class="maison-cta_benefit">
-            <span class="maison-cta_icon">✓</span>
-            <span class="maison-cta_text">{{- section.settings.benefit_2 -}}</span>
+          <div class="wo-cta_benefit">
+            <span class="wo-cta_icon">✓</span>
+            <span class="wo-cta_text">{{- section.settings.benefit_2 -}}</span>
           </div>
         {%- endif -%}
         {%- if section.settings.benefit_3 != blank -%}
-          <div class="maison-cta_benefit">
-            <span class="maison-cta_icon">✓</span>
-            <span class="maison-cta_text">{{- section.settings.benefit_3 -}}</span>
+          <div class="wo-cta_benefit">
+            <span class="wo-cta_icon">✓</span>
+            <span class="wo-cta_text">{{- section.settings.benefit_3 -}}</span>
           </div>
         {%- endif -%}
       </div>
@@ -377,7 +377,7 @@
   </div>
 
   {%- if section.settings.image_left != blank -%}
-    <div class="maison-cta_image-left">
+    <div class="wo-cta_image-left">
       {%- assign left_alt = section.settings.heading | default: 'Product Image' | escape -%}
       {{
         section.settings.image_left
@@ -386,7 +386,7 @@
       }}
     </div>
   {%- else -%}
-    <div class="maison-cta_image-left">
+    <div class="wo-cta_image-left">
       <img
         src="https://placehold.co/400x600/{{ section.settings.background_color | remove: '#' }}/1d211e?text=Product+Image"
         alt="Product Image"
@@ -398,7 +398,7 @@
   {%- endif -%}
 
   {%- if section.settings.image_right != blank -%}
-    <div class="maison-cta_image-right">
+    <div class="wo-cta_image-right">
       {%- assign right_alt = section.settings.heading | default: 'Product Image' | escape -%}
       {{
         section.settings.image_right
@@ -407,7 +407,7 @@
       }}
     </div>
   {%- else -%}
-    <div class="maison-cta_image-right">
+    <div class="wo-cta_image-right">
       <img
         src="https://placehold.co/400x600/{{ section.settings.background_color | remove: '#' }}/1d211e?text=Product+Image"
         alt="Product Image"
