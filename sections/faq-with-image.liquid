@@ -1,0 +1,678 @@
+<style>
+  /* CSS custom properties */
+  #shopify-section-{{ section.id }} {
+    --faq-bg:         {{ section.settings.background_color }};
+    --faq-border:     {{ section.settings.border_color }};
+    --faq-subtitle:   {{ section.settings.subtitle_color }};
+    --faq-heading:    {{ section.settings.heading_color }};
+    --faq-desc:       {{ section.settings.description_color }};
+    --faq-item-bg:    {{ section.settings.faq_background }};
+    --faq-active-bg:  {{ section.settings.faq_active_background }};
+    --faq-toggle-bg:  {{ section.settings.toggle_bg }};
+    background-color: var(--faq-bg);
+    border-bottom: 1px solid var(--faq-border);
+  }
+
+  /* Container */
+  #shopify-section-{{ section.id }} .wo-faq_container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: {{ section.settings.padding_top }}px {{ section.settings.padding_horizontal }}px {{ section.settings.padding_bottom }}px;
+  }
+
+  /* Layout */
+  #shopify-section-{{ section.id }} .wo-faq_wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_wrapper.hide-image {
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_wrapper.hide-image .wo-faq_header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_wrapper.hide-image .wo-faq_items-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Image column */
+  #shopify-section-{{ section.id }} .wo-faq_image {
+    flex: 0 0 50%;
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_img {
+    width: 100%;
+    height: 630px;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+
+  /* Content column */
+  #shopify-section-{{ section.id }} .wo-faq_content {
+    flex: 1;
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_header {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_subtitle {
+    color: var(--faq-subtitle);
+    font-size: {{ section.settings.subtitle_size }}px;
+    font-weight: 700;
+    line-height: 150%;
+    margin: 0 0 4px;
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_heading {
+    color: var(--faq-heading);
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 700;
+    line-height: 120%;
+    margin: 0 0 20px;
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_description {
+    color: var(--faq-desc);
+    font-size: {{ section.settings.description_size }}px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+  }
+
+  /* FAQ items */
+  #shopify-section-{{ section.id }} .wo-faq_items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_item {
+    border-radius: 16px;
+    border: 1px solid var(--faq-border);
+    background: var(--faq-item-bg);
+    box-shadow: 0px 4px 0px -2px var(--faq-border);
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    gap: 12px;
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_question[data-open="true"] {
+    border-bottom: 1px dashed var(--faq-border);
+    background: var(--faq-active-bg);
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_question span {
+    font-size: {{ section.settings.question_size }}px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--faq-heading);
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_toggle-btn {
+    flex-shrink: 0;
+    background: var(--faq-toggle-bg);
+    border: 1px solid var(--faq-border);
+    border-radius: 999px;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--faq-border);
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_toggle-btn svg path {
+    stroke: currentColor;
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_answer[data-open="true"] {
+    background: var(--faq-active-bg);
+  }
+
+  #shopify-section-{{ section.id }} .wo-faq_answer p {
+    margin: 0;
+    font-size: {{ section.settings.answer_size }}px;
+    line-height: 150%;
+    color: var(--faq-desc);
+    padding: 10px 20px 16px;
+  }
+
+  /* Tablet */
+  @media (max-width: 992px) {
+    #shopify-section-{{ section.id }} .wo-faq_wrapper {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    #shopify-section-{{ section.id }} .wo-faq_image {
+      flex: 0 0 100%;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 40px;
+    }
+
+    #shopify-section-{{ section.id }} .wo-faq_img {
+      height: auto;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} .wo-faq_container {
+      padding: {{ section.settings.padding_top_mobile }}px {{ section.settings.padding_horizontal_mobile }}px {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .wo-faq_wrapper.hide-image .wo-faq_items-wrap {
+      max-width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .wo-faq_header {
+      text-align: center;
+    }
+
+    #shopify-section-{{ section.id }} .wo-faq_subtitle {
+      font-size: {{ section.settings.subtitle_size_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .wo-faq_heading {
+      font-size: {{ section.settings.heading_size_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .wo-faq_description {
+      font-size: {{ section.settings.description_size_mobile }}px;
+      margin-bottom: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .wo-faq_question span {
+      font-size: {{ section.settings.question_size_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .wo-faq_answer p {
+      font-size: {{ section.settings.answer_size_mobile }}px;
+    }
+  }
+</style>
+
+<div class="wo-faq_container">
+  <div class="wo-faq_wrapper{% if section.settings.hide_image %} hide-image{% endif %}">
+
+    {%- unless section.settings.hide_image -%}
+      <div class="wo-faq_image">
+        {%- if section.settings.faq_image != blank -%}
+          {%- assign faq_img_alt = section.settings.heading | escape -%}
+          {{
+            section.settings.faq_image
+            | image_url: width: 800
+            | image_tag: class: 'wo-faq_img', alt: faq_img_alt, loading: 'lazy', widths: '400, 600, 800'
+          }}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'wo-faq_img placeholder' }}
+        {%- endif -%}
+      </div>
+    {%- endunless -%}
+
+    <div class="wo-faq_content">
+      <div class="wo-faq_header">
+        {%- if section.settings.subtitle != blank -%}
+          <p class="wo-faq_subtitle">{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="wo-faq_heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.description != blank -%}
+          <p class="wo-faq_description">{{ section.settings.description }}</p>
+        {%- endif -%}
+      </div>
+
+      <div class="wo-faq_items-wrap">
+        <div class="wo-faq_items">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'faq_item' -%}
+              {%- assign is_open = block.settings.open_by_default -%}
+              <div class="wo-faq_item" {{ block.shopify_attributes }}>
+                <div
+                  class="wo-faq_question"
+                  data-open="{% if is_open %}true{% else %}false{% endif %}"
+                >
+                  <span>{{ block.settings.question }}</span>
+                  <button class="wo-faq_toggle-btn" aria-label="Toggle answer">
+                    {%- if is_open -%}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3.3335 8.00004H12.6668" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    {%- else -%}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3.3335 8.00004H12.6668M8.00016 3.33337V12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    {%- endif -%}
+                  </button>
+                </div>
+                <div
+                  class="wo-faq_answer"
+                  data-open="{% if is_open %}true{% else %}false{% endif %}"
+                  {%- if is_open %} style="max-height: 1000px;"{%- endif -%}
+                >
+                  <p>{{ block.settings.answer }}</p>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  var section = document.querySelector('#shopify-section-{{ section.id }}');
+  if (!section) return;
+
+  var faqItems = section.querySelectorAll('.wo-faq_item');
+
+  var PLUS_SVG  = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.3335 8.00004H12.6668M8.00016 3.33337V12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var MINUS_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.3335 8.00004H12.6668" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  faqItems.forEach(function (item) {
+    var question  = item.querySelector('.wo-faq_question');
+    var answer    = item.querySelector('.wo-faq_answer');
+    var toggleBtn = item.querySelector('.wo-faq_toggle-btn');
+
+    if (!question || !answer) return;
+
+    /* Set correct initial height for items open by default */
+    if (question.getAttribute('data-open') === 'true') {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+
+    question.addEventListener('click', function () {
+      var isOpen = question.getAttribute('data-open') === 'true';
+
+      /* Close all other items */
+      faqItems.forEach(function (other) {
+        if (other === item) return;
+        var oQ = other.querySelector('.wo-faq_question');
+        var oA = other.querySelector('.wo-faq_answer');
+        var oT = other.querySelector('.wo-faq_toggle-btn');
+        if (!oQ || !oA) return;
+        oQ.setAttribute('data-open', 'false');
+        oA.setAttribute('data-open', 'false');
+        oA.style.maxHeight = '0';
+        if (oT) oT.innerHTML = PLUS_SVG;
+      });
+
+      /* Toggle this item */
+      if (isOpen) {
+        question.setAttribute('data-open', 'false');
+        answer.setAttribute('data-open', 'false');
+        answer.style.maxHeight = '0';
+        if (toggleBtn) toggleBtn.innerHTML = PLUS_SVG;
+      } else {
+        question.setAttribute('data-open', 'true');
+        answer.setAttribute('data-open', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        if (toggleBtn) toggleBtn.innerHTML = MINUS_SVG;
+      }
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ with Image",
+  "tag": "section",
+  "class": "wo-faq-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "faq_image",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_image",
+      "label": "Hide image",
+      "default": false,
+      "info": "When hidden, content is centered"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "GOT QUESTIONS? WE'VE GOT ANSWERS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "FREQUENTLY ASKED QUESTIONS"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Everything you need to know about WipeOut pest control products. Can't find your answer? Contact our support team directly."
+    },
+    {
+      "type": "header",
+      "content": "Spacing — desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "default": 56,
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "default": 56,
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Horizontal padding",
+      "default": 20,
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Spacing — mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "default": 32,
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "default": 32,
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_mobile",
+      "label": "Horizontal padding",
+      "default": 16,
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Font sizes — desktop"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading",
+      "default": 40,
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtitle",
+      "default": 14,
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description",
+      "default": 16,
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "question_size",
+      "label": "Question text",
+      "default": 16,
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "answer_size",
+      "label": "Answer text",
+      "default": 16,
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Font sizes — mobile"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading",
+      "default": 32,
+      "min": 20,
+      "max": 56,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_mobile",
+      "label": "Subtitle",
+      "default": 12,
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "label": "Description",
+      "default": 14,
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "question_size_mobile",
+      "label": "Question text",
+      "default": 14,
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "answer_size_mobile",
+      "label": "Answer text",
+      "default": 14,
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border",
+      "default": "#2C2609"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle",
+      "default": "#F63208"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#1D211E"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Body text",
+      "default": "#1D211E"
+    },
+    {
+      "type": "color",
+      "id": "faq_background",
+      "label": "FAQ item background",
+      "default": "#FEFCF3"
+    },
+    {
+      "type": "color",
+      "id": "faq_active_background",
+      "label": "FAQ item open background",
+      "default": "#FEF8DB"
+    },
+    {
+      "type": "color",
+      "id": "toggle_bg",
+      "label": "Toggle button background",
+      "default": "#FEEB94"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How quickly does WipeOut start working?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "WipeOut's formula starts working on contact, providing instant knockdown. The residual barrier then continues protecting for weeks — no reapplication needed."
+        },
+        {
+          "type": "checkbox",
+          "id": "open_by_default",
+          "label": "Open by default",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ with Image",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How quickly does WipeOut start working?",
+            "answer": "WipeOut's formula starts working on contact, providing instant knockdown. The residual barrier then continues protecting for weeks after application — no reapplication needed.",
+            "open_by_default": true
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is WipeOut safe around children and pets?",
+            "answer": "Yes. Once the treated surface is dry — typically within 30 minutes — it is safe for children and pets to re-enter the area. We recommend ventilating the room during application."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What pests does WipeOut work against?",
+            "answer": "WipeOut is effective against cockroaches, termites, bed bugs, ants, spiders, mosquitoes, and most common household pests. Check the product label for a full species list."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does WipeOut's protection last?",
+            "answer": "WipeOut's residual barrier keeps working for up to 12 weeks on non-porous surfaces. Frequency of application may vary depending on pest pressure and surface type."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
