@@ -72,7 +72,7 @@
       "name": "WipeOut Hero Carousel",
       "settings": {
         "bg_color": "#ffffff",
-        "slide_height": 520,
+        "slide_height": 720,
         "autoplay": false,
         "autoplay_speed": 5
       }
@@ -715,22 +715,42 @@
         "icon_color": "#9b1f1f"
       }
     },
-    "wipeout_newsletter_EydzzY": {
-      "type": "wipeout-newsletter",
-      "name": "WipeOut Newsletter",
+    "subscription_cta_HgLywY": {
+      "type": "subscription-cta",
+      "name": "Subscription CTA",
       "settings": {
-        "heading": "Get 10% off your first order",
-        "subtext": "Join the WipeOut list for protection tips and member-only offers.",
-        "placeholder": "Enter your email",
-        "button_label": "Subscribe",
-        "success_message": "Thanks for subscribing!",
-        "bg_color": "#181512",
-        "text_color": "#ffffff",
-        "muted_color": "#b8b3ab",
-        "input_bg": "#26221d",
-        "input_border": "#3a352e",
-        "button_bg": "#ffffff",
-        "button_text_color": "#181512"
+        "highlight_text": "RISK-FREE",
+        "heading": "PEST-FREE HOME. GUARANTEED.",
+        "description": "WipeOut's formula is engineered to eliminate pests fast — or your money back. Not happy within 30 days? We'll refund you, no questions asked. Subscribe today and save 30% on your first order.",
+        "button_text": "Subscribe & Save 30% Today",
+        "button_link": "",
+        "show_customer_badge": true,
+        "badge_text": "10,000+ Pest-Free Homes",
+        "avatar_1": "shopify://shop_images/killsandrepellstermite.webp",
+        "avatar_2": "shopify://shop_images/killsandrepelscockroach.webp",
+        "avatar_3": "shopify://shop_images/howtousecockroachkillerspray.webp",
+        "benefit_1": "30-Day Money-Back Guarantee",
+        "benefit_2": "Free Express Delivery",
+        "benefit_3": "Cancel Anytime",
+        "image_mobile": "shopify://shop_images/safeforhomewithchildandpetstermitekiller.webp",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "heading_size": 44,
+        "description_size": 18,
+        "badge_text_size": 14,
+        "button_size": 16,
+        "benefit_text_size": 14,
+        "heading_size_mobile": 36,
+        "description_size_mobile": 16,
+        "background_color": "#FDF6F5",
+        "border_color": "#2C2609",
+        "text_color": "#1d211e",
+        "highlight_color": "#F63208",
+        "button_color": "#C57272",
+        "button_shadow_color": "#2c2609",
+        "badge_bg": "#ffffff"
       }
     }
   },
@@ -747,6 +767,6 @@
     "wipeout_safe_zVjffT",
     "wipeout_reviews_eQPQdp",
     "wipeout_faq_xgEKWp",
-    "wipeout_newsletter_EydzzY"
+    "subscription_cta_HgLywY"
   ]
 }
