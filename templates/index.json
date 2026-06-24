@@ -414,10 +414,10 @@
         "padding_bottom": 60,
         "padding_horizontal": 0,
         "bg_color": "#ffffff",
-        "accent_color": "#ffffff",
+        "accent_color": "#C57272",
         "border_color": "#000000",
         "text_color": "#1d211e",
-        "cell_bg": "#ffffff",
+        "cell_bg": "#FDF6F5",
         "icon_color": "#2c2609"
       }
     },
@@ -464,7 +464,7 @@
       "settings": {
         "title": "Four steps to total control",
         "subtitle": "",
-        "section_bg_color": "#C57272",
+        "section_bg_color": "#FDF6F5",
         "text_color": "#000000",
         "heading_color": "#000000",
         "tag_bg_color": "#FFFFFF",
