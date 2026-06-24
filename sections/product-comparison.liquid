@@ -72,6 +72,16 @@
       "default": 80
     },
     {
+      "type": "range",
+      "id": "padding_horizontal_mobile",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Horizontal padding (mobile)",
+      "default": 20
+    },
+    {
       "type": "header",
       "content": "Font sizes — desktop"
     },
@@ -330,8 +340,8 @@
 
 @media screen and (max-width: 767px) {
   #shopify-section-{{ section.id }} .padding-global {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: {{ section.settings.padding_horizontal_mobile }}px;
+    padding-right: {{ section.settings.padding_horizontal_mobile }}px;
   }
 
   #shopify-section-{{ section.id }} .padding-section {
