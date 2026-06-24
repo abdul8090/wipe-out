@@ -106,7 +106,8 @@
       ],
       "custom_css": [
         ".product__title h1 {font-weight: 700; text-transform: uppercase; font-size: 30px; line-height: 120%; margin: 0 0 0px;}",
-        ".product__tax {display: none;}"
+        ".product__tax {display: none;}",
+        ".product-form__buttons {max-width: 100%;}"
       ],
       "settings": {
         "enable_sticky_info": true,
