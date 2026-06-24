@@ -1,65 +1,204 @@
 <style>
-  #shopify-section-{{ section.id }} {
-    --wo-ann-bg: {{ section.settings.bg_color }};
-    --wo-ann-text: {{ section.settings.text_color }};
+  #shopify-section-{{ section.id }} .wo-ann-bar {
+    background: {{ section.settings.bg_color }};
+    border-top: 1px solid {{ section.settings.border_color }};
+    border-bottom: 1px solid {{ section.settings.border_color }};
+    color: {{ section.settings.text_color }};
   }
 
-  .wo-ann-bar {
-    background: var(--wo-ann-bg);
-    color: var(--wo-ann-text);
-    font-size: 12.5px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-weight: 600;
+  /* ── Desktop ── */
+  #shopify-section-{{ section.id }} .wo-ann-bar__desktop {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: {{ section.settings.padding_y }}px {{ section.settings.padding_x }}px;
+    gap: 16px;
   }
 
-  .wo-ann-bar__inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 9px 24px;
+  #shopify-section-{{ section.id }} .wo-ann-bar__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .wo-ann-bar__icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-shrink: 0;
   }
 
-  .wo-ann-bar__sep {
-    opacity: 0.35;
+  #shopify-section-{{ section.id }} .wo-ann-bar__icon svg path,
+  #shopify-section-{{ section.id }} .wo-ann-bar__icon svg circle,
+  #shopify-section-{{ section.id }} .wo-ann-bar__icon svg rect {
+    stroke: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} .wo-ann-bar__text {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  #shopify-section-{{ section.id }} .wo-ann-bar__divider {
+    width: 1px;
+    height: 22px;
+    background: {{ section.settings.border_color }};
+    flex-shrink: 0;
+  }
+
+  /* ── Mobile slider ── */
+  #shopify-section-{{ section.id }} .wo-ann-bar__mobile {
+    display: none;
+    align-items: center;
+    padding: {{ section.settings.padding_y }}px 8px;
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .wo-ann-bar__slider-wrap {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .wo-ann-bar__track {
+    display: flex;
+    transition: transform 0.35s ease;
+  }
+
+  #shopify-section-{{ section.id }} .wo-ann-bar__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .wo-ann-bar__arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: {{ section.settings.text_color }};
+    flex-shrink: 0;
+    border-radius: 50%;
+    transition: background 0.2s;
+  }
+
+  #shopify-section-{{ section.id }} .wo-ann-bar__arrow:hover {
+    background: rgba(0,0,0,0.08);
+  }
+
+  #shopify-section-{{ section.id }} .wo-ann-bar__arrow svg path {
+    stroke: {{ section.settings.text_color }};
   }
 
   @media (max-width: 767px) {
-    .wo-ann-bar__sep {
+    #shopify-section-{{ section.id }} .wo-ann-bar__desktop {
       display: none;
     }
 
-    .wo-ann-bar__inner {
-      flex-direction: column;
-      gap: 4px;
-      text-align: center;
+    #shopify-section-{{ section.id }} .wo-ann-bar__mobile {
+      display: flex;
     }
   }
 </style>
 
 <div class="wo-ann-bar">
-  <div class="wo-ann-bar__inner">
-    {%- if section.settings.message_1 != blank -%}
-      <span>{{ section.settings.message_1 }}</span>
-    {%- endif -%}
-    {%- if section.settings.message_2 != blank -%}
-      <span class="wo-ann-bar__sep">&#9679;</span>
-      <span>{{ section.settings.message_2 }}</span>
-    {%- endif -%}
-    {%- if section.settings.message_3 != blank -%}
-      <span class="wo-ann-bar__sep">&#9679;</span>
-      <span>{{ section.settings.message_3 }}</span>
-    {%- endif -%}
-    {%- if section.settings.message_4 != blank -%}
-      <span class="wo-ann-bar__sep">&#9679;</span>
-      <span>{{ section.settings.message_4 }}</span>
-    {%- endif -%}
+
+  {%- comment -%} Desktop: all badges in a row {%- endcomment -%}
+  <div class="wo-ann-bar__desktop">
+    {%- for block in section.blocks -%}
+      {%- unless forloop.first -%}
+        <div class="wo-ann-bar__divider"></div>
+      {%- endunless -%}
+      <div class="wo-ann-bar__item" {{ block.shopify_attributes }}>
+        {%- if block.settings.badge_icon != blank -%}
+          <div class="wo-ann-bar__icon">{{ block.settings.badge_icon }}</div>
+        {%- endif -%}
+        <span class="wo-ann-bar__text">{{ block.settings.badge_text }}</span>
+      </div>
+    {%- endfor -%}
   </div>
+
+  {%- comment -%} Mobile: auto-sliding single badge {%- endcomment -%}
+  <div class="wo-ann-bar__mobile" id="wo-ann-mobile-{{ section.id }}">
+    <button class="wo-ann-bar__arrow wo-ann-bar__arrow--prev" aria-label="Previous">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="wo-ann-bar__slider-wrap">
+      <div class="wo-ann-bar__track" id="wo-ann-track-{{ section.id }}">
+        {%- for block in section.blocks -%}
+          <div class="wo-ann-bar__slide" {{ block.shopify_attributes }}>
+            {%- if block.settings.badge_icon != blank -%}
+              <div class="wo-ann-bar__icon">{{ block.settings.badge_icon }}</div>
+            {%- endif -%}
+            <span class="wo-ann-bar__text">{{ block.settings.badge_text }}</span>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    <button class="wo-ann-bar__arrow wo-ann-bar__arrow--next" aria-label="Next">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
 </div>
+
+<script>
+  (function () {
+    var id = '{{ section.id }}';
+    var wrap = document.getElementById('wo-ann-mobile-' + id);
+    var track = document.getElementById('wo-ann-track-' + id);
+    if (!wrap || !track) return;
+
+    var slides = track.querySelectorAll('.wo-ann-bar__slide');
+    var total = slides.length;
+    var current = 0;
+    var timer = null;
+    var speed = {{ section.settings.autoplay_speed | times: 1000 }};
+
+    function setWidths() {
+      var w = track.parentElement.offsetWidth;
+      slides.forEach(function (s) { s.style.width = w + 'px'; });
+    }
+
+    function goTo(index) {
+      current = ((index % total) + total) % total;
+      track.style.transform = 'translateX(-' + (current * slides[0].offsetWidth) + 'px)';
+    }
+
+    function startAuto() {
+      stopAuto();
+      timer = setInterval(function () { goTo(current + 1); }, speed);
+    }
+
+    function stopAuto() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+
+    wrap.querySelector('.wo-ann-bar__arrow--prev').addEventListener('click', function () {
+      stopAuto(); goTo(current - 1); startAuto();
+    });
+
+    wrap.querySelector('.wo-ann-bar__arrow--next').addEventListener('click', function () {
+      stopAuto(); goTo(current + 1); startAuto();
+    });
+
+    wrap.addEventListener('mouseenter', stopAuto);
+    wrap.addEventListener('mouseleave', startAuto);
+
+    window.addEventListener('resize', function () { setWidths(); goTo(current); });
+
+    setWidths();
+    goTo(0);
+    startAuto();
+  })();
+</script>
 
 {% schema %}
 {
@@ -69,6 +208,40 @@
   },
   "settings": [
     {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "unit": "s",
+      "label": "Mobile auto-slide speed",
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_y",
+      "min": 6,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_x",
+      "min": 8,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding (desktop)",
+      "default": 24
+    },
+    {
       "type": "header",
       "content": "Colours"
     },
@@ -76,46 +249,74 @@
       "type": "color",
       "id": "bg_color",
       "label": "Background colour",
-      "default": "#181512"
+      "default": "#FEEB94"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border colour",
+      "default": "#2C2609"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Text colour",
-      "default": "#ffffff"
-    },
+      "label": "Text & icon colour",
+      "default": "#2C2609"
+    }
+  ],
+  "blocks": [
     {
-      "type": "header",
-      "content": "Messages"
-    },
-    {
-      "type": "text",
-      "id": "message_1",
-      "label": "Message 1",
-      "default": "Free UK delivery over £25"
-    },
-    {
-      "type": "text",
-      "id": "message_2",
-      "label": "Message 2",
-      "default": "Odourless formula"
-    },
-    {
-      "type": "text",
-      "id": "message_3",
-      "label": "Message 3",
-      "default": "Kills & repels"
-    },
-    {
-      "type": "text",
-      "id": "message_4",
-      "label": "Message 4",
-      "default": "Safe for kids & pets"
+      "type": "badge",
+      "name": "Trust Badge",
+      "settings": [
+        {
+          "type": "html",
+          "id": "badge_icon",
+          "label": "Icon SVG",
+          "info": "Paste an SVG tag — stroke colour is applied automatically"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text",
+          "default": "Trust Badge"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "WipeOut Announcement Bar"
+      "name": "WipeOut Announcement Bar",
+      "blocks": [
+        {
+          "type": "badge",
+          "settings": {
+            "badge_text": "Free UK delivery over £25",
+            "badge_icon": "<svg width=\"18\" height=\"18\" viewBox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M15 5.25H3C2.58579 5.25 2.25 5.58579 2.25 6V14.25C2.25 14.6642 2.58579 15 3 15H15C15.4142 15 15.75 14.6642 15.75 14.25V6C15.75 5.58579 15.4142 5.25 15 5.25Z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M12 5.25V3.75C12 3.35218 11.842 2.97064 11.5607 2.68934C11.2794 2.40804 10.8978 2.25 10.5 2.25H7.5C7.10218 2.25 6.72064 2.40804 6.43934 2.68934C6.15804 2.97064 6 3.35218 6 3.75V5.25\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M15.75 9.375H2.25\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "badge_text": "Odourless formula",
+            "badge_icon": "<svg width=\"18\" height=\"18\" viewBox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M14.25 7.5C14.25 11.25 9 15 9 15C9 15 3.75 11.25 3.75 7.5C3.75 4.3934 6.13401 1.875 9 1.875C11.866 1.875 14.25 4.3934 14.25 7.5Z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M9 9.75C10.2426 9.75 11.25 8.74264 11.25 7.5C11.25 6.25736 10.2426 5.25 9 5.25C7.75736 5.25 6.75 6.25736 6.75 7.5C6.75 8.74264 7.75736 9.75 9 9.75Z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "badge_text": "30-day money-back guarantee",
+            "badge_icon": "<svg width=\"18\" height=\"18\" viewBox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M8.25 8.25H9V12.75H9.75\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"9\" cy=\"5.625\" r=\"0.75\" fill=\"currentColor\"/></svg>"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "badge_text": "Safe for kids & pets",
+            "badge_icon": "<svg width=\"18\" height=\"18\" viewBox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M9 16.5L2.25 11.25V4.5L9 1.5L15.75 4.5V11.25L9 16.5Z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M6 9L8.25 11.25L12 6.75\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+          }
+        }
+      ]
     }
   ]
 }

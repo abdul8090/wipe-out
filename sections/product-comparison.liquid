@@ -286,14 +286,14 @@
 
 <style>
     
-:root {
+#shopify-section-{{ section.id }} {
   --text--secondary: #121212bf;
-  --browndark: #2c2609;
-  --yellow-b1--200: #fefcf3;
-  --text--primary: #1d211e;
-  --white: white;
+  --browndark: {{ section.settings.border_color }};
+  --yellow-b1--200: {{ section.settings.bg_color }};
+  --text--primary: {{ section.settings.text_color }};
+  --white: {{ section.settings.cell_bg }};
   --gray-75: #0000001f;
-  --yellow-b1--1800: #fedb36;
+  --yellow-b1--1800: {{ section.settings.accent_color }};
   --red: #f63208;
   --yellow-b1--300: #fbf9f2;
   --gray-500: #98a2b3;
@@ -302,14 +302,6 @@
   --black: black;
   --transparent: transparent;
   --gray-50: #00000014;
-}
-
-#shopify-section-{{ section.id }} {
-  --yellow-b1--200: {{ section.settings.bg_color }};
-  --yellow-b1--1800: {{ section.settings.accent_color }};
-  --browndark: {{ section.settings.border_color }};
-  --text--primary: {{ section.settings.text_color }};
-  --white: {{ section.settings.cell_bg }};
 }
 
 #shopify-section-{{ section.id }} .svg.table svg {
