@@ -13,6 +13,7 @@
   "sections": {
     "wipeout_announcement_bar_7MHtYe": {
       "type": "wipeout-announcement-bar",
+      "disabled": true,
       "name": "WipeOut Announcement Bar",
       "settings": {
         "bg_color": "#181512",
@@ -21,6 +22,48 @@
         "message_2": "Odourless formula",
         "message_3": "Kills & repels",
         "message_4": "Safe for kids & pets"
+      }
+    },
+    "announcement_bar_AMta4V": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_H6iBtq": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        },
+        "announcement_eKGKw7": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        },
+        "announcement_7QWyBR": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_H6iBtq",
+        "announcement_eKGKw7",
+        "announcement_7QWyBR"
+      ],
+      "disabled": true,
+      "name": "t:sections.announcement-bar.presets.name",
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
       }
     },
     "header": {
@@ -38,13 +81,14 @@
         "enable_language_selector": false,
         "enable_customer_avatar": true,
         "margin_bottom": 0,
-        "padding_top": 8,
-        "padding_bottom": 8
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
     "wipeout_announcement_bar_7MHtYe",
+    "announcement_bar_AMta4V",
     "header"
   ]
 }

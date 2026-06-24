@@ -1,0 +1,100 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "faq_with_image_JTkg4c": {
+      "type": "faq-with-image",
+      "blocks": {
+        "faq_item_ztxaCP": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How quickly does WipeOut start working?",
+            "answer": "WipeOut's formula starts working on contact, providing instant knockdown. The residual barrier then continues protecting for weeks after application — no reapplication needed.",
+            "open_by_default": true
+          }
+        },
+        "faq_item_eRYr4X": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is WipeOut safe around children and pets?",
+            "answer": "Yes. Once the treated surface is dry — typically within 30 minutes — it is safe for children and pets to re-enter the area. We recommend ventilating the room during application.",
+            "open_by_default": false
+          }
+        },
+        "faq_item_CpUcMt": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What pests does WipeOut work against?",
+            "answer": "WipeOut is effective against cockroaches, termites, bed bugs, ants, spiders, mosquitoes, and most common household pests. Check the product label for a full species list.",
+            "open_by_default": false
+          }
+        },
+        "faq_item_6qrqdn": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does WipeOut's protection last?",
+            "answer": "WipeOut's residual barrier keeps working for up to 12 weeks on non-porous surfaces. Frequency of application may vary depending on pest pressure and surface type.",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_ztxaCP",
+        "faq_item_eRYr4X",
+        "faq_item_CpUcMt",
+        "faq_item_6qrqdn"
+      ],
+      "name": "FAQ with Image",
+      "settings": {
+        "faq_image": "shopify://shop_images/kills_pest.webp",
+        "hide_image": false,
+        "subtitle": "GOT QUESTIONS? WE'VE GOT ANSWERS",
+        "heading": "FREQUENTLY ASKED QUESTIONS",
+        "description": "Everything you need to know about WipeOut pest control products. Can't find your answer? Contact our support team directly.",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_horizontal": 20,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52,
+        "padding_horizontal_mobile": 16,
+        "heading_size": 40,
+        "subtitle_size": 14,
+        "description_size": 16,
+        "question_size": 16,
+        "answer_size": 16,
+        "heading_size_mobile": 32,
+        "subtitle_size_mobile": 12,
+        "description_size_mobile": 14,
+        "question_size_mobile": 14,
+        "answer_size_mobile": 14,
+        "background_color": "#ffffff",
+        "border_color": "#2c2609",
+        "subtitle_color": "#f63208",
+        "heading_color": "#1d211e",
+        "description_color": "#1d211e",
+        "faq_background": "#fdf6f5",
+        "faq_active_background": "#fdf6f5",
+        "toggle_bg": "#c57272"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq_with_image_JTkg4c"
+  ]
+}

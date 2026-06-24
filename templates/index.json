@@ -79,57 +79,6 @@
         "heading_size_mobile": 32
       }
     },
-    "wipeout_trust_strip_jPg363": {
-      "type": "wipeout-trust-strip",
-      "blocks": {
-        "item_gPJTVD": {
-          "type": "item",
-          "settings": {
-            "icon": "lightning",
-            "title": "Rapid Action",
-            "subtitle": "Knocks down on contact"
-          }
-        },
-        "item_8TB7Q6": {
-          "type": "item",
-          "settings": {
-            "icon": "shield",
-            "title": "Long-Lasting",
-            "subtitle": "Protective barrier"
-          }
-        },
-        "item_znmgxq": {
-          "type": "item",
-          "settings": {
-            "icon": "wind",
-            "title": "Odourless",
-            "subtitle": "No harsh fumes"
-          }
-        },
-        "item_APGr8q": {
-          "type": "item",
-          "settings": {
-            "icon": "home",
-            "title": "Home Safe",
-            "subtitle": "Kids & pets friendly"
-          }
-        }
-      },
-      "block_order": [
-        "item_gPJTVD",
-        "item_8TB7Q6",
-        "item_znmgxq",
-        "item_APGr8q"
-      ],
-      "name": "WipeOut Trust Strip",
-      "settings": {
-        "bg_color": "#ffffff",
-        "border_color": "#ebe9e6",
-        "icon_color": "#181512",
-        "title_color": "#181512",
-        "subtitle_color": "#8a857f"
-      }
-    },
     "featured_collection": {
       "type": "featured-collection",
       "disabled": true,
@@ -408,7 +357,7 @@
         "comparison_item_KXmfJG": {
           "type": "comparison_item",
           "settings": {
-            "feature": "Feature",
+            "feature": "Long-lasting protection",
             "your_brand_has": true,
             "others_have": false
           }
@@ -694,12 +643,13 @@
       "name": "WipeOut Reviews",
       "settings": {
         "heading": "Loved by 12,000+ homes",
+        "autoplay_speed": 4,
         "padding_top": 64,
         "padding_bottom": 64,
         "heading_size": 40,
         "heading_size_mobile": 28,
         "bg_color": "#ffffff",
-        "card_bg_color": "#ffffff",
+        "card_bg_color": "#FDF6F5",
         "text_color": "#181512",
         "muted_color": "#6b6864",
         "border_color": "#ebe9e6",
@@ -884,7 +834,6 @@
   },
   "order": [
     "wipeout_hero_carousel_NmFbfW",
-    "wipeout_trust_strip_jPg363",
     "featured_collection",
     "wipeout_shop_by_pest_gaCizL",
     "wipeout_featured_bundle_bPtVJL",
