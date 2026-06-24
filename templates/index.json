@@ -328,6 +328,77 @@
         "icon_color": "#181512"
       }
     },
+    "maison_comparison_DHWrMK": {
+      "type": "maison-comparison",
+      "blocks": {
+        "comparison_item_JEP8YQ": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "100% Natural Ingredients",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        },
+        "comparison_item_JwpMGR": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Grass Fed, Grass Finished",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        },
+        "comparison_item_nKDWbR": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "No Preservatives",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        },
+        "comparison_item_wCH6TN": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Feature",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        },
+        "comparison_item_gXzraY": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Feature",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        },
+        "comparison_item_Qyzjyw": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Feature",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        }
+      },
+      "block_order": [
+        "comparison_item_JEP8YQ",
+        "comparison_item_JwpMGR",
+        "comparison_item_nKDWbR",
+        "comparison_item_wCH6TN",
+        "comparison_item_gXzraY",
+        "comparison_item_Qyzjyw"
+      ],
+      "custom_css": [
+        "{border-top: 1px solid #2c2609;}"
+      ],
+      "name": "Comparison Table",
+      "settings": {
+        "heading": "SUPERIOR IN EVERY WAY",
+        "logo": "shopify://shop_images/wipeoutlogo.avif",
+        "brand_heading": "Wipe out",
+        "others_heading": "OTHERS"
+      }
+    },
     "wipeout_comparison_LxTqcB": {
       "type": "wipeout-comparison",
       "blocks": {
@@ -605,6 +676,7 @@
     "wipeout_shop_by_pest_gaCizL",
     "wipeout_featured_bundle_bPtVJL",
     "wipeout_kills_repels_7Yfjz7",
+    "maison_comparison_DHWrMK",
     "wipeout_comparison_LxTqcB",
     "wipeout_how_to_use_ieQLx8",
     "wipeout_safe_zVjffT",
