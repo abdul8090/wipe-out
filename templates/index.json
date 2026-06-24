@@ -259,6 +259,7 @@
         "feature_thj8jy",
         "feature_YiUNr6"
       ],
+      "disabled": true,
       "name": "WipeOut Featured Bundle",
       "settings": {
         "product": "wipeout-termite-killer-spray-copy",
@@ -556,6 +557,7 @@
         "pill_nxaPDn",
         "pill_4M4nJT"
       ],
+      "disabled": true,
       "name": "WipeOut Safe Section",
       "settings": {
         "heading": "Safe for home, kids & pets",
