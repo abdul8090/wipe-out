@@ -228,8 +228,8 @@
                       </div>
                     </details>
                   </div>
-                  <div class="wrapper">
-                    {%- when 'quantity_selector' -%}
+                  <div class="wrapper5"></div>
+                {%- when 'quantity_selector' -%}
                   <div
                     id="Quantity-Form-{{ section.id }}"
                     class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
@@ -493,8 +493,6 @@
                     product_form_id: product_form_id
                   %}
                 {%- when 'buy_buttons' -%}
-                  </div>
-                
                   {%- render 'buy-buttons',
                     block: block,
                     product: product,
