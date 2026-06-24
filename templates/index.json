@@ -328,6 +328,54 @@
         "icon_color": "#181512"
       }
     },
+    "maison_step_how_NL6jbe": {
+      "type": "maison-step-how",
+      "blocks": {
+        "step_prffDx": {
+          "type": "step",
+          "settings": {
+            "step_number": "STEP 1",
+            "title": "APPLY",
+            "content": "<p>Complete our quick application form with basic information about you and your platform. Takes less than 5 minutes.</p>",
+            "show_image": false
+          }
+        },
+        "step_A8zKMA": {
+          "type": "step",
+          "settings": {
+            "step_number": "STEP 1",
+            "title": "APPLY",
+            "content": "<p>Complete our quick application form with basic information about you and your platform. Takes less than 5 minutes.</p>",
+            "show_image": false
+          }
+        },
+        "step_yTrRzc": {
+          "type": "step",
+          "settings": {
+            "step_number": "STEP 1",
+            "title": "APPLY",
+            "content": "<p>Complete our quick application form with basic information about you and your platform. Takes less than 5 minutes.</p>",
+            "show_image": false
+          }
+        }
+      },
+      "block_order": [
+        "step_prffDx",
+        "step_A8zKMA",
+        "step_yTrRzc"
+      ],
+      "name": "How It Works Steps",
+      "settings": {
+        "section_bg_color": "#FEDB36",
+        "subtitle": "HOW IT WORKS",
+        "subtitle_color": "#FF0000",
+        "heading": "START EARNING IN 3 SIMPLE STEPS",
+        "description": "<p>Our streamlined process gets you from application to earning commissions quickly. Here's how to get started with Evil Goods.</p>",
+        "button_link": "",
+        "button_scroll": "#",
+        "button_text": "Start Your Application"
+      }
+    },
     "maison_comparison_DHWrMK": {
       "type": "maison-comparison",
       "blocks": {
@@ -379,8 +427,8 @@
         "heading": "Why choose WipeOut",
         "brand_heading": "Wipe out",
         "others_heading": "OTHERS",
-        "bg_color": "#FDF6F5",
-        "accent_color": "#C57272",
+        "bg_color": "#fdf6f5",
+        "accent_color": "#c57272",
         "border_color": "#2c2609",
         "text_color": "#1d211e",
         "cell_bg": "#ffffff",
@@ -664,6 +712,7 @@
     "wipeout_shop_by_pest_gaCizL",
     "wipeout_featured_bundle_bPtVJL",
     "wipeout_kills_repels_7Yfjz7",
+    "maison_step_how_NL6jbe",
     "maison_comparison_DHWrMK",
     "wipeout_comparison_LxTqcB",
     "wipeout_how_to_use_ieQLx8",
