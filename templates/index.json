@@ -642,8 +642,26 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review": "Saw results within minutes. No smell at all — sprayed the kitchen before bed and woke up to zero roaches.",
             "author": "Priya M.",
+            "review": "Saw results within minutes. No smell at all — sprayed the kitchen before bed and woke up to zero roaches.",
+            "verified": true
+          }
+        },
+        "review_E3ffVg": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Priya M.",
+            "review": "Saw results within minutes. No smell at all — sprayed the kitchen before bed and woke up to zero roaches.",
+            "verified": true
+          }
+        },
+        "review_RRhrhR": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Priya M.",
+            "review": "Saw results within minutes. No smell at all — sprayed the kitchen before bed and woke up to zero roaches.",
             "verified": true
           }
         },
@@ -651,8 +669,8 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review": "Used the termite spray on our skirting boards and old furniture. Three months on, still nothing. Brilliant.",
             "author": "David R.",
+            "review": "Used the termite spray on our skirting boards and old furniture. Three months on, still nothing. Brilliant.",
             "verified": true
           }
         },
@@ -660,14 +678,16 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review": "Finally something safe to use with a toddler and two cats in the house. The bed bug kit saved us.",
             "author": "Hannah K.",
+            "review": "Finally something safe to use with a toddler and two cats in the house. The bed bug kit saved us.",
             "verified": true
           }
         }
       },
       "block_order": [
         "review_4kYDDD",
+        "review_E3ffVg",
+        "review_RRhrhR",
         "review_JW87xV",
         "review_nBW8Rc"
       ],
@@ -679,11 +699,13 @@
         "heading_size": 40,
         "heading_size_mobile": 28,
         "bg_color": "#ffffff",
+        "card_bg_color": "#ffffff",
         "text_color": "#181512",
         "muted_color": "#6b6864",
         "border_color": "#ebe9e6",
         "star_color": "#e0a32e",
-        "verified_color": "#9b1f1f"
+        "verified_color": "#9b1f1f",
+        "arrow_bg_color": "#ffffff"
       }
     },
     "faq_with_image_yiNMD3": {
