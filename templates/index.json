@@ -328,6 +328,60 @@
         "icon_color": "#181512"
       }
     },
+    "maison_step_how_NL6jbe": {
+      "type": "maison-step-how",
+      "blocks": {
+        "step_prffDx": {
+          "type": "step",
+          "settings": {
+            "step_number": "STEP 1",
+            "title": "Instant Knockdown",
+            "content": "<p>Super-strength formula drops insects on contact — no waiting, no mixing.</p>",
+            "show_image": false
+          }
+        },
+        "step_A8zKMA": {
+          "type": "step",
+          "settings": {
+            "step_number": "STEP 1",
+            "title": "Lasting Barrier",
+            "content": "<p>Leaves a repellent layer on surfaces that keeps working for weeks after spraying.</p>",
+            "show_image": false
+          }
+        },
+        "step_yTrRzc": {
+          "type": "step",
+          "settings": {
+            "step_number": "STEP 1",
+            "title": "Odourless",
+            "content": "<p>No bad smell, no harsh fumes — comfortable to use anywhere in the home.</p>",
+            "show_image": false
+          }
+        }
+      },
+      "block_order": [
+        "step_prffDx",
+        "step_A8zKMA",
+        "step_yTrRzc"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 991px) {.svg.arrow.horizontal-scroll {height: 32px; margin-bottom: -60px; transform: rotate(90deg); } .hiw-row.horizontal-scroll {flex-flow: column; }}",
+        "@media screen and (min-width: 991px) {.heading {text-align: left; max-width: none; width: 100%; } .heading-h3 {font-size: 48px; font-weight: 700; line-height: 1.2; }}",
+        ".hiw-card.white {background-color: #fbf9f2;}",
+        " {border-top: 1px solid #2c2609;}"
+      ],
+      "name": "How It Works Steps",
+      "settings": {
+        "section_bg_color": "#FFFFFF",
+        "subtitle": "HOW IT WORKS",
+        "subtitle_color": "#FF0000",
+        "heading": "Kills on contact. Repels for weeks.",
+        "description": "<p>Instant knockdown, then a long-lasting protective barrier that keeps insects from coming back — with zero smell.<br/><br/></p>",
+        "button_link": "",
+        "button_scroll": "",
+        "button_text": ""
+      }
+    },
     "maison_comparison_DHWrMK": {
       "type": "maison-comparison",
       "blocks": {
@@ -378,7 +432,13 @@
       "settings": {
         "heading": "Why choose WipeOut",
         "brand_heading": "Wipe out",
-        "others_heading": "OTHERS"
+        "others_heading": "OTHERS",
+        "bg_color": "#fdf6f5",
+        "accent_color": "#c57272",
+        "border_color": "#2c2609",
+        "text_color": "#1d211e",
+        "cell_bg": "#ffffff",
+        "icon_color": "#2c2609"
       }
     },
     "wipeout_comparison_LxTqcB": {
@@ -658,6 +718,7 @@
     "wipeout_shop_by_pest_gaCizL",
     "wipeout_featured_bundle_bPtVJL",
     "wipeout_kills_repels_7Yfjz7",
+    "maison_step_how_NL6jbe",
     "maison_comparison_DHWrMK",
     "wipeout_comparison_LxTqcB",
     "wipeout_how_to_use_ieQLx8",

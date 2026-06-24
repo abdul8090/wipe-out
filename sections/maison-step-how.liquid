@@ -1,0 +1,233 @@
+{% schema %}
+{
+  "name": "How It Works Steps",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#FEDB36"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "HOW IT WORKS"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#FF0000"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "START EARNING IN 3 SIMPLE STEPS"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Our streamlined process gets you from application to earning commissions quickly. Here's how to get started with Evil Goods.</p>"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_scroll",
+      "label": "Button Scroll To Section ID",
+      "default": "#",
+      "info": "Section ID to scroll to when clicked (if no link provided)"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Start Your Application"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_number",
+          "label": "Step Number",
+          "default": "STEP 1"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "APPLY"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Complete our quick application form with basic information about you and your platform. Takes less than 5 minutes.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Image Settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_image",
+          "label": "Show Image",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works Steps",
+      "blocks": [
+        {
+          "type": "step"
+        },
+        {
+          "type": "step"
+        },
+        {
+          "type": "step"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="section section-horizontal-scroll" style="background-color: {{ section.settings.section_bg_color }};">
+  <div class="padding-global padding-global-none">
+    <div class="container-large">
+      <div class="padding-section">
+        <div class="journey-component">
+          <div class="heading heading-padding">
+            <div class="heading_subtitle">
+              <span style="color: {{ section.settings.subtitle_color }}">{{ section.settings.subtitle }}</span>
+            </div>
+            <h3 class="heading-h3">{{ section.settings.heading }}</h3>
+            <div class="heading_description">{{ section.settings.description }}</div>
+          </div>
+          <div class="hiw-row horizontal-scroll">
+            {% for block in section.blocks %}
+              {% if block.type == 'step' %}
+                {% assign step_index = forloop.index %}
+                {% if step_index > 1 %}
+                  <div class="arrow-icon-wrapper">
+                    <div class="svg arrow horizontal-scroll w-embed">
+                      <svg width="32" height="33" viewbox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30.8569 16.5L15.9997 31.3571V22.7857H1.14258V10.2143H15.9997V1.64285L30.8569 16.5Z" fill="#FEDB36"></path>
+                        <path d="M30.8569 16.5L15.9997 31.3571V22.7857H1.14258V10.2143H15.9997V1.64285L30.8569 16.5Z" stroke="#2C2609" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                  </div>
+                {% endif %}
+                <div class="hiw-step-wrapper">
+                  <div class="hiw-step">
+                    <div class="svg step-check w-embed">
+                      <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.25 6.75L9.75 17.25L4.5 12" stroke="#2C2609" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                    <div>{{ block.settings.step_number }}</div>
+                  </div>
+                  <div class="hiw-card-wrapper">
+                    <div class="hiw-card white">
+                      <div class="hiw-card-title">{{ block.settings.title }}</div>
+                      <div>{{ block.settings.content }}</div>
+                      {% if block.settings.show_image and block.settings.image != blank %}
+                        <div class="hiw-card-image-maison">
+                          <img
+                            src="{{ block.settings.image | img_url: 'master' }}"
+                            alt="{{ block.settings.title }}"
+                            width="auto"
+                            height="auto"
+                            loading="lazy"
+                          >
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% if section.settings.button_text != blank %}
+            <div class="button-wrapper">
+              {% if section.settings.button_link != blank %}
+                <a href="{{ section.settings.button_link }}" class="button w-inline-block">
+                  <div>{{ section.settings.button_text }}</div>
+                </a>
+              {% elsif section.settings.button_scroll != blank %}
+                <a
+                  href="#{{ section.settings.button_scroll }}"
+                  class="button w-inline-block scroll-to-section"
+                  data-scroll-to="{{ section.settings.button_scroll }}"
+                >
+                  <div>{{ section.settings.button_text }}</div>
+                </a>
+              {% else %}
+                <a href="#" class="button w-inline-block">
+                  <div>{{ section.settings.button_text }}</div>
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hiw-card-image-maison {
+{% comment %}     width: 100%;
+    height: 100%;
+    object-fit: cover; {% endcomment %}
+  }
+  .hiw-card-image-maison img {
+    max-width: fit-content;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const scrollButtons = document.querySelectorAll('.section-horizontal-scroll .scroll-to-section');
+
+    // Add smooth scroll functionality for buttons with section IDs
+    scrollButtons.forEach((button) => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('data-scroll-to');
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+          window.scrollTo({
+            top: targetSection.offsetTop,
+            behavior: 'smooth',
+          });
+        }
+      });
+    });
+  });
+</script>
