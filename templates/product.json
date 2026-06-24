@@ -225,13 +225,13 @@
         "heading_size": 50,
         "heading_size_mobile": 28,
         "bg_color": "#ffffff",
-        "card_bg_color": "#ffffff",
+        "card_bg_color": "#FDF6F5",
         "text_color": "#181512",
         "muted_color": "#6b6864",
         "border_color": "#ebe9e6",
         "star_color": "#e0a32e",
         "verified_color": "#9b1f1f",
-        "arrow_bg_color": "#ffffff"
+        "arrow_bg_color": "#C57272"
       }
     },
     "related-products": {
