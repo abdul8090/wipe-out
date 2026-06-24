@@ -335,8 +335,8 @@
           "type": "step",
           "settings": {
             "step_number": "STEP 1",
-            "title": "APPLY",
-            "content": "<p>Complete our quick application form with basic information about you and your platform. Takes less than 5 minutes.</p>",
+            "title": "Instant Knockdown",
+            "content": "<p>Super-strength formula drops insects on contact — no waiting, no mixing.</p>",
             "show_image": false
           }
         },
@@ -344,8 +344,8 @@
           "type": "step",
           "settings": {
             "step_number": "STEP 1",
-            "title": "APPLY",
-            "content": "<p>Complete our quick application form with basic information about you and your platform. Takes less than 5 minutes.</p>",
+            "title": "Lasting Barrier",
+            "content": "<p>Leaves a repellent layer on surfaces that keeps working for weeks after spraying.</p>",
             "show_image": false
           }
         },
@@ -353,8 +353,8 @@
           "type": "step",
           "settings": {
             "step_number": "STEP 1",
-            "title": "APPLY",
-            "content": "<p>Complete our quick application form with basic information about you and your platform. Takes less than 5 minutes.</p>",
+            "title": "Odourless",
+            "content": "<p>No bad smell, no harsh fumes — comfortable to use anywhere in the home.</p>",
             "show_image": false
           }
         }
@@ -372,11 +372,11 @@
       ],
       "name": "How It Works Steps",
       "settings": {
-        "section_bg_color": "#FEDB36",
+        "section_bg_color": "#FDF6F5",
         "subtitle": "HOW IT WORKS",
         "subtitle_color": "#FF0000",
-        "heading": "START EARNING IN 3 SIMPLE STEPS",
-        "description": "<p>Our streamlined process gets you from application to earning commissions quickly. Here's how to get started with Evil Goods.</p>",
+        "heading": "Kills on contact. Repels for weeks.",
+        "description": "<p>Instant knockdown, then a long-lasting protective barrier that keeps insects from coming back — with zero smell.<br/><br/></p>",
         "button_link": "",
         "button_scroll": "",
         "button_text": ""
