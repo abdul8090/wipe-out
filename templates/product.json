@@ -23,7 +23,7 @@
         "custom_liquid_U6xxh4": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{{ product.description | strip_html | truncatewords: 25 }}"
+            "custom_liquid": "<p class=\"shortDescription\">{{ product.description | strip_html | truncatewords: 25 }}</p>"
           }
         },
         "rating_RamqRa": {
