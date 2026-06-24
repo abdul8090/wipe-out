@@ -296,7 +296,7 @@
         "step_A8zKMA": {
           "type": "step",
           "settings": {
-            "step_number": "STEP 1",
+            "step_number": "STEP 2",
             "title": "Lasting Barrier",
             "content": "<p>Leaves a repellent layer on surfaces that keeps working for weeks after spraying.</p>",
             "show_image": false
@@ -305,7 +305,7 @@
         "step_yTrRzc": {
           "type": "step",
           "settings": {
-            "step_number": "STEP 1",
+            "step_number": "STEP 3",
             "title": "Odourless",
             "content": "<p>No bad smell, no harsh fumes — comfortable to use anywhere in the home.</p>",
             "show_image": false
@@ -325,14 +325,28 @@
       ],
       "name": "How It Works Steps",
       "settings": {
-        "section_bg_color": "#ffffff",
         "subtitle": "HOW IT WORKS",
-        "subtitle_color": "#ff0000",
         "heading": "Kills on contact. Repels for weeks.",
         "description": "<p>Instant knockdown, then a long-lasting protective barrier that keeps insects from coming back — with zero smell.<br/><br/></p>",
+        "button_text": "",
         "button_link": "",
         "button_scroll": "",
-        "button_text": ""
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "padding_horizontal": 80,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28,
+        "bg_color": "#FFFFFF",
+        "subtitle_color": "#ff0000",
+        "heading_color": "#1d211e",
+        "text_color": "#1d211e",
+        "step_bg": "#000000",
+        "step_text": "#FFFFFF",
+        "card_accent": "#000000",
+        "card_border": "#2c2609",
+        "btn_bg": "#000000",
+        "btn_text": "#1d211e",
+        "btn_border": "#2c2609"
       }
     },
     "maison_comparison_DHWrMK": {
@@ -389,9 +403,9 @@
         "padding_top": 60,
         "padding_bottom": 60,
         "padding_horizontal": 0,
-        "bg_color": "#fdf6f5",
-        "accent_color": "#c57272",
-        "border_color": "#2c2609",
+        "bg_color": "#FFFFFF",
+        "accent_color": "#FFFFFF",
+        "border_color": "#000000",
         "text_color": "#1d211e",
         "cell_bg": "#ffffff",
         "icon_color": "#2c2609"
