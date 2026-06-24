@@ -23,6 +23,18 @@
     gap: 40px;
   }
 
+  .wo-ft__logo {
+    display: block;
+    margin-bottom: 12px;
+    text-decoration: none;
+  }
+
+  .wo-ft__logo img {
+    width: {{ section.settings.logo_width }}px;
+    height: auto;
+    display: block;
+  }
+
   .wo-ft__brand-name {
     font-weight: 900;
     font-size: 24px;
@@ -130,7 +142,20 @@
 <footer class="wo-ft">
   <div class="wo-ft__main">
     <div>
-      <a class="wo-ft__brand-name" href="{{ routes.root_url }}">{{ section.settings.brand_name }}</a>
+      {%- if section.settings.logo != blank -%}
+        <a class="wo-ft__logo" href="{{ routes.root_url }}">
+          {{
+            section.settings.logo
+            | image_url: width: section.settings.logo_width
+            | image_tag:
+              alt: section.settings.brand_name,
+              loading: 'lazy',
+              width: section.settings.logo_width
+          }}
+        </a>
+      {%- else -%}
+        <a class="wo-ft__brand-name" href="{{ routes.root_url }}">{{ section.settings.brand_name }}</a>
+      {%- endif -%}
       <span class="wo-ft__brand-sub">{{ section.settings.brand_tagline }}</span>
       {%- if section.settings.brand_desc != blank -%}
         <p class="wo-ft__brand-desc">{{ section.settings.brand_desc }}</p>
@@ -197,9 +222,24 @@
       "content": "Brand"
     },
     {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Footer logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 40,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo width",
+      "default": 120
+    },
+    {
       "type": "text",
       "id": "brand_name",
-      "label": "Brand name",
+      "label": "Brand name (shown if no logo)",
       "default": "WIPEOUT"
     },
     {
