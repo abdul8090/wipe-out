@@ -715,24 +715,6 @@
         "icon_color": "#9b1f1f"
       }
     },
-    "wipeout_newsletter_EydzzY": {
-      "type": "wipeout-newsletter",
-      "name": "WipeOut Newsletter",
-      "settings": {
-        "heading": "Get 10% off your first order",
-        "subtext": "Join the WipeOut list for protection tips and member-only offers.",
-        "placeholder": "Enter your email",
-        "button_label": "Subscribe",
-        "success_message": "Thanks for subscribing!",
-        "bg_color": "#181512",
-        "text_color": "#ffffff",
-        "muted_color": "#b8b3ab",
-        "input_bg": "#26221d",
-        "input_border": "#3a352e",
-        "button_bg": "#ffffff",
-        "button_text_color": "#181512"
-      }
-    },
     "subscription_cta_HgLywY": {
       "type": "subscription-cta",
       "name": "Subscription CTA",
@@ -781,7 +763,6 @@
     "wipeout_safe_zVjffT",
     "wipeout_reviews_eQPQdp",
     "wipeout_faq_xgEKWp",
-    "wipeout_newsletter_EydzzY",
     "subscription_cta_HgLywY"
   ]
 }
