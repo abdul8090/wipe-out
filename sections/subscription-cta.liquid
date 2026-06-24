@@ -285,13 +285,13 @@
     </div>
   {%- else -%}
     <div class="wo-cta_image-mobile">
-      <img
+      {% comment %} <img
         src="https://placehold.co/800x300/{{ section.settings.background_color | remove: '#' }}/1d211e?text=Product+Image"
         alt="Product Image"
         width="800"
         height="300"
         loading="lazy"
-      >
+      > {% endcomment %}
     </div>
   {%- endif -%}
 
@@ -387,13 +387,13 @@
     </div>
   {%- else -%}
     <div class="wo-cta_image-left">
-      <img
+      {% comment %} <img
         src="https://placehold.co/400x600/{{ section.settings.background_color | remove: '#' }}/1d211e?text=Product+Image"
         alt="Product Image"
         width="400"
         height="600"
         loading="lazy"
-      >
+      > {% endcomment %}
     </div>
   {%- endif -%}
 
@@ -408,13 +408,13 @@
     </div>
   {%- else -%}
     <div class="wo-cta_image-right">
-      <img
+      {% comment %} <img
         src="https://placehold.co/400x600/{{ section.settings.background_color | remove: '#' }}/1d211e?text=Product+Image"
         alt="Product Image"
         width="400"
         height="600"
         loading="lazy"
-      >
+      > {% endcomment %}
     </div>
   {%- endif -%}
 </div>
