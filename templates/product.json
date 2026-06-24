@@ -16,6 +16,10 @@
           "type": "title",
           "settings": {}
         },
+        "rating_RamqRa": {
+          "type": "rating",
+          "settings": {}
+        },
         "price": {
           "type": "price",
           "settings": {}
@@ -34,8 +38,8 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
           }
         },
         "collapsible_tab_AwERNE": {
@@ -82,6 +86,7 @@
       },
       "block_order": [
         "title",
+        "rating_RamqRa",
         "price",
         "variant_picker",
         "quantity_selector",
@@ -92,20 +97,23 @@
         "collapsible_tab_6rkDW7",
         "description"
       ],
+      "custom_css": [
+        ".product__title h1{font-weight: 700; text-transform: uppercase; font-size: 40px; line-height: 120%; margin: 0 0 30px;}"
+      ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "medium",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "gallery_layout": "thumbnail_slider",
+        "media_fit": "cover",
+        "gallery_layout": "stacked",
         "mobile_thumbnails": "hide",
         "media_position": "left",
         "image_zoom": "lightbox",
-        "hide_variants": true,
+        "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 36,
-        "padding_bottom": 12
+        "padding_bottom": 36
       }
     },
     "product_comparison_FatBLr": {
@@ -237,7 +245,7 @@
     "related-products": {
       "type": "related-products",
       "custom_css": [
-        ".related-products__heading{font-weight: 700; text-transform: uppercase; font-size: 40px; line-height: 120%; margin: 0 0 30px; text-align: center;}"
+        ".related-products__heading {font-weight: 700; text-transform: uppercase; font-size: 40px; line-height: 120%; margin: 0 0 30px; text-align: center;}"
       ],
       "settings": {
         "heading": "You may also like",
