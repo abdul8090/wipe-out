@@ -54,6 +54,7 @@
         "announcement_eKGKw7",
         "announcement_7QWyBR"
       ],
+      "disabled": true,
       "name": "t:sections.announcement-bar.presets.name",
       "settings": {
         "auto_rotate": false,
