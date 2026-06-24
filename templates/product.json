@@ -108,6 +108,78 @@
         "padding_bottom": 12
       }
     },
+    "product_comparison_FatBLr": {
+      "type": "product-comparison",
+      "blocks": {
+        "comparison_item_zAgm8T": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Ready to use — zero mixing",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        },
+        "comparison_item_4rJfFp": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Completely odourless",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        },
+        "comparison_item_wT4Yqe": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Safe around kids & pets",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        },
+        "comparison_item_7niHzJ": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Long-lasting protection",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        }
+      },
+      "block_order": [
+        "comparison_item_zAgm8T",
+        "comparison_item_4rJfFp",
+        "comparison_item_wT4Yqe",
+        "comparison_item_7niHzJ"
+      ],
+      "custom_css": [
+        "div:empty {display: block;}",
+        " {border-top: 1px solid #2c2609;}"
+      ],
+      "name": "Comparison Table",
+      "settings": {
+        "heading": "Why choose WipeOut",
+        "brand_heading": "Wipe out",
+        "others_heading": "OTHERS",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 14,
+        "heading_size": 40,
+        "feature_size": 18,
+        "col_heading_size": 18,
+        "heading_size_tablet": 32,
+        "feature_size_tablet": 14,
+        "col_heading_size_tablet": 14,
+        "heading_size_mobile": 28,
+        "feature_size_mobile": 13,
+        "col_heading_size_mobile": 14,
+        "bg_color": "#ffffff",
+        "accent_color": "#c57272",
+        "border_color": "#000000",
+        "text_color": "#1d211e",
+        "cell_bg": "#fdf6f5",
+        "icon_color": "#2c2609"
+      }
+    },
     "wipeout_reviews_7qnMGt": {
       "type": "wipeout-reviews",
       "blocks": {
@@ -183,6 +255,7 @@
   },
   "order": [
     "main",
+    "product_comparison_FatBLr",
     "wipeout_reviews_7qnMGt",
     "related-products"
   ]
