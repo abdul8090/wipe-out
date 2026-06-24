@@ -54,7 +54,7 @@
 
   #shopify-section-{{ section.id }} .ms-hiw__subtitle {
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: {{ section.settings.subtitle_size }}px;
     font-weight: 700;
     color: var(--ms-hiw-subtitle);
   }
@@ -64,12 +64,12 @@
     text-transform: uppercase;
     margin: 0;
     font-family: Organetto, Arial, sans-serif;
-    font-size: 40px;
+    font-size: {{ section.settings.heading_size }}px;
     line-height: 1.2;
   }
 
   #shopify-section-{{ section.id }} .ms-hiw__desc {
-    font-size: 16px;
+    font-size: {{ section.settings.desc_size }}px;
     color: var(--ms-hiw-text);
   }
 
@@ -159,12 +159,12 @@
 
   #shopify-section-{{ section.id }} .ms-hiw__card-title {
     color: var(--ms-hiw-heading);
-    font-size: 20px;
+    font-size: {{ section.settings.card_title_size }}px;
     font-weight: 700;
   }
 
   #shopify-section-{{ section.id }} .ms-hiw__card-body {
-    font-size: 14px;
+    font-size: {{ section.settings.card_body_size }}px;
     color: var(--ms-hiw-text);
     line-height: 1.5;
   }
@@ -197,7 +197,7 @@
     border: 1px solid var(--ms-hiw-btn-border);
     border-radius: 12px;
     box-shadow: 0 4px var(--ms-hiw-btn-border);
-    font-size: 16px;
+    font-size: {{ section.settings.btn_size }}px;
     font-weight: 700;
     text-decoration: none;
     transition: opacity 0.2s;
@@ -225,25 +225,28 @@
     }
 
     #shopify-section-{{ section.id }} .ms-hiw__heading {
-      font-size: 36px;
+      font-size: {{ section.settings.heading_size_tablet }}px;
     }
 
     #shopify-section-{{ section.id }} .ms-hiw__subtitle {
-      font-size: 12px;
+      font-size: {{ section.settings.subtitle_size_tablet }}px;
     }
 
     #shopify-section-{{ section.id }} .ms-hiw__desc {
-      font-size: 14px;
+      font-size: {{ section.settings.desc_size_tablet }}px;
     }
 
     #shopify-section-{{ section.id }} .ms-hiw__card {
       padding: 16px 12px;
-      font-size: 12px;
       gap: 8px;
     }
 
     #shopify-section-{{ section.id }} .ms-hiw__card-title {
-      font-size: 16px;
+      font-size: {{ section.settings.card_title_size_tablet }}px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__card-body {
+      font-size: {{ section.settings.card_body_size_tablet }}px;
     }
 
     #shopify-section-{{ section.id }} .ms-hiw__step {
@@ -255,7 +258,7 @@
       border-radius: 8px;
       height: 45px;
       padding: 8px 16px;
-      font-size: 14px;
+      font-size: {{ section.settings.btn_size_tablet }}px;
     }
   }
 
@@ -279,6 +282,30 @@
     #shopify-section-{{ section.id }} .ms-hiw__btn-wrap {
       padding-left: 18px;
       padding-right: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__heading {
+      font-size: {{ section.settings.heading_size_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__subtitle {
+      font-size: {{ section.settings.subtitle_size_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__desc {
+      font-size: {{ section.settings.desc_size_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__card-title {
+      font-size: {{ section.settings.card_title_size_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__card-body {
+      font-size: {{ section.settings.card_body_size_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__btn {
+      font-size: {{ section.settings.btn_size_mobile }}px;
     }
   }
 </style>
@@ -472,6 +499,198 @@
       "unit": "px",
       "label": "Padding bottom (mobile)",
       "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Font sizes — desktop"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desc_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Description",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Card title",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_body_size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Card body text",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "btn_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Font sizes — tablet"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_tablet",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_tablet",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "desc_size_tablet",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Description",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_tablet",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Card title",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_body_size_tablet",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Card body text",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "btn_size_tablet",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Font sizes — mobile"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 18,
+      "max": 52,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_mobile",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "desc_size_mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_mobile",
+      "min": 12,
+      "max": 26,
+      "step": 1,
+      "unit": "px",
+      "label": "Card title",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_body_size_mobile",
+      "min": 8,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Card body text",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "btn_size_mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text",
+      "default": 14
     },
     {
       "type": "header",
