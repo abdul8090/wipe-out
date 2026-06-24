@@ -47,8 +47,8 @@
         "link_column_3raB8R": {
           "type": "link_column",
           "settings": {
-            "column_title": "Company",
-            "links": "",
+            "column_title": "Policies",
+            "links": "policies",
             "link_1_label": "Our story",
             "link_1_url": "",
             "link_2_label": "Ingredients & safety",
