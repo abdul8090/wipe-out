@@ -378,7 +378,13 @@
       "settings": {
         "heading": "Why choose WipeOut",
         "brand_heading": "Wipe out",
-        "others_heading": "OTHERS"
+        "others_heading": "OTHERS",
+        "bg_color": "#fefcf3",
+        "accent_color": "#000000",
+        "border_color": "#2c2609",
+        "text_color": "#1d211e",
+        "cell_bg": "#ffffff",
+        "icon_color": "#2c2609"
       }
     },
     "wipeout_comparison_LxTqcB": {
