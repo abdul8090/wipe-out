@@ -703,6 +703,7 @@
       ],
       "name": "FAQ with Image",
       "settings": {
+        "faq_image": "shopify://shop_images/kills_pest.webp",
         "hide_image": false,
         "subtitle": "GOT QUESTIONS? WE'VE GOT ANSWERS",
         "heading": "FREQUENTLY ASKED QUESTIONS",
