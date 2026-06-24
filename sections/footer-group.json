@@ -18,7 +18,7 @@
           "type": "link_column",
           "settings": {
             "column_title": "Shop",
-            "links": "",
+            "links": "shop",
             "link_1_label": "Bed Bug Killer",
             "link_1_url": "",
             "link_2_label": "Termite Killer",
@@ -33,7 +33,7 @@
           "type": "link_column",
           "settings": {
             "column_title": "Help",
-            "links": "",
+            "links": "helpful-links",
             "link_1_label": "Track my order",
             "link_1_url": "",
             "link_2_label": "Delivery & returns",
