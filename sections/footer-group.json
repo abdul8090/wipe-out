@@ -32,7 +32,7 @@
         "link_column_4FNGbb": {
           "type": "link_column",
           "settings": {
-            "column_title": "Help",
+            "column_title": "Helpful Links",
             "links": "helpful-links",
             "link_1_label": "Track my order",
             "link_1_url": "",
@@ -67,8 +67,10 @@
       ],
       "name": "WipeOut Footer",
       "settings": {
+        "logo": "shopify://shop_images/wipeoutlogo.avif",
+        "logo_width": 120,
         "brand_name": "WIPEOUT",
-        "brand_tagline": "Advanced Insect Killer+",
+        "brand_tagline": "",
         "brand_desc": "Super-strength, odourless insect control for the modern home. Kills & repels — safe for kids and pets.",
         "copyright": "© 2026 WipeOut. Advanced Insect Killer+. All rights reserved.",
         "show_payment_icons": false,
