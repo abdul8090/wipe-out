@@ -1,28 +1,390 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --ms-hiw-bg:          {{ section.settings.bg_color }};
+    --ms-hiw-heading:     {{ section.settings.heading_color }};
+    --ms-hiw-subtitle:    {{ section.settings.subtitle_color }};
+    --ms-hiw-text:        {{ section.settings.text_color }};
+    --ms-hiw-step-bg:     {{ section.settings.step_bg }};
+    --ms-hiw-step-text:   {{ section.settings.step_text }};
+    --ms-hiw-accent:      {{ section.settings.card_accent }};
+    --ms-hiw-card-border: {{ section.settings.card_border }};
+    --ms-hiw-btn-bg:      {{ section.settings.btn_bg }};
+    --ms-hiw-btn-text:    {{ section.settings.btn_text }};
+    --ms-hiw-btn-border:  {{ section.settings.btn_border }};
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw {
+    background-color: var(--ms-hiw-bg);
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__outer {
+    padding-left: {{ section.settings.padding_horizontal }}px;
+    padding-right: {{ section.settings.padding_horizontal }}px;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__inner {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__journey {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  /* Heading block */
+  #shopify-section-{{ section.id }} .ms-hiw__heading-wrap {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__subtitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ms-hiw-subtitle);
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__heading {
+    color: var(--ms-hiw-heading);
+    text-transform: uppercase;
+    margin: 0;
+    font-family: Organetto, Arial, sans-serif;
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__desc {
+    font-size: 16px;
+    color: var(--ms-hiw-text);
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__desc p {
+    margin: 0;
+  }
+
+  /* Steps row — horizontal scroll on all sizes */
+  #shopify-section-{{ section.id }} .ms-hiw__row {
+    display: flex;
+    flex-flow: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 16px;
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__row::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Arrow between steps */
+  #shopify-section-{{ section.id }} .ms-hiw__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 10px;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__arrow path:first-child {
+    fill: var(--ms-hiw-btn-bg);
+    stroke: var(--ms-hiw-btn-border);
+  }
+
+  /* Step */
+  #shopify-section-{{ section.id }} .ms-hiw__step-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 280px;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__step {
+    background-color: var(--ms-hiw-step-bg);
+    color: var(--ms-hiw-step-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__step svg path {
+    stroke: var(--ms-hiw-step-text);
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__card-wrapper {
+    border-left: 4px solid var(--ms-hiw-accent);
+    flex: 1;
+    padding-top: 16px;
+    padding-left: 16px;
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__card {
+    border: 1px dashed var(--ms-hiw-card-border);
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 24px 12px;
+    font-size: 16px;
+    gap: 16px;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__card-title {
+    color: var(--ms-hiw-heading);
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__card-body {
+    font-size: 14px;
+    color: var(--ms-hiw-text);
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__card-body p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__card-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Button */
+  #shopify-section-{{ section.id }} .ms-hiw__btn-wrap {
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    padding: 16px;
+    background-color: var(--ms-hiw-btn-bg);
+    color: var(--ms-hiw-btn-text);
+    border: 1px solid var(--ms-hiw-btn-border);
+    border-radius: 12px;
+    box-shadow: 0 4px var(--ms-hiw-btn-border);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  #shopify-section-{{ section.id }} .ms-hiw__btn:hover {
+    opacity: 0.88;
+  }
+
+  /* Tablet */
+  @media screen and (max-width: 991px) {
+    #shopify-section-{{ section.id }} .ms-hiw__outer {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__inner {
+      padding-top: {{ section.settings.padding_top | times: 0.6 | round }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.6 | round }}px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__journey {
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__heading {
+      font-size: 36px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__subtitle {
+      font-size: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__desc {
+      font-size: 14px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__card {
+      padding: 16px 12px;
+      font-size: 12px;
+      gap: 8px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__card-title {
+      font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__step {
+      gap: 8px;
+      padding: 8px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__btn {
+      border-radius: 8px;
+      height: 45px;
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+
+  /* Mobile */
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .ms-hiw__outer {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__inner {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__row {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .ms-hiw__btn-wrap {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+</style>
+
+<div class="ms-hiw">
+  <div class="ms-hiw__outer">
+    <div class="ms-hiw__container">
+      <div class="ms-hiw__inner">
+        <div class="ms-hiw__journey">
+
+          <div class="ms-hiw__heading-wrap">
+            {%- if section.settings.subtitle != blank -%}
+              <div class="ms-hiw__subtitle">{{ section.settings.subtitle }}</div>
+            {%- endif -%}
+            {%- if section.settings.heading != blank -%}
+              <h3 class="ms-hiw__heading">{{ section.settings.heading }}</h3>
+            {%- endif -%}
+            {%- if section.settings.description != blank -%}
+              <div class="ms-hiw__desc">{{ section.settings.description }}</div>
+            {%- endif -%}
+          </div>
+
+          <div class="ms-hiw__row">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'step' -%}
+                {%- unless forloop.first -%}
+                  <div class="ms-hiw__arrow">
+                    <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M30.8569 16.5L15.9997 31.3571V22.7857H1.14258V10.2143H15.9997V1.64285L30.8569 16.5Z" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                {%- endunless -%}
+
+                <div class="ms-hiw__step-wrapper" {{ block.shopify_attributes }}>
+                  <div class="ms-hiw__step">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.25 6.75L9.75 17.25L4.5 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <div>{{ block.settings.step_number }}</div>
+                  </div>
+                  <div class="ms-hiw__card-wrapper">
+                    <div class="ms-hiw__card">
+                      <div class="ms-hiw__card-title">{{ block.settings.title }}</div>
+                      <div class="ms-hiw__card-body">{{ block.settings.content }}</div>
+                      {%- if block.settings.show_image and block.settings.image != blank -%}
+                        <div class="ms-hiw__card-image">
+                          {%- assign step_img_alt = block.settings.title | escape -%}
+                          {{
+                            block.settings.image
+                            | image_url: width: 480
+                            | image_tag: alt: step_img_alt, loading: 'lazy', widths: '240, 360, 480'
+                          }}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+          {%- if section.settings.button_text != blank -%}
+            <div class="ms-hiw__btn-wrap">
+              {%- if section.settings.button_link != blank -%}
+                <a href="{{ section.settings.button_link }}" class="ms-hiw__btn">{{ section.settings.button_text }}</a>
+              {%- elsif section.settings.button_scroll != blank -%}
+                <a href="#{{ section.settings.button_scroll }}" class="ms-hiw__btn ms-hiw__btn--scroll" data-scroll-to="{{ section.settings.button_scroll }}">{{ section.settings.button_text }}</a>
+              {%- else -%}
+                <a href="#" class="ms-hiw__btn">{{ section.settings.button_text }}</a>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var section = document.getElementById('shopify-section-{{ section.id }}');
+  if (!section) return;
+  section.querySelectorAll('.ms-hiw__btn--scroll').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var target = document.getElementById(this.dataset.scrollTo);
+      if (target) window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+
 {% schema %}
 {
   "name": "How It Works Steps",
   "settings": [
     {
       "type": "header",
-      "content": "Section Settings"
-    },
-    {
-      "type": "color",
-      "id": "section_bg_color",
-      "label": "Section Background Color",
-      "default": "#FEDB36"
+      "content": "Content"
     },
     {
       "type": "text",
       "id": "subtitle",
       "label": "Subtitle",
       "default": "HOW IT WORKS"
-    },
-    {
-      "type": "color",
-      "id": "subtitle_color",
-      "label": "Subtitle Color",
-      "default": "#FF0000"
     },
     {
       "type": "text",
@@ -34,25 +396,152 @@
       "type": "richtext",
       "id": "description",
       "label": "Description",
-      "default": "<p>Our streamlined process gets you from application to earning commissions quickly. Here's how to get started with Evil Goods.</p>"
+      "default": "<p>Our streamlined process gets you from application to earning commissions quickly.</p>"
     },
     {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button Link"
-    },
-    {
-      "type": "text",
-      "id": "button_scroll",
-      "label": "Button Scroll To Section ID",
-      "default": "#",
-      "info": "Section ID to scroll to when clicked (if no link provided)"
+      "type": "header",
+      "content": "Button"
     },
     {
       "type": "text",
       "id": "button_text",
-      "label": "Button Text",
+      "label": "Button text",
       "default": "Start Your Application"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "button_scroll",
+      "label": "Scroll-to section ID",
+      "info": "Used when no link is set. Enter the section element ID without #."
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding (desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section background",
+      "default": "#fedb36"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle colour",
+      "default": "#f63208"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading colour",
+      "default": "#1d211e"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Body text colour",
+      "default": "#1d211e"
+    },
+    {
+      "type": "color",
+      "id": "step_bg",
+      "label": "Step header background",
+      "default": "#fedb36"
+    },
+    {
+      "type": "color",
+      "id": "step_text",
+      "label": "Step header text & icon colour",
+      "default": "#2c2609"
+    },
+    {
+      "type": "color",
+      "id": "card_accent",
+      "label": "Card left-border accent",
+      "default": "#fedb36"
+    },
+    {
+      "type": "color",
+      "id": "card_border",
+      "label": "Card dashed border",
+      "default": "#2c2609"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg",
+      "label": "Button background",
+      "default": "#fedb36"
+    },
+    {
+      "type": "color",
+      "id": "btn_text",
+      "label": "Button text colour",
+      "default": "#1d211e"
+    },
+    {
+      "type": "color",
+      "id": "btn_border",
+      "label": "Button border & shadow colour",
+      "default": "#2c2609"
     }
   ],
   "blocks": [
@@ -64,7 +553,7 @@
         {
           "type": "text",
           "id": "step_number",
-          "label": "Step Number",
+          "label": "Step label",
           "default": "STEP 1"
         },
         {
@@ -77,16 +566,16 @@
           "type": "richtext",
           "id": "content",
           "label": "Content",
-          "default": "<p>Complete our quick application form with basic information about you and your platform. Takes less than 5 minutes.</p>"
+          "default": "<p>Complete our quick application form. Takes less than 5 minutes.</p>"
         },
         {
           "type": "header",
-          "content": "Image Settings"
+          "content": "Image"
         },
         {
           "type": "checkbox",
           "id": "show_image",
-          "label": "Show Image",
+          "label": "Show image",
           "default": false
         },
         {
@@ -102,132 +591,19 @@
       "name": "How It Works Steps",
       "blocks": [
         {
-          "type": "step"
+          "type": "step",
+          "settings": { "step_number": "STEP 1", "title": "APPLY" }
         },
         {
-          "type": "step"
+          "type": "step",
+          "settings": { "step_number": "STEP 2", "title": "GET APPROVED" }
         },
         {
-          "type": "step"
+          "type": "step",
+          "settings": { "step_number": "STEP 3", "title": "START EARNING" }
         }
       ]
     }
   ]
 }
 {% endschema %}
-
-<section class="section section-horizontal-scroll" style="background-color: {{ section.settings.section_bg_color }};">
-  <div class="padding-global padding-global-none">
-    <div class="container-large">
-      <div class="padding-section">
-        <div class="journey-component">
-          <div class="heading heading-padding">
-            <div class="heading_subtitle">
-              <span style="color: {{ section.settings.subtitle_color }}">{{ section.settings.subtitle }}</span>
-            </div>
-            <h3 class="heading-h3">{{ section.settings.heading }}</h3>
-            <div class="heading_description">{{ section.settings.description }}</div>
-          </div>
-          <div class="hiw-row horizontal-scroll">
-            {% for block in section.blocks %}
-              {% if block.type == 'step' %}
-                {% assign step_index = forloop.index %}
-                {% if step_index > 1 %}
-                  <div class="arrow-icon-wrapper">
-                    <div class="svg arrow horizontal-scroll w-embed">
-                      <svg width="32" height="33" viewbox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M30.8569 16.5L15.9997 31.3571V22.7857H1.14258V10.2143H15.9997V1.64285L30.8569 16.5Z" fill="#FEDB36"></path>
-                        <path d="M30.8569 16.5L15.9997 31.3571V22.7857H1.14258V10.2143H15.9997V1.64285L30.8569 16.5Z" stroke="#2C2609" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg>
-                    </div>
-                  </div>
-                {% endif %}
-                <div class="hiw-step-wrapper">
-                  <div class="hiw-step">
-                    <div class="svg step-check w-embed">
-                      <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20.25 6.75L9.75 17.25L4.5 12" stroke="#2C2609" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg>
-                    </div>
-                    <div>{{ block.settings.step_number }}</div>
-                  </div>
-                  <div class="hiw-card-wrapper">
-                    <div class="hiw-card white">
-                      <div class="hiw-card-title">{{ block.settings.title }}</div>
-                      <div>{{ block.settings.content }}</div>
-                      {% if block.settings.show_image and block.settings.image != blank %}
-                        <div class="hiw-card-image-maison">
-                          <img
-                            src="{{ block.settings.image | img_url: 'master' }}"
-                            alt="{{ block.settings.title }}"
-                            width="auto"
-                            height="auto"
-                            loading="lazy"
-                          >
-                        </div>
-                      {% endif %}
-                    </div>
-                  </div>
-                </div>
-              {% endif %}
-            {% endfor %}
-          </div>
-          {% if section.settings.button_text != blank %}
-            <div class="button-wrapper">
-              {% if section.settings.button_link != blank %}
-                <a href="{{ section.settings.button_link }}" class="button w-inline-block">
-                  <div>{{ section.settings.button_text }}</div>
-                </a>
-              {% elsif section.settings.button_scroll != blank %}
-                <a
-                  href="#{{ section.settings.button_scroll }}"
-                  class="button w-inline-block scroll-to-section"
-                  data-scroll-to="{{ section.settings.button_scroll }}"
-                >
-                  <div>{{ section.settings.button_text }}</div>
-                </a>
-              {% else %}
-                <a href="#" class="button w-inline-block">
-                  <div>{{ section.settings.button_text }}</div>
-                </a>
-              {% endif %}
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-  .hiw-card-image-maison {
-{% comment %}     width: 100%;
-    height: 100%;
-    object-fit: cover; {% endcomment %}
-  }
-  .hiw-card-image-maison img {
-    max-width: fit-content;
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const scrollButtons = document.querySelectorAll('.section-horizontal-scroll .scroll-to-section');
-
-    // Add smooth scroll functionality for buttons with section IDs
-    scrollButtons.forEach((button) => {
-      button.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('data-scroll-to');
-        const targetSection = document.getElementById(targetId);
-
-        if (targetSection) {
-          window.scrollTo({
-            top: targetSection.offsetTop,
-            behavior: 'smooth',
-          });
-        }
-      });
-    });
-  });
-</script>
