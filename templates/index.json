@@ -72,7 +72,7 @@
       "name": "WipeOut Hero Carousel",
       "settings": {
         "bg_color": "#ffffff",
-        "slide_height": 520,
+        "slide_height": 720,
         "autoplay": false,
         "autoplay_speed": 5
       }
