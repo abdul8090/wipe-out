@@ -22,12 +22,12 @@
             "custom_liquid": "{{ product.description | strip_html | truncatewords: 25 }}"
           }
         },
-        "rating_RamqRa": {
-          "type": "rating",
-          "settings": {}
-        },
         "price": {
           "type": "price",
+          "settings": {}
+        },
+        "rating_RamqRa": {
+          "type": "rating",
           "settings": {}
         },
         "variant_picker": {
@@ -93,8 +93,8 @@
       "block_order": [
         "title",
         "custom_liquid_U6xxh4",
-        "rating_RamqRa",
         "price",
+        "rating_RamqRa",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
