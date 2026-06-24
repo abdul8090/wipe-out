@@ -659,6 +659,80 @@
         "verified_color": "#9b1f1f"
       }
     },
+    "faq_with_image_yiNMD3": {
+      "type": "faq-with-image",
+      "blocks": {
+        "faq_item_w8ndK3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How quickly does WipeOut start working?",
+            "answer": "WipeOut's formula starts working on contact, providing instant knockdown. The residual barrier then continues protecting for weeks after application — no reapplication needed.",
+            "open_by_default": true
+          }
+        },
+        "faq_item_8q73hV": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is WipeOut safe around children and pets?",
+            "answer": "Yes. Once the treated surface is dry — typically within 30 minutes — it is safe for children and pets to re-enter the area. We recommend ventilating the room during application.",
+            "open_by_default": false
+          }
+        },
+        "faq_item_34m3iQ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What pests does WipeOut work against?",
+            "answer": "WipeOut is effective against cockroaches, termites, bed bugs, ants, spiders, mosquitoes, and most common household pests. Check the product label for a full species list.",
+            "open_by_default": false
+          }
+        },
+        "faq_item_X3a9g3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does WipeOut's protection last?",
+            "answer": "WipeOut's residual barrier keeps working for up to 12 weeks on non-porous surfaces. Frequency of application may vary depending on pest pressure and surface type.",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_w8ndK3",
+        "faq_item_8q73hV",
+        "faq_item_34m3iQ",
+        "faq_item_X3a9g3"
+      ],
+      "name": "FAQ with Image",
+      "settings": {
+        "hide_image": false,
+        "subtitle": "GOT QUESTIONS? WE'VE GOT ANSWERS",
+        "heading": "FREQUENTLY ASKED QUESTIONS",
+        "description": "Everything you need to know about WipeOut pest control products. Can't find your answer? Contact our support team directly.",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "padding_horizontal": 20,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_horizontal_mobile": 16,
+        "heading_size": 40,
+        "subtitle_size": 14,
+        "description_size": 16,
+        "question_size": 16,
+        "answer_size": 16,
+        "heading_size_mobile": 32,
+        "subtitle_size_mobile": 12,
+        "description_size_mobile": 14,
+        "question_size_mobile": 14,
+        "answer_size_mobile": 14,
+        "background_color": "#FFFFFF",
+        "border_color": "#2C2609",
+        "subtitle_color": "#F63208",
+        "heading_color": "#1D211E",
+        "description_color": "#1D211E",
+        "faq_background": "#FDF6F5",
+        "faq_active_background": "#FDF6F5",
+        "toggle_bg": "#C57272"
+      }
+    },
     "wipeout_faq_xgEKWp": {
       "type": "wipeout-faq",
       "blocks": {
@@ -705,6 +779,7 @@
         "faq_item_kDUrQG",
         "faq_item_6PxEfG"
       ],
+      "disabled": true,
       "name": "WipeOut FAQ",
       "settings": {
         "heading": "Questions, answered",
@@ -744,11 +819,11 @@
         "benefit_text_size": 14,
         "heading_size_mobile": 36,
         "description_size_mobile": 16,
-        "background_color": "#FDF6F5",
-        "border_color": "#2C2609",
+        "background_color": "#fdf6f5",
+        "border_color": "#2c2609",
         "text_color": "#1d211e",
-        "highlight_color": "#F63208",
-        "button_color": "#C57272",
+        "highlight_color": "#f63208",
+        "button_color": "#c57272",
         "button_shadow_color": "#2c2609",
         "badge_bg": "#ffffff"
       }
@@ -766,6 +841,7 @@
     "wipeout_how_to_use_ieQLx8",
     "wipeout_safe_zVjffT",
     "wipeout_reviews_eQPQdp",
+    "faq_with_image_yiNMD3",
     "wipeout_faq_xgEKWp",
     "subscription_cta_HgLywY"
   ]
