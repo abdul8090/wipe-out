@@ -17,7 +17,7 @@
   .wo-kr__inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: clamp(64px, 8vw, 108px) 24px;
+    padding: {{ section.settings.padding_top }}px 24px {{ section.settings.padding_bottom }}px;
     text-align: center;
   }
 
@@ -34,7 +34,7 @@
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.015em;
-    font-size: clamp(32px, 5.2vw, 64px);
+    font-size: {{ section.settings.heading_size }}px;
     line-height: 0.95;
     margin: 0 auto 18px;
     max-width: 14ch;
@@ -102,6 +102,12 @@
       margin-bottom: 36px;
     }
   }
+
+  @media (max-width: 767px) {
+    .wo-kr__heading {
+      font-size: {{ section.settings.heading_size_mobile }}px;
+    }
+  }
 </style>
 
 <section class="wo-kr">
@@ -164,6 +170,54 @@
       "id": "subtext",
       "label": "Subtext",
       "default": "Instant knockdown, then a long-lasting protective barrier that keeps insects from coming back — with zero smell."
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 64
+    },
+    {
+      "type": "header",
+      "content": "Font sizes"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading — desktop",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 16,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading — mobile",
+      "default": 32
     },
     {
       "type": "header",

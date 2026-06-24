@@ -16,7 +16,7 @@
   .wo-rev__inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: clamp(64px, 8vw, 108px) 24px;
+    padding: {{ section.settings.padding_top }}px 24px {{ section.settings.padding_bottom }}px;
   }
 
   .wo-rev__header {
@@ -36,7 +36,7 @@
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.015em;
-    font-size: clamp(28px, 4.2vw, 50px);
+    font-size: {{ section.settings.heading_size }}px;
     line-height: 0.98;
     margin: 0;
   }
@@ -89,6 +89,12 @@
       grid-template-columns: 1fr;
     }
   }
+
+  @media (max-width: 767px) {
+    .wo-rev__heading {
+      font-size: {{ section.settings.heading_size_mobile }}px;
+    }
+  }
 </style>
 
 {%- assign star_svg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>' -%}
@@ -131,6 +137,54 @@
       "id": "heading",
       "label": "Heading",
       "default": "Loved by 12,000+ homes"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 64
+    },
+    {
+      "type": "header",
+      "content": "Font sizes"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading — desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 16,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading — mobile",
+      "default": 28
     },
     {
       "type": "header",

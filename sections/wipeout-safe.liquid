@@ -18,7 +18,7 @@
   .wo-safe__inner {
     max-width: 1080px;
     margin: 0 auto;
-    padding: clamp(56px, 7vw, 92px) 24px;
+    padding: {{ section.settings.padding_top }}px 24px {{ section.settings.padding_bottom }}px;
     text-align: center;
   }
 
@@ -32,7 +32,7 @@
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.015em;
-    font-size: clamp(28px, 4.2vw, 50px);
+    font-size: {{ section.settings.heading_size }}px;
     line-height: 0.98;
     margin: 0 0 16px;
   }
@@ -73,6 +73,12 @@
       font-size: 12px;
     }
   }
+
+  @media (max-width: 767px) {
+    .wo-safe__heading {
+      font-size: {{ section.settings.heading_size_mobile }}px;
+    }
+  }
 </style>
 
 <section class="wo-safe">
@@ -109,6 +115,54 @@
       "id": "description",
       "label": "Description",
       "default": "A non-toxic, odourless formula designed for indoor use. Powerful on pests, gentle on the home you share."
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 56
+    },
+    {
+      "type": "header",
+      "content": "Font sizes"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading — desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 16,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading — mobile",
+      "default": 28
     },
     {
       "type": "header",

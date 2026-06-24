@@ -44,7 +44,7 @@
   }
 
   .wo-bundle__content-col {
-    padding: clamp(40px, 5vw, 80px) clamp(24px, 4vw, 64px);
+    padding: {{ section.settings.padding_top }}px clamp(24px, 4vw, 64px) {{ section.settings.padding_bottom }}px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,7 +63,7 @@
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.015em;
-    font-size: clamp(30px, 3.6vw, 50px);
+    font-size: {{ section.settings.heading_size }}px;
     line-height: 0.96;
     margin: 0 0 18px;
   }
@@ -187,6 +187,12 @@
 
     .wo-bundle__btn {
       text-align: center;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .wo-bundle__heading {
+      font-size: {{ section.settings.heading_size_mobile }}px;
     }
   }
 </style>
@@ -356,6 +362,54 @@
       "type": "url",
       "id": "secondary_button_link",
       "label": "Secondary button link"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 56
+    },
+    {
+      "type": "header",
+      "content": "Font sizes"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading — desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 16,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading — mobile",
+      "default": 30
     },
     {
       "type": "header",
