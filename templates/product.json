@@ -12,13 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {}
@@ -45,18 +38,58 @@
             "show_gift_card_recipient": true
           }
         },
+        "collapsible_tab_AwERNE": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Description",
+            "icon": "none",
+            "content": "{{ product.description }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_i3cw6h": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "KEY FEATURES",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible_tab_QV6Pn6": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "PRECAUTIONS",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible_tab_6rkDW7": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "DIRECTION OF USE",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {}
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "collapsible_tab_AwERNE",
+        "collapsible_tab_i3cw6h",
+        "collapsible_tab_QV6Pn6",
+        "collapsible_tab_6rkDW7",
         "description"
       ],
       "settings": {
@@ -100,8 +133,8 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review": "Saw results within minutes. No smell at all — sprayed the kitchen before bed and woke up to zero roaches.",
             "author": "Priya M.",
+            "review": "Saw results within minutes. No smell at all — sprayed the kitchen before bed and woke up to zero roaches.",
             "verified": true
           }
         },
@@ -109,8 +142,8 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review": "Used the termite spray on our skirting boards and old furniture. Three months on, still nothing. Brilliant.",
             "author": "David R.",
+            "review": "Used the termite spray on our skirting boards and old furniture. Three months on, still nothing. Brilliant.",
             "verified": true
           }
         },
@@ -118,8 +151,8 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review": "Finally something safe to use with a toddler and two cats in the house. The bed bug kit saved us.",
             "author": "Hannah K.",
+            "review": "Finally something safe to use with a toddler and two cats in the house. The bed bug kit saved us.",
             "verified": true
           }
         }
@@ -132,12 +165,19 @@
       "name": "WipeOut Reviews",
       "settings": {
         "heading": "Loved by 12,000+ homes",
+        "autoplay_speed": 4,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "heading_size": 50,
+        "heading_size_mobile": 28,
         "bg_color": "#ffffff",
+        "card_bg_color": "#ffffff",
         "text_color": "#181512",
         "muted_color": "#6b6864",
         "border_color": "#ebe9e6",
         "star_color": "#e0a32e",
-        "verified_color": "#9b1f1f"
+        "verified_color": "#9b1f1f",
+        "arrow_bg_color": "#ffffff"
       }
     },
     "wipeout_faq_YA4ipN": {
@@ -189,6 +229,10 @@
       "name": "WipeOut FAQ",
       "settings": {
         "heading": "Questions, answered",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "heading_size": 50,
+        "heading_size_mobile": 28,
         "bg_color": "#ffffff",
         "border_color": "#ebe9e6",
         "text_color": "#181512",
