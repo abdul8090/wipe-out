@@ -1,0 +1,856 @@
+{% schema %}
+{
+  "name": "Product Benefits Tabs",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "SKINCARE THAT HITS DIFFERENT"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "Powered by nature's heavy-hitters. No fluff, no fillers — just real ingredients that heal, hydrate, and hold the line."
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section background",
+      "default": "#FEEB94"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "tag_bg_color",
+      "label": "Tag background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "tag_text_color",
+      "label": "Tag text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "nav_active_bg",
+      "label": "Active tab background",
+      "default": "#FEEB94"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_benefit_tags",
+      "label": "Hide benefit tags",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_tab",
+      "name": "Product Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_name",
+          "label": "Tab name",
+          "default": "Product Name"
+        },
+        {
+          "type": "select",
+          "id": "grid_columns",
+          "label": "Grid Layout",
+          "options": [
+            {
+              "value": "1",
+              "label": "One Column"
+            },
+            {
+              "value": "2",
+              "label": "Two Columns"
+            }
+          ],
+          "default": "2"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product image"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "ingredient_image_1",
+          "label": "Ingredient icon"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_title_1",
+          "label": "Ingredient title",
+          "default": "Ingredient Name"
+        },
+        {
+          "type": "textarea",
+          "id": "ingredient_description_1",
+          "label": "Ingredient description",
+          "default": "Ingredient description text"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_tag_1",
+          "label": "Benefit tag",
+          "default": "✓ Benefit"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "ingredient_image_2",
+          "label": "Ingredient icon"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_title_2",
+          "label": "Ingredient title",
+          "default": "Ingredient Name"
+        },
+        {
+          "type": "textarea",
+          "id": "ingredient_description_2",
+          "label": "Ingredient description",
+          "default": "Ingredient description text"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_tag_2",
+          "label": "Benefit tag",
+          "default": "✓ Benefit"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "ingredient_image_3",
+          "label": "Ingredient icon"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_title_3",
+          "label": "Ingredient title",
+          "default": "Ingredient Name"
+        },
+        {
+          "type": "textarea",
+          "id": "ingredient_description_3",
+          "label": "Ingredient description",
+          "default": "Ingredient description text"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_tag_3",
+          "label": "Benefit tag",
+          "default": "✓ Benefit"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "ingredient_image_4",
+          "label": "Ingredient icon"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_title_4",
+          "label": "Ingredient title",
+          "default": "Ingredient Name"
+        },
+        {
+          "type": "textarea",
+          "id": "ingredient_description_4",
+          "label": "Ingredient description",
+          "default": "Ingredient description text"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_tag_4",
+          "label": "Benefit tag",
+          "default": "✓ Benefit"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "ingredient_image_5",
+          "label": "Ingredient icon"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_title_5",
+          "label": "Ingredient title",
+          "default": "Ingredient Name"
+        },
+        {
+          "type": "textarea",
+          "id": "ingredient_description_5",
+          "label": "Ingredient description",
+          "default": "Ingredient description text"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_tag_5",
+          "label": "Benefit tag",
+          "default": "✓ Benefit"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "ingredient_image_6",
+          "label": "Ingredient icon"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_title_6",
+          "label": "Ingredient title",
+          "default": "Ingredient Name"
+        },
+        {
+          "type": "textarea",
+          "id": "ingredient_description_6",
+          "label": "Ingredient description",
+          "default": "Ingredient description text"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_tag_6",
+          "label": "Benefit tag",
+          "default": "✓ Benefit"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "ingredient_image_7",
+          "label": "Ingredient icon"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_title_7",
+          "label": "Ingredient title",
+          "default": "Ingredient Name"
+        },
+        {
+          "type": "textarea",
+          "id": "ingredient_description_7",
+          "label": "Ingredient description",
+          "default": "Ingredient description text"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_tag_7",
+          "label": "Benefit tag",
+          "default": "✓ Benefit"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 8"
+        },
+        {
+          "type": "image_picker",
+          "id": "ingredient_image_8",
+          "label": "Ingredient icon"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_title_8",
+          "label": "Ingredient title",
+          "default": "Ingredient Name"
+        },
+        {
+          "type": "textarea",
+          "id": "ingredient_description_8",
+          "label": "Ingredient description",
+          "default": "Ingredient description text"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_tag_8",
+          "label": "Benefit tag",
+          "default": "✓ Benefit"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Benefits Tabs",
+      "blocks": [
+        {
+          "type": "product_tab",
+          "settings": {
+            "tab_name": "Tallow Balm",
+            "ingredient_title_1": "Manuka Honey Therapy",
+            "ingredient_description_1": "Naturally anti-inflammatory to help heal blemishes and calm irritation.",
+            "ingredient_tag_1": "✓ Soothes & Heals",
+            "ingredient_title_2": "Grass-Fed Grass-Finished Tallow Nutrition",
+            "ingredient_description_2": "Delivers deep moisture and essential vitamins for strong, supple skin.",
+            "ingredient_tag_2": "✓ Nourishes Deeply",
+            "ingredient_title_3": "Olive Oil Absorption Boost",
+            "ingredient_description_3": "Cold-pressed olive oil helps your skin drink in nutrients without clogging pores.",
+            "ingredient_tag_3": "✓ Boosts Nutrient Uptake",
+            "ingredient_title_4": "Calendula Comfort",
+            "ingredient_description_4": "Pot marigold extract helps reduce redness and supports skin recovery.",
+            "ingredient_tag_4": "✓ Reduces Inflammation",
+            "ingredient_title_5": "Manuka Honey Therapy",
+            "ingredient_description_5": "Naturally anti-inflammatory to help heal blemishes and calm irritation.",
+            "ingredient_tag_5": "✓ Soothes & Heals",
+            "ingredient_title_6": "Grass-Fed Grass-Finished Tallow Nutrition",
+            "ingredient_description_6": "Delivers deep moisture and essential vitamins for strong, supple skin.",
+            "ingredient_tag_6": "✓ Nourishes Deeply",
+            "ingredient_title_7": "Olive Oil Absorption Boost",
+            "ingredient_description_7": "Cold-pressed olive oil helps your skin drink in nutrients without clogging pores.",
+            "ingredient_tag_7": "✓ Boosts Nutrient Uptake",
+            "ingredient_title_8": "Calendula Comfort",
+            "ingredient_description_8": "Pot marigold extract helps reduce redness and supports skin recovery.",
+            "ingredient_tag_8": "✓ Reduces Inflammation"
+          }
+        },
+        {
+          "type": "product_tab",
+          "settings": {
+            "tab_name": "Sunscreen",
+            "ingredient_title_1": "Non-Nano Zinc Oxide",
+            "ingredient_description_1": "Physical sun protection that shields skin from UVA and UVB rays without absorption into bloodstream.",
+            "ingredient_tag_1": "✓ Broad Spectrum Protection",
+            "ingredient_title_2": "Coconut Oil Moisture",
+            "ingredient_description_2": "Hydrates skin while providing natural sun protection properties.",
+            "ingredient_tag_2": "✓ Hydrates & Protects",
+            "ingredient_title_3": "Aloe Vera Soothing",
+            "ingredient_description_3": "Calms sun-stressed skin and provides cooling comfort while in the sun.",
+            "ingredient_tag_3": "✓ Calms & Soothes",
+            "ingredient_title_4": "Vitamin E Antioxidant",
+            "ingredient_description_4": "Fights free radical damage and helps keep skin youthful even during sun exposure.",
+            "ingredient_tag_4": "✓ Prevents Oxidative Damage",
+            "ingredient_title_5": "Non-Nano Zinc Oxide",
+            "ingredient_description_5": "Physical sun protection that shields skin from UVA and UVB rays without absorption into bloodstream.",
+            "ingredient_tag_5": "✓ Broad Spectrum Protection",
+            "ingredient_title_6": "Coconut Oil Moisture",
+            "ingredient_description_6": "Hydrates skin while providing natural sun protection properties.",
+            "ingredient_tag_6": "✓ Hydrates & Protects",
+            "ingredient_title_7": "Aloe Vera Soothing",
+            "ingredient_description_7": "Calms sun-stressed skin and provides cooling comfort while in the sun.",
+            "ingredient_tag_7": "✓ Calms & Soothes",
+            "ingredient_title_8": "Vitamin E Antioxidant",
+            "ingredient_description_8": "Fights free radical damage and helps keep skin youthful even during sun exposure.",
+            "ingredient_tag_8": "✓ Prevents Oxidative Damage"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div
+  class="maison_commerce_product_benefits"
+  style="background-color: {{ section.settings.section_bg_color }};"
+  id="ProductBenefitTabs-{{ section.id }}"
+>
+  <div class="maison_commerce_container">
+    <div class="maison_commerce_header">
+      {% if section.settings.title != blank %}
+        <h2 class="maison_commerce_title" style="color: {{ section.settings.heading_color }};">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+
+      {% if section.settings.subtitle != blank %}
+        <p class="maison_commerce_subtitle" style="color: {{ section.settings.text_color }};">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="maison_commerce_product_nav_container">
+        <div
+          class="maison_commerce_product_nav_wrapper"
+          style="scrollbar-width: none; overflow-x: auto; border-radius: 999px;"
+        >
+          <div class="maison_commerce_product_nav">
+            {% for block in section.blocks %}
+              {% if block.type == 'product_tab' %}
+                <button
+                  class="maison_commerce_nav_item {% if forloop.first %}maison_commerce_active{% endif %}"
+                  data-tab="{{ block.id }}"
+                  data-active-bg="{{ section.settings.nav_active_bg }}"
+                  style="color: {{ section.settings.heading_color }};"
+                  {{ block.shopify_attributes }}
+                >
+                  {{ block.settings.tab_name }}
+                </button>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="maison_commerce_content_container">
+        {% for block in section.blocks %}
+          {% if block.type == 'product_tab' %}
+            <div
+              class="maison_commerce_content {% if forloop.first %}maison_commerce_content_active{% endif %}"
+              data-content="{{ block.id }}"
+              {{ block.shopify_attributes }}
+            >
+              <div class="maison_commerce_product_image">
+                {% if block.settings.product_image != blank %}
+                  {{
+                    block.settings.product_image
+                    | image_url: width: 600
+                    | image_tag: loading: 'lazy', alt: block.settings.tab_name
+                  }}
+                {% else %}
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+              </div>
+
+              <div
+                class="maison_commerce_ingredients_grid"
+                style="grid-template-columns: repeat({{ block.settings.grid_columns }}, 1fr);"
+              >
+                {% for i in (1..8) %}
+                  {% assign ingredient_image = 'ingredient_image_' | append: i %}
+                  {% assign ingredient_title = 'ingredient_title_' | append: i %}
+                  {% assign ingredient_description = 'ingredient_description_' | append: i %}
+                  {% assign ingredient_tag = 'ingredient_tag_' | append: i %}
+
+                  {% if block.settings[ingredient_title] != blank %}
+                    <div class="maison_commerce_ingredient_item">
+                      <div class="maison_commerce_ingredient_image">
+                        {% if block.settings[ingredient_image] != blank %}
+                          {{
+                            block.settings[ingredient_image]
+                            | image_url: width: 70
+                            | image_tag: loading: 'lazy', alt: block.settings[ingredient_title]
+                          }}
+                        {% else %}
+                          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                        {% endif %}
+                      </div>
+                      <div class="maison_commerce_ingredient_content">
+                        <h3
+                          class="maison_commerce_ingredient_title"
+                          style="color: {{ section.settings.heading_color }};"
+                        >
+                          {{ block.settings[ingredient_title] }}
+                        </h3>
+                        <p
+                          class="maison_commerce_ingredient_description"
+                          style="color: {{ section.settings.text_color }};"
+                        >
+                          {{ block.settings[ingredient_description] }}
+                        </p>
+                        {% if block.settings[ingredient_tag] != blank and section.settings.hide_benefit_tags != true %}
+                          <span
+                            class="maison_commerce_benefit_tag"
+                            style="background-color: {{ section.settings.tag_bg_color }}; color: {{ section.settings.tag_text_color }}; border-color: {{ section.settings.heading_color }};"
+                          >
+                            {{ block.settings[ingredient_tag] }}
+                          </span>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  @font-face {
+    font-family: "Gt America Trial";
+    src: url('https://cdn.shopify.com/s/files/1/0638/8383/7620/files/GT-America-Standard-Regular-Trial.woff2?v=1745508413') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gt America Trial";
+    src: url('https://cdn.shopify.com/s/files/1/0638/8383/7620/files/GT-America-Standard-Regular-Italic-Trial.woff2?v=1745508412') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gt America Trial";
+    src: url('https://cdn.shopify.com/s/files/1/0638/8383/7620/files/GT-America-Standard-Medium-Trial.woff2?v=1745508412') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gt America Trial";
+    src: url('https://cdn.shopify.com/s/files/1/0638/8383/7620/files/GT-America-Standard-Bold-Trial.woff2?v=1745508413') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: Organetto Variable --Trial;
+    src: url('{{ "Fontspring-Organetto.otf" | asset_url }}');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .maison_commerce_product_benefits {
+    padding: 60px 20px;
+    width: 100%;
+    font-family: {{ settings.type_body_font_family }};
+  }
+
+  .maison_commerce_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    {% comment %} padding: 0 20px; {% endcomment %}
+  }
+
+  .maison_commerce_header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .maison_commerce_title {
+    font-family: Organetto-Variable;
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .maison_commerce_subtitle {
+    font-family: "GT America Trial";
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .maison_commerce_product_nav_container {
+    margin: 0 auto 40px;
+    max-width: 800px;
+    width: fit-content;
+    background: #FFFFFF;
+    border: 1px solid #000;
+    border-radius: 40px;
+    padding: 5px;
+    overflow: hidden;
+  }
+
+  .maison_commerce_product_nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  .maison_commerce_nav_item {
+    background: transparent;
+    border: none;
+    padding: 8px 16px;
+    font-family: "GT America Trial";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    color: #2C2609;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 40px;
+    white-space: nowrap;
+  }
+
+  .maison_commerce_nav_item.maison_commerce_active {
+    border: 1px solid #000;
+    font-weight: 600;
+  }
+
+  .maison_commerce_content {
+    display: none;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .maison_commerce_content.maison_commerce_content_active {
+    display: flex;
+  }
+
+  .maison_commerce_product_image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+  }
+
+  .maison_commerce_product_image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .maison_commerce_ingredients_grid {
+    flex: 1;
+    min-width: 300px;
+    display: grid;
+    grid-gap: 10px;
+  }
+
+  .maison_commerce_ingredient_item {
+    display: flex;
+    gap: 15px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    align-items: center;
+    padding: 16px;
+  }
+
+  .maison_commerce_ingredient_image {
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+    background: #EFEFEF;
+  }
+
+  .maison_commerce_ingredient_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .maison_commerce_ingredient_content {
+    flex-grow: 1;
+  }
+
+  .maison_commerce_ingredient_title {
+    font-family: "GT America Trial" !important;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%;
+    color: #1D211E;
+    margin: 0 0 8px;
+    text-transform: none;
+  }
+
+  .maison_commerce_ingredient_description {
+    font-size: 14px;
+    margin: 0 0 10px;
+    line-height: 1.4;
+  }
+
+  .maison_commerce_benefit_tag {
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 991px) {
+    .maison_commerce_product_nav_container {
+      max-width: 100%;
+    }
+
+    .maison_commerce_content {
+      flex-direction: column;
+    }
+
+    .maison_commerce_product_image {
+      max-width: 100%;
+      order: 2;
+    }
+
+    .maison_commerce_ingredients_grid {
+      order: 1;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .maison_commerce_product_benefits {
+      padding: 20px 16px 40px;
+    }
+
+    .maison_commerce_ingredients_grid {
+      grid-template-columns: 1fr !important;
+      gap: 0px;
+    }
+
+    .maison_commerce_title {
+      font-family: Organetto-Variable;
+      font-size: 36px;
+      margin-bottom: 24px;
+    }
+
+    .maison_commerce_subtitle {
+      font-family: "GT America Trial";
+      font-size: 14px;
+      padding: 0 20px;
+    }
+
+    .maison_commerce_product_nav_container {
+      {% comment %} width: 100%; {% endcomment %}
+      margin-bottom: 30px;
+      {% comment %} overflow-x: auto; {% endcomment %}
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      padding: 0px;
+    }
+
+    .maison_commerce_product_nav_container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .maison_commerce_product_nav {
+      width: max-content;
+      justify-content: flex-start;
+      padding: 0px;
+    }
+
+    .maison_commerce_nav_item {
+      padding: 10px 15px;
+      font-size: 14px;
+      margin: 2px;
+      flex-shrink: 0;
+    }
+
+    .maison_commerce_ingredient_item {
+      margin-bottom: 16px;
+      padding: 10px;
+    }
+
+    .maison_commerce_ingredient_image {
+      width: 72px;
+      height: 72px;
+    }
+
+    .maison_commerce_ingredient_title {
+      font-size: 14px;
+    }
+
+    .maison_commerce_ingredient_description {
+      font-size: 14px;
+    }
+
+    .maison_commerce_benefit_tag {
+      font-size: 12px;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const sectionId = 'ProductBenefitTabs-{{ section.id }}';
+    const section = document.getElementById(sectionId);
+
+    if (!section) return;
+
+    const navItems = section.querySelectorAll('.maison_commerce_nav_item');
+    const navContainer = section.querySelector('.maison_commerce_product_nav_container');
+    const contentItems = section.querySelectorAll('.maison_commerce_content');
+
+    navItems.forEach((item) => {
+      item.addEventListener('click', function () {
+        // Remove active class from all nav items
+        navItems.forEach((navItem) => {
+          navItem.classList.remove('maison_commerce_active');
+          navItem.style.backgroundColor = 'transparent';
+        });
+
+        // Add active class to clicked item
+        this.classList.add('maison_commerce_active');
+        this.style.backgroundColor = this.getAttribute('data-active-bg');
+
+        // Show the corresponding content tab
+        const tabContent = this.getAttribute('data-tab');
+
+        // Hide all content sections
+        contentItems.forEach((content) => {
+          content.classList.remove('maison_commerce_content_active');
+        });
+
+        // Show the selected content section
+        section
+          .querySelector(`.maison_commerce_content[data-content="${tabContent}"]`)
+          .classList.add('maison_commerce_content_active');
+
+        // Scroll the container to show the active button
+        if (window.innerWidth <= 767) {
+          const buttonRect = this.getBoundingClientRect();
+          const containerRect = navContainer.getBoundingClientRect();
+
+          // Calculate the scroll amount to center the button in the container
+          const scrollLeft = this.offsetLeft - containerRect.width / 2 + buttonRect.width / 2;
+
+          // Smooth scroll to the position
+          navContainer.scrollTo({
+            left: scrollLeft,
+            behavior: 'smooth',
+          });
+        }
+      });
+    });
+
+    // Set initial active tab background color
+    const activeTab = section.querySelector('.maison_commerce_nav_item.maison_commerce_active');
+    if (activeTab) {
+      activeTab.style.backgroundColor = activeTab.getAttribute('data-active-bg');
+    }
+  })();
+</script>

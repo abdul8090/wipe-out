@@ -72,7 +72,7 @@
       "name": "WipeOut Hero Carousel",
       "settings": {
         "bg_color": "#ffffff",
-        "slide_height": 540,
+        "slide_height": 520,
         "autoplay": false,
         "autoplay_speed": 5
       }
@@ -259,6 +259,7 @@
         "feature_thj8jy",
         "feature_YiUNr6"
       ],
+      "disabled": true,
       "name": "WipeOut Featured Bundle",
       "settings": {
         "product": "wipeout-termite-killer-spray-copy",
@@ -296,7 +297,7 @@
         "step_A8zKMA": {
           "type": "step",
           "settings": {
-            "step_number": "STEP 1",
+            "step_number": "STEP 2",
             "title": "Lasting Barrier",
             "content": "<p>Leaves a repellent layer on surfaces that keeps working for weeks after spraying.</p>",
             "show_image": false
@@ -305,7 +306,7 @@
         "step_yTrRzc": {
           "type": "step",
           "settings": {
-            "step_number": "STEP 1",
+            "step_number": "STEP 3",
             "title": "Odourless",
             "content": "<p>No bad smell, no harsh fumes — comfortable to use anywhere in the home.</p>",
             "show_image": false
@@ -325,14 +326,28 @@
       ],
       "name": "How It Works Steps",
       "settings": {
-        "section_bg_color": "#ffffff",
         "subtitle": "HOW IT WORKS",
-        "subtitle_color": "#ff0000",
         "heading": "Kills on contact. Repels for weeks.",
         "description": "<p>Instant knockdown, then a long-lasting protective barrier that keeps insects from coming back — with zero smell.<br/><br/></p>",
+        "button_text": "",
         "button_link": "",
         "button_scroll": "",
-        "button_text": ""
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "padding_horizontal": 80,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28,
+        "bg_color": "#FDF6F5",
+        "subtitle_color": "#ff0000",
+        "heading_color": "#1d211e",
+        "text_color": "#1d211e",
+        "step_bg": "#000000",
+        "step_text": "#ffffff",
+        "card_accent": "#000000",
+        "card_border": "#2c2609",
+        "btn_bg": "#000000",
+        "btn_text": "#1d211e",
+        "btn_border": "#2c2609"
       }
     },
     "maison_comparison_DHWrMK": {
@@ -362,10 +377,18 @@
             "others_have": false
           }
         },
-        "comparison_item_wCH6TN": {
+        "comparison_item_KXmfJG": {
           "type": "comparison_item",
           "settings": {
-            "feature": "Protects for weeks",
+            "feature": "Feature",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        },
+        "comparison_item_7FCCwb": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Feature",
             "your_brand_has": true,
             "others_have": false
           }
@@ -375,7 +398,8 @@
         "comparison_item_JEP8YQ",
         "comparison_item_JwpMGR",
         "comparison_item_nKDWbR",
-        "comparison_item_wCH6TN"
+        "comparison_item_KXmfJG",
+        "comparison_item_7FCCwb"
       ],
       "custom_css": [
         "div:empty {display: block;}",
@@ -389,12 +413,64 @@
         "padding_top": 60,
         "padding_bottom": 60,
         "padding_horizontal": 0,
-        "bg_color": "#fdf6f5",
-        "accent_color": "#c57272",
-        "border_color": "#2c2609",
+        "bg_color": "#ffffff",
+        "accent_color": "#C57272",
+        "border_color": "#000000",
         "text_color": "#1d211e",
-        "cell_bg": "#ffffff",
+        "cell_bg": "#FDF6F5",
         "icon_color": "#2c2609"
+      }
+    },
+    "tab_care_q78dtC": {
+      "type": "tab-care",
+      "blocks": {
+        "product_tab_emGQF8": {
+          "type": "product_tab",
+          "settings": {
+            "tab_name": "",
+            "grid_columns": "1",
+            "product_image": "shopify://shop_images/killsandrepelscockroach.webp",
+            "ingredient_title_1": "Inspect",
+            "ingredient_description_1": "Find active areas, entry points and the dark corners where pests hide.",
+            "ingredient_tag_1": "",
+            "ingredient_title_2": "Spray",
+            "ingredient_description_2": "Apply directly to insects and along surfaces for instant knockdown.",
+            "ingredient_tag_2": "",
+            "ingredient_title_3": "Gel & Tablets",
+            "ingredient_description_3": "Place gel in cracks and tablets in hidden spaces for round-the-clock defence.",
+            "ingredient_tag_3": "",
+            "ingredient_title_4": "Treat Drains",
+            "ingredient_description_4": "Pour drainage liquid down pipes to stop infestations at the source.",
+            "ingredient_tag_4": "",
+            "ingredient_title_5": "",
+            "ingredient_description_5": "",
+            "ingredient_tag_5": "✓ Soothes & Heals",
+            "ingredient_title_6": "",
+            "ingredient_description_6": "",
+            "ingredient_tag_6": "",
+            "ingredient_title_7": "",
+            "ingredient_description_7": "",
+            "ingredient_tag_7": "",
+            "ingredient_title_8": "",
+            "ingredient_description_8": "",
+            "ingredient_tag_8": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_tab_emGQF8"
+      ],
+      "name": "Product Benefits Tabs",
+      "settings": {
+        "title": "Four steps to total control",
+        "subtitle": "",
+        "section_bg_color": "#FDF6F5",
+        "text_color": "#000000",
+        "heading_color": "#000000",
+        "tag_bg_color": "#FFFFFF",
+        "tag_text_color": "#000000",
+        "nav_active_bg": "#C57272",
+        "hide_benefit_tags": false
       }
     },
     "wipeout_how_to_use_ieQLx8": {
@@ -435,6 +511,7 @@
         "step_CimQG7",
         "step_CkNi6X"
       ],
+      "disabled": true,
       "name": "WipeOut How to Use",
       "settings": {
         "eyebrow": "Simple to use",
@@ -480,6 +557,7 @@
         "pill_nxaPDn",
         "pill_4M4nJT"
       ],
+      "disabled": true,
       "name": "WipeOut Safe Section",
       "settings": {
         "heading": "Safe for home, kids & pets",
@@ -622,6 +700,7 @@
     "wipeout_featured_bundle_bPtVJL",
     "maison_step_how_NL6jbe",
     "maison_comparison_DHWrMK",
+    "tab_care_q78dtC",
     "wipeout_how_to_use_ieQLx8",
     "wipeout_safe_zVjffT",
     "wipeout_reviews_eQPQdp",
