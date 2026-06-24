@@ -108,24 +108,6 @@
         "padding_bottom": 12
       }
     },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
-      }
-    },
     "wipeout_reviews_7qnMGt": {
       "type": "wipeout-reviews",
       "blocks": {
@@ -180,71 +162,28 @@
         "arrow_bg_color": "#ffffff"
       }
     },
-    "wipeout_faq_YA4ipN": {
-      "type": "wipeout-faq",
-      "blocks": {
-        "faq_item_jeFkkC": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Is WipeOut safe to use around children and pets?",
-            "answer": "Yes. WipeOut is a non-toxic, odourless formula specifically designed for indoor use. It is safe to use around children and pets once the treated surface has dried."
-          }
-        },
-        "faq_item_CEN7wr": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How long does WipeOut keep working after application?",
-            "answer": "WipeOut creates a long-lasting repellent barrier that keeps working for several weeks. For severe infestations, we recommend a second application after 7–10 days."
-          }
-        },
-        "faq_item_DxUU8f": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Does WipeOut have a smell?",
-            "answer": "No. WipeOut is completely odourless. There are no harsh chemical fumes, making it comfortable to use in bedrooms, kitchens, and living spaces."
-          }
-        },
-        "faq_item_yWDrnf": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Which WipeOut product should I buy?",
-            "answer": "Choose by pest type: Bed Bug Killer for mattresses and soft furnishings, Termite Killer for wood and timber, or the Cockroach Complete Kit for the most comprehensive 4-way protection."
-          }
-        },
-        "faq_item_Kcd89T": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How quickly does WipeOut work?",
-            "answer": "WipeOut knocks down insects on contact — you'll see results within minutes of application."
-          }
-        }
-      },
-      "block_order": [
-        "faq_item_jeFkkC",
-        "faq_item_CEN7wr",
-        "faq_item_DxUU8f",
-        "faq_item_yWDrnf",
-        "faq_item_Kcd89T"
-      ],
-      "name": "WipeOut FAQ",
+    "related-products": {
+      "type": "related-products",
       "settings": {
-        "heading": "Questions, answered",
-        "padding_top": 64,
-        "padding_bottom": 64,
-        "heading_size": 50,
-        "heading_size_mobile": 28,
-        "bg_color": "#ffffff",
-        "border_color": "#ebe9e6",
-        "text_color": "#181512",
-        "muted_color": "#6b6864",
-        "icon_color": "#9b1f1f"
+        "heading": "You may also like",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
       }
     }
   },
   "order": [
     "main",
-    "related-products",
     "wipeout_reviews_7qnMGt",
-    "wipeout_faq_YA4ipN"
+    "related-products"
   ]
 }
