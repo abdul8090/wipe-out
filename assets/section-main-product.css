@@ -223,6 +223,49 @@ product-info {
   box-shadow: none;
 }
 
+/* Trust badge strip */
+.product-buy-block_guarantee {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  border: 1px solid #2c2609;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.product-buy-block_guarantee-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1d211e;
+  line-height: 1.4;
+}
+
+.product-buy-block_guarantee-cell + .product-buy-block_guarantee-cell {
+  border-left: 1px solid #2c2609;
+}
+
+.product-buy-block_guarantee-cell .svg {
+  flex-shrink: 0;
+  color: #1d211e;
+}
+
+@media screen and (max-width: 749px) {
+  .product-buy-block_guarantee {
+    flex-direction: column;
+  }
+
+  .product-buy-block_guarantee-cell + .product-buy-block_guarantee-cell {
+    border-left: none;
+    border-top: 1px solid #2c2609;
+  }
+}
+
 .product-form__submit[aria-disabled='true'] + .shopify-payment-button .shopify-payment-button__button[disabled],
 .product-form__submit[disabled] + .shopify-payment-button .shopify-payment-button__button[disabled] {
   cursor: not-allowed;

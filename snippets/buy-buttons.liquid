@@ -99,6 +99,77 @@
         </div>
       {%- endform -%}
     </product-form>
+
+    {%- if block.settings.trust_guarantee_text != blank
+      or block.settings.trust_shipping_text != blank
+      or block.settings.trust_refund_text != blank -%}
+      <div class="product-buy-block_guarantee">
+        {%- if block.settings.trust_guarantee_text != blank -%}
+          <div class="product-buy-block_guarantee-cell">
+            <div class="svg w-embed">
+              <svg style="min-width:20px;min-height:20px;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#pbb-clip-cal)">
+                  <path d="M18.125 3.125H1.875C1.18464 3.125 0.625 3.68464 0.625 4.375V18.125C0.625 18.8153 1.18464 19.375 1.875 19.375H18.125C18.8153 19.375 19.375 18.8153 19.375 18.125V4.375C19.375 3.68464 18.8153 3.125 18.125 3.125Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M0.625 8.125H19.375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M5.625 5V0.625" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14.375 5V0.625" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4.6875 11.875C4.51491 11.875 4.375 11.7351 4.375 11.5625C4.375 11.3899 4.51491 11.25 4.6875 11.25" stroke="currentColor" stroke-width="1.25"/>
+                  <path d="M4.6875 11.875C4.86009 11.875 5 11.7351 5 11.5625C5 11.3899 4.86009 11.25 4.6875 11.25" stroke="currentColor" stroke-width="1.25"/>
+                  <path d="M10 11.875C9.82742 11.875 9.6875 11.7351 9.6875 11.5625C9.6875 11.3899 9.82742 11.25 10 11.25" stroke="currentColor" stroke-width="1.25"/>
+                  <path d="M10 11.875C10.1726 11.875 10.3125 11.7351 10.3125 11.5625C10.3125 11.3899 10.1726 11.25 10 11.25" stroke="currentColor" stroke-width="1.25"/>
+                  <path d="M15.3125 11.875C15.1399 11.875 15 11.7351 15 11.5625C15 11.3899 15.1399 11.25 15.3125 11.25" stroke="currentColor" stroke-width="1.25"/>
+                  <path d="M15.3125 11.875C15.4851 11.875 15.625 11.7351 15.625 11.5625C15.625 11.3899 15.4851 11.25 15.3125 11.25" stroke="currentColor" stroke-width="1.25"/>
+                </g>
+                <defs><clipPath id="pbb-clip-cal"><rect width="20" height="20" fill="white"/></clipPath></defs>
+              </svg>
+            </div>
+            <div>{{ block.settings.trust_guarantee_text }}</div>
+          </div>
+        {%- endif -%}
+
+        {%- if block.settings.trust_shipping_text != blank -%}
+          <div class="product-buy-block_guarantee-cell">
+            <div class="svg w-embed">
+              <svg style="min-width:20px;min-height:20px;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#pbb-clip-truck)">
+                  <path d="M3.125 15.8334C3.125 16.2754 3.30059 16.6993 3.61316 17.0119C3.92572 17.3244 4.34964 17.5 4.79167 17.5C5.23369 17.5 5.65762 17.3244 5.97017 17.0119C6.28274 16.6993 6.45833 16.2754 6.45833 15.8334C6.45833 15.3914 6.28274 14.9674 5.97017 14.6549C5.65762 14.3423 5.23369 14.1667 4.79167 14.1667C4.34964 14.1667 3.92572 14.3423 3.61316 14.6549C3.30059 14.9674 3.125 15.3914 3.125 15.8334Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.75 15.8334C13.75 16.2754 13.9256 16.6993 14.2382 17.0119C14.5508 17.3244 14.9747 17.5 15.4167 17.5C15.8587 17.5 16.2826 17.3244 16.5952 17.0119C16.9077 16.6993 17.0833 16.2754 17.0833 15.8334C17.0833 15.3914 16.9077 14.9674 16.5952 14.6549C16.2826 14.3423 15.8587 14.1667 15.4167 14.1667C14.9747 14.1667 14.5508 14.3423 14.2382 14.6549C13.9256 14.9674 13.75 15.3914 13.75 15.8334Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6.45898 15.8333H13.7507" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17.0845 15.8333H18.5428C18.7638 15.8333 18.9757 15.7455 19.1321 15.5892C19.2883 15.433 19.3761 15.221 19.3761 15V3.33333C19.3761 3.11232 19.2883 2.90036 19.1321 2.74408C18.9757 2.5878 18.7638 2.5 18.5428 2.5H3.12612C2.90511 2.5 2.69315 2.5878 2.53686 2.74408C2.38058 2.90036 2.29279 3.11232 2.29279 3.33333V9.86417L0.917789 11C0.826574 11.0782 0.753357 11.1752 0.703157 11.2844C0.652958 11.3936 0.626962 11.5123 0.626953 11.6325V15C0.626953 15.221 0.71475 15.433 0.871031 15.5892C1.02731 15.7455 1.23927 15.8333 1.46029 15.8333H3.12696" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4.79102 11.6667V6.66669H6.24935" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6.24935 9.16669H4.79102" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14.0111 6.66669H12.5527V11.6667H14.0111" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14.0111 9.16669H12.5527" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17.4993 6.66669H16.041V11.6667H17.4993" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17.4993 9.16669H16.041" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8.4375 11.6667V6.66669H9.47917C9.75542 6.66669 10.0204 6.77644 10.2157 6.97179C10.4111 7.16714 10.5208 7.43209 10.5208 7.70835C10.5208 7.98462 10.4111 8.24957 10.2157 8.44494C10.0204 8.64027 9.75542 8.75002 9.47917 8.75002H8.4375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8.4375 8.75H8.85417C9.29617 8.75 9.72008 8.92558 10.0327 9.23817C10.3452 9.55075 10.5208 9.97467 10.5208 10.4167V11.6667" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs><clipPath id="pbb-clip-truck"><rect width="20" height="20" fill="white"/></clipPath></defs>
+              </svg>
+            </div>
+            <div>{{ block.settings.trust_shipping_text }}</div>
+          </div>
+        {%- endif -%}
+
+        {%- if block.settings.trust_refund_text != blank -%}
+          <div class="product-buy-block_guarantee-cell">
+            <div class="svg w-embed">
+              <svg style="min-width:20px;min-height:20px;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#pbb-clip-shield)">
+                  <path d="M1.87503 3.2683V9.61333C1.87504 11.6188 2.48279 13.5772 3.61816 15.2305C4.75353 16.8837 6.36321 18.1541 8.23503 18.8742L9.10253 19.2075C9.68019 19.4297 10.3199 19.4297 10.8975 19.2075L11.765 18.8742C13.6369 18.1541 15.2465 16.8837 16.3819 15.2305C17.5173 13.5772 18.125 11.6188 18.125 9.61333V3.2683C18.1266 3.02953 18.0592 2.79539 17.9309 2.59403C17.8025 2.39268 17.6188 2.23268 17.4017 2.1333C15.0682 1.11479 12.5459 0.600513 10 0.62413C7.45408 0.600513 4.93183 1.11479 2.59836 2.1333C2.38126 2.23268 2.19749 2.39268 2.06917 2.59403C1.94084 2.79539 1.87343 3.02953 1.87503 3.2683Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14.334 9.375C14.2143 10.2048 13.8585 10.9828 13.3092 11.6163C12.7599 12.2497 12.0401 12.712 11.2355 12.9481C10.431 13.1841 9.57554 13.184 8.77104 12.9477C7.96655 12.7114 7.24691 12.2489 6.69777 11.6153C6.14863 10.9817 5.79314 10.2036 5.6736 9.37375C5.55406 8.54383 5.67552 7.69704 6.02352 6.9342C6.37152 6.17136 6.9314 5.52458 7.6365 5.07087C8.34162 4.61716 9.1622 4.37562 10.0007 4.375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14.3749 5.46875L10.3866 9.45707C10.2839 9.55949 10.1449 9.61699 9.99995 9.61699C9.85495 9.61699 9.71595 9.55949 9.61328 9.45707L8.36328 8.20292" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs><clipPath id="pbb-clip-shield"><rect width="20" height="20" fill="white"/></clipPath></defs>
+              </svg>
+            </div>
+            <div>{{ block.settings.trust_refund_text }}</div>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
   {%- else -%}
     <div class="product-form">
       <div class="product-form__buttons form">
