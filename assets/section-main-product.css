@@ -218,6 +218,10 @@ product-info {
   box-shadow: 0px 2px 0px 0px #2c2609;
 }
 
+.product-form__submit.button:after {
+  box-shadow: none;
+}
+
 .product-form__submit[aria-disabled='true'] + .shopify-payment-button .shopify-payment-button__button[disabled],
 .product-form__submit[disabled] + .shopify-payment-button .shopify-payment-button__button[disabled] {
   cursor: not-allowed;
