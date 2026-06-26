@@ -62,7 +62,7 @@
           "settings": {
             "heading": "KEY FEATURES",
             "icon": "none",
-            "content": "",
+            "content": "{{ product.metafields.custom.key_features | metafield_tag }}",
             "page": ""
           }
         },
@@ -71,7 +71,7 @@
           "settings": {
             "heading": "PRECAUTIONS",
             "icon": "none",
-            "content": "",
+            "content": "{{ product.metafields.custom.precautions | metafield_tag }}",
             "page": ""
           }
         },
@@ -80,7 +80,7 @@
           "settings": {
             "heading": "DIRECTION OF USE",
             "icon": "none",
-            "content": "",
+            "content": "{{ product.metafields.custom.direction_of_use | metafield_tag }}",
             "page": ""
           }
         },
