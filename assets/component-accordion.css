@@ -119,8 +119,7 @@
 .accordion__content img {
   max-width: 100%;
 }
-.product__info-container .accordion { border-top: 0; }
-
-.product__info-container .accordion + .accordion {
-  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
+.product__info-container .accordion:first-child { border-top: 0; }
+.product__info-container .accordion:not(.accordion ~ .accordion) {
+  border-top: none;
 }
