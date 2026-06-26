@@ -119,6 +119,6 @@
 .accordion__content img {
   max-width: 100%;
 }
-.product__info-container .accordion:first-child{
+.product__info-container .accordion::first-child{
   border-top: 0px;
 }
