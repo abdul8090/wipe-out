@@ -45,7 +45,10 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false
+            "show_gift_card_recipient": false,
+            "trust_guarantee_text": "30-Day Money-Back Guarantee",
+            "trust_shipping_text": "Free Express Delivery",
+            "trust_refund_text": "Pest-Free Or Your Money Back"
           }
         },
         "collapsible_tab_AwERNE": {
@@ -54,6 +57,7 @@
             "heading": "Description",
             "icon": "none",
             "content": "{{ product.description }}",
+            "content_urdu": "{{ product.metafields.custom.description_urdu | metafield_tag }}",
             "page": ""
           }
         },
@@ -63,6 +67,7 @@
             "heading": "KEY FEATURES",
             "icon": "none",
             "content": "{{ product.metafields.custom.key_features | metafield_tag }}",
+            "content_urdu": "{{ product.metafields.custom.key_features_urdu | metafield_tag }}",
             "page": ""
           }
         },
@@ -72,6 +77,7 @@
             "heading": "PRECAUTIONS",
             "icon": "none",
             "content": "{{ product.metafields.custom.precautions | metafield_tag }}",
+            "content_urdu": "{{ product.metafields.custom.precautions_urdu | metafield_tag }}",
             "page": ""
           }
         },
@@ -81,6 +87,7 @@
             "heading": "DIRECTION OF USE",
             "icon": "none",
             "content": "{{ product.metafields.custom.direction_of_use | metafield_tag }}",
+            "content_urdu": "{{ product.metafields.custom.direction_of_use_urdu | metafield_tag }}",
             "page": ""
           }
         },
@@ -182,6 +189,8 @@
         "padding_bottom": 60,
         "padding_horizontal": 0,
         "padding_horizontal_mobile": 0,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28,
         "heading_size": 40,
         "feature_size": 18,
         "col_heading_size": 18,
