@@ -135,7 +135,13 @@
 
         --font-heading-family: 'Archivo', sans-serif;
         --font-heading-style: normal;
-        --font-heading-weight: 900;
+        --font-heading-weight: 700;
+
+        --font-collapsible-family: var(--font-heading-family);
+        --font-collapsible-weight: 700;
+        --font-collapsible-style: normal;
+        --font-collapsible-spacing: normal;
+        --font-collapsible-size: inherit;
 
         --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
