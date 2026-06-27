@@ -5,6 +5,7 @@
   data-product-id="{{ product.id }}"
   data-update-url="true"
   data-url="{{ product.url }}"
+  data-lang-section="en"
   {% if section.settings.image_zoom == 'hover' %}
     data-zoom-on-hover
   {% endif %}
@@ -15,6 +16,7 @@
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 
   {% unless product.has_only_default_variant %}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
@@ -36,6 +38,41 @@
         padding-top: {{ section.settings.padding_top }}px;
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
+    }
+
+    #MainProduct-{{ section.id }} .product-lang-toggle {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    #MainProduct-{{ section.id }} .product-lang-btn {
+      padding: 5px 16px;
+      border: 1.5px solid currentColor;
+      background: transparent;
+      cursor: pointer;
+      font-size: 14px;
+      font-family: var(--font-body-family);
+      border-radius: 4px;
+      opacity: 0.45;
+      transition: opacity 0.15s;
+    }
+
+    #MainProduct-{{ section.id }} .product-lang-btn[aria-pressed="true"] {
+      opacity: 1;
+      font-weight: 700;
+    }
+
+    #MainProduct-{{ section.id }}[data-lang-section="en"] [data-lang="ur"],
+    #MainProduct-{{ section.id }}[data-lang-section="ur"] [data-lang="en"] {
+      display: none;
+    }
+
+    #MainProduct-{{ section.id }} [data-lang="ur"] {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      direction: rtl;
+      text-align: right;
+      line-height: 2.4;
     }
   {%- endstyle -%}
 
@@ -85,6 +122,7 @@
             class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
           >
             {%- assign product_form_id = 'product-form-' | append: section.id -%}
+            {%- assign lang_toggle_shown = false -%}
 
             {%- for block in section.blocks -%}
               {%- case block.type -%}
@@ -211,6 +249,13 @@
                 {%- when 'custom_liquid' -%}
                   {{ block.settings.custom_liquid }}
                 {%- when 'collapsible_tab' -%}
+                  {%- unless lang_toggle_shown -%}
+                    <div class="product-lang-toggle" role="group" aria-label="Language / زبان">
+                      <button class="product-lang-btn" data-lang-btn="en" aria-pressed="true">English</button>
+                      <button class="product-lang-btn" data-lang-btn="ur" aria-pressed="false">اردو</button>
+                    </div>
+                    {%- assign lang_toggle_shown = true -%}
+                  {%- endunless -%}
                   <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                     <details id="Details-{{ block.id }}-{{ section.id }}">
                       <summary>
@@ -223,8 +268,15 @@
                         {{- 'icon-caret.svg' | inline_asset_content -}}
                       </summary>
                       <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                        {{ block.settings.content }}
-                        {{ block.settings.page.content }}
+                        <div data-lang="en">
+                          {{ block.settings.content }}
+                          {{ block.settings.page.content }}
+                        </div>
+                        {%- if block.settings.content_urdu != blank -%}
+                          <div data-lang="ur" dir="rtl" lang="ur">
+                            {{ block.settings.content_urdu }}
+                          </div>
+                        {%- endif -%}
                       </div>
                     </details>
                   </div>
@@ -751,6 +803,22 @@
       </script>
     </div>
   </product-component>
+  <script>
+    (function () {
+      var el = document.getElementById('MainProduct-{{ section.id }}');
+      if (!el) return;
+      var btns = el.querySelectorAll('[data-lang-btn]');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = this.getAttribute('data-lang-btn');
+          el.setAttribute('data-lang-section', lang);
+          btns.forEach(function (b) {
+            b.setAttribute('aria-pressed', b.getAttribute('data-lang-btn') === lang ? 'true' : 'false');
+          });
+        });
+      });
+    })();
+  </script>
 </product-info>
 
 {% schema %}
@@ -1236,6 +1304,11 @@
           "type": "richtext",
           "id": "content",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.content.label"
+        },
+        {
+          "type": "richtext",
+          "id": "content_urdu",
+          "label": "Content (Urdu / اردو)"
         },
         {
           "type": "page",
