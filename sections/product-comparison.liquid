@@ -82,6 +82,26 @@
       "default": 20
     },
     {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 28
+    },
+    {
       "type": "header",
       "content": "Font sizes — desktop"
     },
@@ -2116,7 +2136,28 @@
 
 }
 
-</style>    
+/* ── Final-wins overrides (placed after global Maison CSS so same-specificity rules here win) ── */
+
+@media screen and (max-width: 767px) {
+  #shopify-section-{{ section.id }} .padding-section {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  #shopify-section-{{ section.id }} .heading-h2 {
+    font-size: {{ section.settings.heading_size_mobile }}px;
+  }
+
+  #shopify-section-{{ section.id }} .table-cell-left {
+    font-size: {{ section.settings.feature_size_mobile }}px;
+  }
+
+  #shopify-section-{{ section.id }} .table-heading {
+    font-size: {{ section.settings.col_heading_size_mobile }}px;
+  }
+}
+
+</style>
 
 <div class="padding-global">
   <div class="container-large container-large_relative">
