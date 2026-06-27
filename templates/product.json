@@ -54,7 +54,7 @@
         "collapsible_tab_AwERNE": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Description",
+            "heading": "DESCRIPTION",
             "icon": "none",
             "content": "{{ product.description }}",
             "content_urdu": "{{ product.metafields.custom.description_urdu | metafield_tag }}",
