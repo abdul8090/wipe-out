@@ -124,7 +124,10 @@
                   <summary id="Summary-{{ block.id }}-{{ section.id }}">
                     {% render 'icon-accordion', icon: block.settings.icon %}
                     <h3 class="accordion__title inline-richtext h4">
-                      {{ block.settings.heading | default: block.settings.page.title | escape }}
+                      <span data-lang="en">{{ block.settings.heading | default: block.settings.page.title | escape }}</span>
+                      {%- if block.settings.heading_urdu != blank -%}
+                        <span data-lang="ur" dir="rtl" lang="ur">{{ block.settings.heading_urdu | escape }}</span>
+                      {%- endif -%}
                     </h3>
                     {{- 'icon-caret.svg' | inline_asset_content -}}
                   </summary>
@@ -362,6 +365,11 @@
           "id": "heading",
           "default": "t:sections.collapsible_content.blocks.collapsible_row.settings.heading.default",
           "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.heading.label"
+        },
+        {
+          "type": "text",
+          "id": "heading_urdu",
+          "label": "Heading (Urdu / اردو)"
         },
         {
           "type": "select",
