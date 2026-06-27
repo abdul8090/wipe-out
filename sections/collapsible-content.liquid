@@ -1,5 +1,6 @@
 {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
 {{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -13,9 +14,45 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  #shopify-section-{{ section.id }} .lang-toggle {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    justify-content: {{ section.settings.heading_alignment }};
+  }
+
+  #shopify-section-{{ section.id }} .lang-toggle__btn {
+    padding: 6px 18px;
+    border: 1.5px solid currentColor;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: var(--font-body-family);
+    border-radius: 4px;
+    opacity: 0.45;
+    transition: opacity 0.15s;
+  }
+
+  #shopify-section-{{ section.id }} .lang-toggle__btn[aria-pressed="true"] {
+    opacity: 1;
+    font-weight: 700;
+  }
+
+  #shopify-section-{{ section.id }} [data-lang-section="en"] [data-lang="ur"],
+  #shopify-section-{{ section.id }} [data-lang-section="ur"] [data-lang="en"] {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} [data-lang="ur"] {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    direction: rtl;
+    text-align: right;
+    line-height: 2.4;
+  }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
+<div class="color-{{ section.settings.color_scheme }} gradient" data-lang-section="en">
   <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
     <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
       <div class="{% if section.settings.image == blank %}collapsible-content-wrapper-narrow{% else %}page-width{% endif %}">
@@ -35,6 +72,10 @@
           {%- else -%}
             <h2 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h2>
           {% endif %}
+        </div>
+        <div class="lang-toggle" role="group" aria-label="Language / زبان">
+          <button class="lang-toggle__btn" data-lang-btn="en" aria-pressed="true">English</button>
+          <button class="lang-toggle__btn" data-lang-btn="ur" aria-pressed="false">اردو</button>
         </div>
         <div class="grid grid--1-col grid--2-col-tablet collapsible-content__grid{% if section.settings.desktop_layout == 'image_second' %} collapsible-content__grid--reverse{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {%- if section.settings.image != blank -%}
@@ -93,8 +134,15 @@
                     role="region"
                     aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
                   >
-                    {{ block.settings.row_content }}
-                    {{ block.settings.page.content }}
+                    <div data-lang="en">
+                      {{ block.settings.row_content }}
+                      {{ block.settings.page.content }}
+                    </div>
+                    {%- if block.settings.row_content_urdu != blank -%}
+                      <div data-lang="ur" dir="rtl" lang="ur">
+                        {{ block.settings.row_content_urdu }}
+                      </div>
+                    {%- endif -%}
                   </div>
                 </details>
               </div>
@@ -105,6 +153,24 @@
     </div>
   </div>
 </div>
+
+<script>
+  (function () {
+    var section = document.getElementById('shopify-section-{{ section.id }}');
+    if (!section) return;
+    var wrapper = section.querySelector('[data-lang-section]');
+    var btns = section.querySelectorAll('[data-lang-btn]');
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var lang = this.getAttribute('data-lang-btn');
+        wrapper.setAttribute('data-lang-section', lang);
+        btns.forEach(function (b) {
+          b.setAttribute('aria-pressed', b.getAttribute('data-lang-btn') === lang ? 'true' : 'false');
+        });
+      });
+    });
+  })();
+</script>
 
 {% schema %}
 {
@@ -485,6 +551,11 @@
           "type": "richtext",
           "id": "row_content",
           "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.row_content.label"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content_urdu",
+          "label": "Content (Urdu / اردو)"
         },
         {
           "type": "page",
