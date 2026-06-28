@@ -193,7 +193,7 @@
         "padding_bottom": 60,
         "padding_horizontal": 0,
         "padding_horizontal_mobile": 14,
-        "padding_top_mobile": 28,
+        "padding_top_mobile": 60,
         "padding_bottom_mobile": 28,
         "heading_size": 40,
         "feature_size": 18,
@@ -292,8 +292,8 @@
       "settings": {
         "heading": "Loved by 12,000+ homes",
         "autoplay_speed": 4,
-        "padding_top": 64,
-        "padding_bottom": 64,
+        "padding_top": 60,
+        "padding_bottom": 60,
         "heading_size": 40,
         "heading_size_mobile": 28,
         "bg_color": "#ffffff",
@@ -324,8 +324,8 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": true,
-        "padding_top": 20,
-        "padding_bottom": 44
+        "padding_top": 0,
+        "padding_bottom": 60
       }
     }
   },
