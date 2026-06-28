@@ -1,0 +1,297 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "custom_liquid_U6xxh4": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<p class=\"shortDescription\">{{ product.description | strip_html | truncatewords: 25 }}</p>"
+          }
+        },
+        "rating_RamqRa": {
+          "type": "rating",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "trust_guarantee_text": "30-Day Money-Back Guarantee",
+            "trust_shipping_text": "Free Express Delivery",
+            "trust_refund_text": "Pest-Free Or Your Money Back"
+          }
+        },
+        "collapsible_tab_AwERNE": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "DESCRIPTION",
+            "heading_urdu": "تفصیل",
+            "icon": "none",
+            "content": "{{ product.description }}",
+            "content_urdu": "{{ product.metafields.custom.description_urdu | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_i3cw6h": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "KEY FEATURES",
+            "heading_urdu": "خصوصیات",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.key_features | metafield_tag }}",
+            "content_urdu": "{{ product.metafields.custom.key_features_urdu | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_QV6Pn6": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "PRECAUTIONS",
+            "heading_urdu": "احتیاطی تدابیر",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.precautions | metafield_tag }}",
+            "content_urdu": "{{ product.metafields.custom.precautions_urdu | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_6rkDW7": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "DIRECTION OF USE",
+            "heading_urdu": "استعمال کا طریقہ",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.direction_of_use | metafield_tag }}",
+            "content_urdu": "{{ product.metafields.custom.direction_of_use_urdu | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "custom_liquid_U6xxh4",
+        "rating_RamqRa",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "collapsible_tab_AwERNE",
+        "collapsible_tab_i3cw6h",
+        "collapsible_tab_QV6Pn6",
+        "collapsible_tab_6rkDW7",
+        "description"
+      ],
+      "custom_css": [
+        ".product__title h1 {font-weight: 700; text-transform: uppercase; font-size: 30px; line-height: 120%; margin: 0 0 0px;}",
+        ".product__tax {display: none;}",
+        ".product-form__buttons {max-width: 100%;}",
+        ".shortDescription {font-weight: 500; font-size: 14px; line-height: 24px; margin: 0 0 0px; text-align: left;}",
+        ".accordion__title.inline-richtext {font-size: 16px; font-weight: 700;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product_comparison_FatBLr": {
+      "type": "product-comparison",
+      "blocks": {
+        "comparison_item_zAgm8T": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Ready to use — zero mixing",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        },
+        "comparison_item_4rJfFp": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Completely odourless",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        },
+        "comparison_item_wT4Yqe": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Safe around kids & pets",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        },
+        "comparison_item_7niHzJ": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Long-lasting protection",
+            "your_brand_has": true,
+            "others_have": false
+          }
+        }
+      },
+      "block_order": [
+        "comparison_item_zAgm8T",
+        "comparison_item_4rJfFp",
+        "comparison_item_wT4Yqe",
+        "comparison_item_7niHzJ"
+      ],
+      "custom_css": [
+        "div:empty {display: block;}",
+        " {border-top: 1px solid #2c2609;}"
+      ],
+      "name": "Comparison Table",
+      "settings": {
+        "heading": "Why choose WipeOut",
+        "brand_heading": "Wipe out",
+        "others_heading": "OTHERS",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28,
+        "heading_size": 40,
+        "feature_size": 18,
+        "col_heading_size": 18,
+        "heading_size_tablet": 32,
+        "feature_size_tablet": 14,
+        "col_heading_size_tablet": 14,
+        "heading_size_mobile": 28,
+        "feature_size_mobile": 13,
+        "col_heading_size_mobile": 14,
+        "bg_color": "#ffffff",
+        "accent_color": "#c57272",
+        "border_color": "#000000",
+        "text_color": "#1d211e",
+        "cell_bg": "#fdf6f5",
+        "icon_color": "#2c2609"
+      }
+    },
+    "wipeout_reviews_7qnMGt": {
+      "type": "wipeout-reviews",
+      "blocks": {
+        "review_PwXqDG": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Priya M.",
+            "review": "Saw results within minutes. No smell at all — sprayed the kitchen before bed and woke up to zero roaches.",
+            "verified": true
+          }
+        },
+        "review_VWgwzW": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "David R.",
+            "review": "Used the termite spray on our skirting boards and old furniture. Three months on, still nothing. Brilliant.",
+            "verified": true
+          }
+        },
+        "review_WWBXFN": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Hannah K.",
+            "review": "Finally something safe to use with a toddler and two cats in the house. The bed bug kit saved us.",
+            "verified": true
+          }
+        }
+      },
+      "block_order": [
+        "review_PwXqDG",
+        "review_VWgwzW",
+        "review_WWBXFN"
+      ],
+      "name": "WipeOut Reviews",
+      "settings": {
+        "heading": "Loved by 12,000+ homes",
+        "autoplay_speed": 4,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "heading_size": 40,
+        "heading_size_mobile": 28,
+        "bg_color": "#ffffff",
+        "card_bg_color": "#fdf6f5",
+        "text_color": "#181512",
+        "muted_color": "#6b6864",
+        "border_color": "#ebe9e6",
+        "star_color": "#e0a32e",
+        "verified_color": "#9b1f1f",
+        "arrow_bg_color": "#c57272"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "custom_css": [
+        ".related-products__heading {font-weight: 700; text-transform: uppercase; font-size: 40px; line-height: 120%; margin: 0 0 30px; text-align: center;}"
+      ],
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h1",
+        "products_to_show": 3,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "padding_top": 20,
+        "padding_bottom": 44
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_comparison_FatBLr",
+    "wipeout_reviews_7qnMGt",
+    "related-products"
+  ]
+}
