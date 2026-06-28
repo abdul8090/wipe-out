@@ -314,7 +314,7 @@
         "card_title_size_mobile": 16,
         "card_body_size_mobile": 12,
         "btn_size_mobile": 14,
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "subtitle_color": "#ff0000",
         "heading_color": "#1d211e",
         "text_color": "#1d211e",
@@ -394,10 +394,10 @@
         "feature_size_mobile": 13,
         "col_heading_size_mobile": 14,
         "bg_color": "#ffffff",
-        "accent_color": "#FFFFFF",
+        "accent_color": "#ffffff",
         "border_color": "#000000",
         "text_color": "#000000",
-        "cell_bg": "#FFFFFF",
+        "cell_bg": "#ffffff",
         "icon_color": "#000000"
       }
     },
@@ -467,12 +467,12 @@
         "ingredient_desc_size_mobile": 14,
         "tag_size_mobile": 12,
         "nav_size_mobile": 14,
-        "section_bg_color": "#FFFFFF",
+        "section_bg_color": "#ffffff",
         "heading_color": "#000000",
         "text_color": "#000000",
         "nav_bg": "#ffffff",
         "nav_border": "#000000",
-        "nav_text": "#FFFFFF",
+        "nav_text": "#ffffff",
         "nav_active_bg": "#000000",
         "card_bg": "#ffffff",
         "card_border": "#000000",
@@ -651,7 +651,7 @@
         "heading_size": 40,
         "heading_size_mobile": 28,
         "bg_color": "#ffffff",
-        "card_bg_color": "#FFFFFF",
+        "card_bg_color": "#ffffff",
         "text_color": "#181512",
         "muted_color": "#6b6864",
         "border_color": "#ebe9e6",
@@ -730,9 +730,10 @@
         "subtitle_color": "#f63208",
         "heading_color": "#1d211e",
         "description_color": "#1d211e",
-        "faq_background": "#FFFFFF",
-        "faq_active_background": "#fdf6f5",
-        "toggle_bg": "#000000"
+        "faq_background": "#ffffff",
+        "faq_active_background": "#FFFFFF",
+        "toggle_bg": "#000000",
+        "toggle_color": "#FFFFFF"
       }
     },
     "wipeout_faq_xgEKWp": {
@@ -824,11 +825,11 @@
         "benefit_text_size": 14,
         "heading_size_mobile": 36,
         "description_size_mobile": 16,
-        "background_color": "#fdf6f5",
+        "background_color": "#FFFFFF",
         "border_color": "#2c2609",
         "text_color": "#1d211e",
         "highlight_color": "#f63208",
-        "button_color": "#c57272",
+        "button_color": "#FFFFFF",
         "button_shadow_color": "#2c2609",
         "badge_bg": "#ffffff"
       }
