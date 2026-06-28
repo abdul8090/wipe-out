@@ -148,8 +148,8 @@
         "bg_color": "#ffffff",
         "text_color": "#181512",
         "muted_color": "#6b6864",
-        "eyebrow_color": "#FF0000",
-        "border_color": "#ebe9e6"
+        "eyebrow_color": "#ff0000",
+        "border_color": "#FFFFFF"
       }
     },
     "wipeout_featured_bundle_bPtVJL": {
@@ -642,9 +642,9 @@
         "heading_color": "#1d211e",
         "description_color": "#1d211e",
         "faq_background": "#ffffff",
-        "faq_active_background": "#FFFFFF",
+        "faq_active_background": "#ffffff",
         "toggle_bg": "#000000",
-        "toggle_color": "#FFFFFF"
+        "toggle_color": "#ffffff"
       }
     },
     "wipeout_faq_xgEKWp": {
@@ -736,11 +736,11 @@
         "benefit_text_size": 14,
         "heading_size_mobile": 36,
         "description_size_mobile": 16,
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "border_color": "#2c2609",
         "text_color": "#1d211e",
         "highlight_color": "#f63208",
-        "button_color": "#FFFFFF",
+        "button_color": "#ffffff",
         "button_shadow_color": "#2c2609",
         "badge_bg": "#ffffff"
       }
