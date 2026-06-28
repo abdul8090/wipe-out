@@ -138,6 +138,86 @@
         "padding_bottom": 36
       }
     },
+    "product_benefits_NK8eeY": {
+      "type": "product-benefits",
+      "blocks": {
+        "product_tab_z6FLNr": {
+          "type": "product_tab",
+          "settings": {
+            "tab_name": "Instant Lockdown",
+            "grid_columns": "1",
+            "product_image": "shopify://shop_images/killsandrepelscockroach.webp",
+            "ingredient_image_1": "shopify://shop_images/pest_inspection_under_the_cabinet.png",
+            "ingredient_title_1": "Inspect",
+            "ingredient_description_1": "Find active areas, entry points and the dark corners where pests hide.",
+            "ingredient_tag_1": "",
+            "ingredient_image_2": "shopify://shop_images/pest_control_in_a_clean_setting.png",
+            "ingredient_title_2": "Spray",
+            "ingredient_description_2": "Apply directly to insects and along surfaces for instant knockdown.",
+            "ingredient_tag_2": "",
+            "ingredient_image_3": "shopify://shop_images/pest_control_solution_in_action.png",
+            "ingredient_title_3": "Gel & Tablets",
+            "ingredient_description_3": "Place gel in cracks and tablets in hidden spaces for round-the-clock defence.",
+            "ingredient_tag_3": "",
+            "ingredient_image_4": "shopify://shop_images/insect_repellent_action_on_tiled_floor.png",
+            "ingredient_title_4": "Treat Drains",
+            "ingredient_description_4": "Pour drainage liquid down pipes to stop infestations at the source.",
+            "ingredient_tag_4": "",
+            "ingredient_title_5": "",
+            "ingredient_description_5": "",
+            "ingredient_tag_5": "✓ Soothes & Heals",
+            "ingredient_title_6": "",
+            "ingredient_description_6": "",
+            "ingredient_tag_6": "",
+            "ingredient_title_7": "",
+            "ingredient_description_7": "",
+            "ingredient_tag_7": "",
+            "ingredient_title_8": "",
+            "ingredient_description_8": "",
+            "ingredient_tag_8": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_tab_z6FLNr"
+      ],
+      "name": "Product Benefits Tabs",
+      "settings": {
+        "title": "Four steps to total control",
+        "subtitle": "",
+        "hide_benefit_tags": false,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_horizontal": 20,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48,
+        "padding_horizontal_mobile": 14,
+        "heading_size": 40,
+        "subtitle_size": 18,
+        "ingredient_title_size": 18,
+        "ingredient_desc_size": 14,
+        "tag_size": 16,
+        "nav_size": 16,
+        "heading_size_mobile": 28,
+        "subtitle_size_mobile": 14,
+        "ingredient_title_size_mobile": 14,
+        "ingredient_desc_size_mobile": 14,
+        "tag_size_mobile": 12,
+        "nav_size_mobile": 14,
+        "section_bg_color": "#ffffff",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "nav_bg": "#ffffff",
+        "nav_border": "#000000",
+        "nav_text": "#ffffff",
+        "nav_active_bg": "#000000",
+        "card_bg": "#ffffff",
+        "card_border": "#000000",
+        "ingredient_img_bg": "#efefef",
+        "tag_bg_color": "#ffffff",
+        "tag_text_color": "#000000"
+      }
+    },
     "product_comparison_FatBLr": {
       "type": "product-comparison",
       "blocks": {
@@ -290,6 +370,7 @@
   },
   "order": [
     "main",
+    "product_benefits_NK8eeY",
     "product_comparison_FatBLr",
     "wipeout_reviews_7qnMGt",
     "related-products"
