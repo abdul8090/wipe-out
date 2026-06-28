@@ -484,8 +484,8 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "author": "Priya M.",
-            "review": "Saw results within minutes. No smell at all — sprayed the kitchen before bed and woke up to zero roaches.",
+            "author": "Usman",
+            "review": "Yaar seedha kaam karta hai. Ek raat mein farq aa gaya. Pehle bohot sprays waste kiye.",
             "verified": true
           }
         },
@@ -493,8 +493,8 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "author": "Priya M.",
-            "review": "Saw results within minutes. No smell at all — sprayed the kitchen before bed and woke up to zero roaches.",
+            "author": "Nadia Chaudhry",
+            "review": "Naye ghar mein shift hua toh cockroach ka swagat mila. WipeOut ka poora system use kiya ek hafte mein ghar saaf. Shukar hai aisay product available hain.",
             "verified": true
           }
         },
@@ -502,8 +502,8 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "author": "Priya M.",
-            "review": "Saw results within minutes. No smell at all — sprayed the kitchen before bed and woke up to zero roaches.",
+            "author": "Imran Butt",
+            "review": "Kitchen mein cockroach tha kaafi time se. Nali wala liquid daala toh wahan se hi band ho gaye. Ye part sab se zyada useful laga",
             "verified": true
           }
         },
@@ -511,8 +511,26 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "author": "David R.",
-            "review": "Used the termite spray on our skirting boards and old furniture. Three months on, still nothing. Brilliant.",
+            "author": "Danish",
+            "review": "Bachon ke kamre mein use kiya, koi smell nahi aayi bilkul. Satisfied hun.\"",
+            "verified": true
+          }
+        },
+        "review_xBjgNC": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Fatima Nawaz",
+            "review": "Market walay spray 2 din kaam karte hain phir wapas. Ye wala alag hai. 3 hafta ho gaya ab tak kuch nahi.",
+            "verified": true
+          }
+        },
+        "review_FF9BY8": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Sana",
+            "review": "Very Satisfied with results",
             "verified": true
           }
         },
@@ -531,6 +549,8 @@
         "review_E3ffVg",
         "review_RRhrhR",
         "review_JW87xV",
+        "review_xBjgNC",
+        "review_FF9BY8",
         "review_nBW8Rc"
       ],
       "name": "WipeOut Reviews",
