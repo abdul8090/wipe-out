@@ -5,7 +5,6 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -15,123 +14,145 @@
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
-    {%- if section.settings.heading != blank -%}
-      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {{ section.settings.heading }}
-      </h2>
-    {%- else -%}
-      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
-    {%- endif -%}
-    {%- liquid
-      assign contact_form_class = 'isolate'
-      if settings.animations_reveal_on_scroll
-        assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
-      endif
-    -%}
-    {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
-      {%- if form.posted_successfully? -%}
-        <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
-          {{- 'icon-success.svg' | inline_asset_content -}}
-          {{ 'templates.contact.form.post_success' | t }}
-        </h2>
-      {%- elsif form.errors -%}
-        <div class="form__message">
-          <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
-            {{- 'icon-error.svg' | inline_asset_content -}}
-            {{ 'templates.contact.form.error_heading' | t }}
+  <div class="contact-redesign section-{{ section.id }}-padding page-width">
+    <div class="contact-redesign__grid">
+
+      <!-- Left info panel -->
+      <div class="contact-redesign__info">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="contact-redesign__heading {{ section.settings.heading_size }}">
+            {{ section.settings.heading }}
           </h2>
-        </div>
-        <ul class="form-status-list caption-large" role="list">
-          <li>
-            <a href="#ContactForm-email" class="link">
-              {{ form.errors.translated_fields.email | capitalize }}
-              {{ form.errors.messages.email }}
-            </a>
-          </li>
-        </ul>
-      {%- endif -%}
-      <div class="contact__fields">
-        <div class="field">
-          <input
-            class="field__input"
-            autocomplete="name"
-            type="text"
-            id="ContactForm-name"
-            name="contact[{{ 'templates.contact.form.name' | t }}]"
-            value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-            placeholder="{{ 'templates.contact.form.name' | t }}"
-          >
-          <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
-        </div>
-        <div class="field field--with-error">
-          <input
-            autocomplete="email"
-            type="email"
-            id="ContactForm-email"
-            class="field__input"
-            name="contact[email]"
-            spellcheck="false"
-            autocapitalize="off"
-            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-            aria-required="true"
-            {% if form.errors contains 'email' %}
-              aria-invalid="true"
-              aria-describedby="ContactForm-email-error"
-            {% endif %}
-            placeholder="{{ 'templates.contact.form.email' | t }}"
-          >
-          <label class="field__label" for="ContactForm-email">
-            {{- 'templates.contact.form.email' | t }}
-            <span aria-hidden="true">*</span></label
-          >
-          {%- if form.errors contains 'email' -%}
-            <small class="contact__field-error" id="ContactForm-email-error">
-              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-              <span class="form__message">
-                <span class="svg-wrapper">
-                  {{- 'icon-error.svg' | inline_asset_content -}}
-                </span>
-                {{- form.errors.translated_fields.email | capitalize }}
-                {{ form.errors.messages.email -}}
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="contact-redesign__subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+
+        <div class="contact-redesign__details">
+          {%- if section.settings.email != blank -%}
+            <div class="contact-redesign__detail-item">
+              <span class="contact-redesign__detail-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               </span>
-            </small>
+              <a href="mailto:{{ section.settings.email }}" class="contact-redesign__detail-text">{{ section.settings.email }}</a>
+            </div>
+          {%- endif -%}
+          {%- if section.settings.phone != blank -%}
+            <div class="contact-redesign__detail-item">
+              <span class="contact-redesign__detail-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <a href="tel:{{ section.settings.phone }}" class="contact-redesign__detail-text">{{ section.settings.phone }}</a>
+            </div>
+          {%- endif -%}
+          {%- if section.settings.address != blank -%}
+            <div class="contact-redesign__detail-item">
+              <span class="contact-redesign__detail-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <span class="contact-redesign__detail-text">{{ section.settings.address }}</span>
+            </div>
           {%- endif -%}
         </div>
       </div>
-      <div class="field">
-        <input
-          type="tel"
-          id="ContactForm-phone"
-          class="field__input"
-          autocomplete="tel"
-          name="contact[{{ 'templates.contact.form.phone' | t }}]"
-          pattern="[0-9\-]*"
-          value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-          placeholder="{{ 'templates.contact.form.phone' | t }}"
-        >
-        <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+
+      <!-- Right form panel -->
+      <div class="contact-redesign__form-wrap">
+        {%- liquid
+          assign contact_form_class = 'contact-redesign__form isolate'
+          if settings.animations_reveal_on_scroll
+            assign contact_form_class = 'contact-redesign__form isolate scroll-trigger animate--slide-in'
+          endif
+        -%}
+        {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+          {%- if form.posted_successfully? -%}
+            <div class="contact-redesign__success">
+              <span class="contact-redesign__success-icon">
+                {{- 'icon-success.svg' | inline_asset_content -}}
+              </span>
+              <p>{{ 'templates.contact.form.post_success' | t }}</p>
+            </div>
+          {%- elsif form.errors -%}
+            <div class="contact-redesign__error" role="alert" tabindex="-1" autofocus>
+              <span class="svg-wrapper">{{- 'icon-error.svg' | inline_asset_content -}}</span>
+              {{ 'templates.contact.form.error_heading' | t }}
+            </div>
+          {%- endif -%}
+
+          <div class="contact-redesign__row">
+            <div class="contact-redesign__field">
+              <label class="contact-redesign__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+              <input
+                class="contact-redesign__input"
+                autocomplete="name"
+                type="text"
+                id="ContactForm-name"
+                name="contact[{{ 'templates.contact.form.name' | t }}]"
+                value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                placeholder="{{ 'templates.contact.form.name' | t }}"
+              >
+            </div>
+            <div class="contact-redesign__field">
+              <label class="contact-redesign__label" for="ContactForm-email">
+                {{ 'templates.contact.form.email' | t }} <span aria-hidden="true">*</span>
+              </label>
+              <input
+                autocomplete="email"
+                type="email"
+                id="ContactForm-email"
+                class="contact-redesign__input{% if form.errors contains 'email' %} contact-redesign__input--error{% endif %}"
+                name="contact[email]"
+                spellcheck="false"
+                autocapitalize="off"
+                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                aria-required="true"
+                {% if form.errors contains 'email' %}aria-invalid="true" aria-describedby="ContactForm-email-error"{% endif %}
+                placeholder="{{ 'templates.contact.form.email' | t }}"
+              >
+              {%- if form.errors contains 'email' -%}
+                <small class="contact-redesign__field-error" id="ContactForm-email-error">
+                  <span class="svg-wrapper">{{- 'icon-error.svg' | inline_asset_content -}}</span>
+                  {{- form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email -}}
+                </small>
+              {%- endif -%}
+            </div>
+          </div>
+
+          <div class="contact-redesign__field">
+            <label class="contact-redesign__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+            <input
+              type="tel"
+              id="ContactForm-phone"
+              class="contact-redesign__input"
+              autocomplete="tel"
+              name="contact[{{ 'templates.contact.form.phone' | t }}]"
+              pattern="[0-9\-]*"
+              value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+              placeholder="{{ 'templates.contact.form.phone' | t }}"
+            >
+          </div>
+
+          <div class="contact-redesign__field">
+            <label class="contact-redesign__label" for="ContactForm-body">{{ 'templates.contact.form.comment' | t }}</label>
+            <textarea
+              rows="6"
+              id="ContactForm-body"
+              class="contact-redesign__input contact-redesign__textarea"
+              name="contact[{{ 'templates.contact.form.comment' | t }}]"
+              placeholder="{{ 'templates.contact.form.comment' | t }}"
+            >{{- form.body -}}</textarea>
+          </div>
+
+          <div class="contact-redesign__submit">
+            <button type="submit" class="contact-redesign__btn">
+              {{ 'templates.contact.form.send' | t }}
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </div>
+        {%- endform -%}
       </div>
-      <div class="field">
-        <textarea
-          rows="10"
-          id="ContactForm-body"
-          class="text-area field__input"
-          name="contact[{{ 'templates.contact.form.comment' | t }}]"
-          placeholder="{{ 'templates.contact.form.comment' | t }}"
-        >
-          {{- form.body -}}
-        </textarea>
-        <label class="form__label field__label" for="ContactForm-body">
-          {{- 'templates.contact.form.comment' | t -}}
-        </label>
-      </div>
-      <div class="contact__button">
-        <button type="submit" class="button">
-          {{ 'templates.contact.form.send' | t }}
-        </button>
-      </div>
-    {%- endform -%}
+
+    </div>
   </div>
 </div>
 
@@ -154,29 +175,36 @@
       "type": "select",
       "id": "heading_size",
       "options": [
-        {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
-        },
-        {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
-        },
-        {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
-        },
-        {
-          "value": "hxl",
-          "label": "t:sections.all.heading_size.options__4.label"
-        },
-        {
-          "value": "hxxl",
-          "label": "t:sections.all.heading_size.options__5.label"
-        }
+        { "value": "h2", "label": "t:sections.all.heading_size.options__1.label" },
+        { "value": "h1", "label": "t:sections.all.heading_size.options__2.label" },
+        { "value": "h0", "label": "t:sections.all.heading_size.options__3.label" },
+        { "value": "hxl", "label": "t:sections.all.heading_size.options__4.label" },
+        { "value": "hxxl", "label": "t:sections.all.heading_size.options__5.label" }
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading / Description",
+      "default": "Have a question or need help? Fill out the form and we'll get back to you as soon as possible."
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Contact Email",
+      "placeholder": "hello@example.com"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Contact Phone"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Address"
     },
     {
       "type": "color_scheme",
@@ -196,7 +224,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "default": 60
     },
     {
       "type": "range",
@@ -206,7 +234,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "default": 60
     }
   ],
   "presets": [
