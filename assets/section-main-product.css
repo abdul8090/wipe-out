@@ -180,6 +180,7 @@ product-info {
 .product-form__input.product-form__quantity {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .product-form__input .form__label {

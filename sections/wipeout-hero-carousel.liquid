@@ -164,6 +164,7 @@
     .wo-hero__arrow {
       width: 36px;
       height: 36px;
+      display: none;
     }
 
     .wo-hero__arrow--prev {
@@ -173,11 +174,20 @@
     .wo-hero__arrow--next {
       right: 10px;
     }
+<<<<<<< HEAD
 
     {% unless section.settings.show_icons_mobile %}
     #shopify-section-{{ section.id }} .wo-hero__arrow,
     #shopify-section-{{ section.id }} .wo-hero__dots {
       display: none;
+=======
+
+  }
+
+  @media (max-width: 480px) {
+    #shopify-section-{{ section.id }} {
+      --wo-hero-height: 225px;
+>>>>>>> 14ee421d538b121ad0e5d5964e3cffd89e4a139b
     }
     {% endunless %}
   }

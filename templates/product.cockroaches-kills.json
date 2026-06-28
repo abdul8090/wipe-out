@@ -121,7 +121,7 @@
         ".product-form__buttons {max-width: 100%;}",
         ".shortDescription {font-weight: 500; font-size: 14px; line-height: 24px; margin: 0 0 0px; text-align: left;}",
         ".accordion__title.inline-richtext {font-size: 16px; font-weight: 700;}",
-        "@media(max-width: 749px){.product__title h1 {font-size: 28px; }}"
+        "@media (max-width: 749px) {.product__title h1 {font-size: 28px; }}"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -139,10 +139,90 @@
         "padding_bottom": 36
       }
     },
-    "product_comparison_wfJhtt": {
+    "product_benefits_NK8eeY": {
+      "type": "product-benefits",
+      "blocks": {
+        "product_tab_z6FLNr": {
+          "type": "product_tab",
+          "settings": {
+            "tab_name": "Instant Lockdown",
+            "grid_columns": "1",
+            "product_image": "shopify://shop_images/killsandrepelscockroach.webp",
+            "ingredient_image_1": "shopify://shop_images/pest_inspection_under_the_cabinet.png",
+            "ingredient_title_1": "Inspect",
+            "ingredient_description_1": "Find active areas, entry points and the dark corners where pests hide.",
+            "ingredient_tag_1": "",
+            "ingredient_image_2": "shopify://shop_images/pest_control_in_a_clean_setting.png",
+            "ingredient_title_2": "Spray",
+            "ingredient_description_2": "Apply directly to insects and along surfaces for instant knockdown.",
+            "ingredient_tag_2": "",
+            "ingredient_image_3": "shopify://shop_images/pest_control_solution_in_action.png",
+            "ingredient_title_3": "Gel & Tablets",
+            "ingredient_description_3": "Place gel in cracks and tablets in hidden spaces for round-the-clock defence.",
+            "ingredient_tag_3": "",
+            "ingredient_image_4": "shopify://shop_images/insect_repellent_action_on_tiled_floor.png",
+            "ingredient_title_4": "Treat Drains",
+            "ingredient_description_4": "Pour drainage liquid down pipes to stop infestations at the source.",
+            "ingredient_tag_4": "",
+            "ingredient_title_5": "",
+            "ingredient_description_5": "",
+            "ingredient_tag_5": "✓ Soothes & Heals",
+            "ingredient_title_6": "",
+            "ingredient_description_6": "",
+            "ingredient_tag_6": "",
+            "ingredient_title_7": "",
+            "ingredient_description_7": "",
+            "ingredient_tag_7": "",
+            "ingredient_title_8": "",
+            "ingredient_description_8": "",
+            "ingredient_tag_8": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_tab_z6FLNr"
+      ],
+      "name": "Product Benefits Tabs",
+      "settings": {
+        "title": "Four steps to total control",
+        "subtitle": "",
+        "hide_benefit_tags": false,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_horizontal": 20,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 28,
+        "padding_horizontal_mobile": 14,
+        "heading_size": 40,
+        "subtitle_size": 18,
+        "ingredient_title_size": 18,
+        "ingredient_desc_size": 14,
+        "tag_size": 16,
+        "nav_size": 16,
+        "heading_size_mobile": 28,
+        "subtitle_size_mobile": 14,
+        "ingredient_title_size_mobile": 14,
+        "ingredient_desc_size_mobile": 14,
+        "tag_size_mobile": 12,
+        "nav_size_mobile": 14,
+        "section_bg_color": "#ffffff",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "nav_bg": "#ffffff",
+        "nav_border": "#000000",
+        "nav_text": "#ffffff",
+        "nav_active_bg": "#000000",
+        "card_bg": "#ffffff",
+        "card_border": "#000000",
+        "ingredient_img_bg": "#efefef",
+        "tag_bg_color": "#ffffff",
+        "tag_text_color": "#000000"
+      }
+    },
+    "product_comparison_DMFhPC": {
       "type": "product-comparison",
       "blocks": {
-        "comparison_item_bxw9GB": {
+        "comparison_item_xKUVHf": {
           "type": "comparison_item",
           "settings": {
             "feature": "Ready to use — zero mixing",
@@ -150,7 +230,7 @@
             "others_have": false
           }
         },
-        "comparison_item_mDTmJ9": {
+        "comparison_item_iVhTTw": {
           "type": "comparison_item",
           "settings": {
             "feature": "Completely odourless",
@@ -158,7 +238,7 @@
             "others_have": false
           }
         },
-        "comparison_item_ibrB4a": {
+        "comparison_item_ehLBX9": {
           "type": "comparison_item",
           "settings": {
             "feature": "Safe around kids & pets",
@@ -166,7 +246,7 @@
             "others_have": false
           }
         },
-        "comparison_item_RBDk9p": {
+        "comparison_item_Q6xFbb": {
           "type": "comparison_item",
           "settings": {
             "feature": "Long-lasting protection",
@@ -176,10 +256,10 @@
         }
       },
       "block_order": [
-        "comparison_item_bxw9GB",
-        "comparison_item_mDTmJ9",
-        "comparison_item_ibrB4a",
-        "comparison_item_RBDk9p"
+        "comparison_item_xKUVHf",
+        "comparison_item_iVhTTw",
+        "comparison_item_ehLBX9",
+        "comparison_item_Q6xFbb"
       ],
       "custom_css": [
         "div:empty {display: block;}",
@@ -194,7 +274,7 @@
         "padding_bottom": 60,
         "padding_horizontal": 0,
         "padding_horizontal_mobile": 14,
-        "padding_top_mobile": 60,
+        "padding_top_mobile": 36,
         "padding_bottom_mobile": 28,
         "heading_size": 40,
         "feature_size": 18,
@@ -213,10 +293,10 @@
         "icon_color": "#000000"
       }
     },
-    "wipeout_reviews_WJEUPj": {
+    "wipeout_reviews_Hx8Eet": {
       "type": "wipeout-reviews",
       "blocks": {
-        "review_pC9jcM": {
+        "review_MH8d8G": {
           "type": "review",
           "settings": {
             "rating": 5,
@@ -225,7 +305,7 @@
             "verified": true
           }
         },
-        "review_YjwVmN": {
+        "review_CPcUDY": {
           "type": "review",
           "settings": {
             "rating": 5,
@@ -234,7 +314,7 @@
             "verified": true
           }
         },
-        "review_kX7dty": {
+        "review_ir3fyD": {
           "type": "review",
           "settings": {
             "rating": 5,
@@ -243,7 +323,7 @@
             "verified": true
           }
         },
-        "review_XdGJ4J": {
+        "review_bYtgNB": {
           "type": "review",
           "settings": {
             "rating": 5,
@@ -252,7 +332,7 @@
             "verified": true
           }
         },
-        "review_JUtNAr": {
+        "review_43Laim": {
           "type": "review",
           "settings": {
             "rating": 5,
@@ -261,7 +341,7 @@
             "verified": true
           }
         },
-        "review_TXRdDT": {
+        "review_ffcGzU": {
           "type": "review",
           "settings": {
             "rating": 5,
@@ -270,7 +350,7 @@
             "verified": true
           }
         },
-        "review_bnKzJ7": {
+        "review_9EJeWn": {
           "type": "review",
           "settings": {
             "rating": 5,
@@ -281,20 +361,20 @@
         }
       },
       "block_order": [
-        "review_pC9jcM",
-        "review_YjwVmN",
-        "review_kX7dty",
-        "review_XdGJ4J",
-        "review_JUtNAr",
-        "review_TXRdDT",
-        "review_bnKzJ7"
+        "review_MH8d8G",
+        "review_CPcUDY",
+        "review_ir3fyD",
+        "review_bYtgNB",
+        "review_43Laim",
+        "review_ffcGzU",
+        "review_9EJeWn"
       ],
       "name": "WipeOut Reviews",
       "settings": {
         "heading": "Loved by 12,000+ homes",
         "autoplay_speed": 4,
         "padding_top": 60,
-        "padding_bottom": 60,
+        "padding_bottom": 56,
         "heading_size": 40,
         "heading_size_mobile": 28,
         "bg_color": "#ffffff",
@@ -332,8 +412,9 @@
   },
   "order": [
     "main",
-    "product_comparison_wfJhtt",
-    "wipeout_reviews_WJEUPj",
+    "product_benefits_NK8eeY",
+    "product_comparison_DMFhPC",
+    "wipeout_reviews_Hx8Eet",
     "related-products"
   ]
 }
