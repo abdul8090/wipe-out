@@ -9,6 +9,7 @@
     --faq-item-bg:    {{ section.settings.faq_background }};
     --faq-active-bg:  {{ section.settings.faq_active_background }};
     --faq-toggle-bg:  {{ section.settings.toggle_bg }};
+    --faq-toggle-color: {{ section.settings.toggle_color }};
     background-color: var(--faq-bg);
     border-bottom: 1px solid var(--faq-border);
   }
@@ -129,14 +130,14 @@
   #shopify-section-{{ section.id }} .wo-faq_toggle-btn {
     flex-shrink: 0;
     background: var(--faq-toggle-bg);
-    border: 1px solid var(--faq-border);
+    border: 1px solid var(--faq-toggle-color);
     border-radius: 999px;
     padding: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--faq-border);
+    color: var(--faq-toggle-color);
   }
 
   #shopify-section-{{ section.id }} .wo-faq_toggle-btn svg path {
@@ -610,6 +611,12 @@
       "id": "toggle_bg",
       "label": "Toggle button background",
       "default": "#FEEB94"
+    },
+    {
+      "type": "color",
+      "id": "toggle_color",
+      "label": "Toggle button border & icon color",
+      "default": "#2C2609"
     }
   ],
   "blocks": [
