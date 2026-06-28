@@ -138,10 +138,10 @@
         "padding_bottom": 36
       }
     },
-    "product_comparison_FatBLr": {
+    "product_comparison_wfJhtt": {
       "type": "product-comparison",
       "blocks": {
-        "comparison_item_zAgm8T": {
+        "comparison_item_bxw9GB": {
           "type": "comparison_item",
           "settings": {
             "feature": "Ready to use — zero mixing",
@@ -149,7 +149,7 @@
             "others_have": false
           }
         },
-        "comparison_item_4rJfFp": {
+        "comparison_item_mDTmJ9": {
           "type": "comparison_item",
           "settings": {
             "feature": "Completely odourless",
@@ -157,7 +157,7 @@
             "others_have": false
           }
         },
-        "comparison_item_wT4Yqe": {
+        "comparison_item_ibrB4a": {
           "type": "comparison_item",
           "settings": {
             "feature": "Safe around kids & pets",
@@ -165,7 +165,7 @@
             "others_have": false
           }
         },
-        "comparison_item_7niHzJ": {
+        "comparison_item_RBDk9p": {
           "type": "comparison_item",
           "settings": {
             "feature": "Long-lasting protection",
@@ -175,10 +175,10 @@
         }
       },
       "block_order": [
-        "comparison_item_zAgm8T",
-        "comparison_item_4rJfFp",
-        "comparison_item_wT4Yqe",
-        "comparison_item_7niHzJ"
+        "comparison_item_bxw9GB",
+        "comparison_item_mDTmJ9",
+        "comparison_item_ibrB4a",
+        "comparison_item_RBDk9p"
       ],
       "custom_css": [
         "div:empty {display: block;}",
@@ -187,12 +187,12 @@
       "name": "Comparison Table",
       "settings": {
         "heading": "Why choose WipeOut",
-        "brand_heading": "Wipe out",
+        "brand_heading": "WIPE OUT",
         "others_heading": "OTHERS",
         "padding_top": 60,
         "padding_bottom": 60,
         "padding_horizontal": 0,
-        "padding_horizontal_mobile": 0,
+        "padding_horizontal_mobile": 14,
         "padding_top_mobile": 28,
         "padding_bottom_mobile": 28,
         "heading_size": 40,
@@ -205,11 +205,11 @@
         "feature_size_mobile": 13,
         "col_heading_size_mobile": 14,
         "bg_color": "#ffffff",
-        "accent_color": "#c57272",
+        "accent_color": "#ffffff",
         "border_color": "#000000",
-        "text_color": "#1d211e",
-        "cell_bg": "#fdf6f5",
-        "icon_color": "#2c2609"
+        "text_color": "#000000",
+        "cell_bg": "#ffffff",
+        "icon_color": "#000000"
       }
     },
     "wipeout_reviews_7qnMGt": {
@@ -290,7 +290,7 @@
   },
   "order": [
     "main",
-    "product_comparison_FatBLr",
+    "product_comparison_wfJhtt",
     "wipeout_reviews_7qnMGt",
     "related-products"
   ]
