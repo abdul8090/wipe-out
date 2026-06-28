@@ -262,7 +262,10 @@
                         <div class="summary__title">
                           {% render 'icon-accordion', icon: block.settings.icon %}
                           <h2 class="h4 accordion__title inline-richtext">
-                            {{ block.settings.heading | default: block.settings.page.title | escape }}
+                            <span data-lang="en">{{ block.settings.heading | default: block.settings.page.title | escape }}</span>
+                            {%- if block.settings.heading_urdu != blank -%}
+                              <span data-lang="ur" dir="rtl" lang="ur">{{ block.settings.heading_urdu | escape }}</span>
+                            {%- endif -%}
                           </h2>
                         </div>
                         {{- 'icon-caret.svg' | inline_asset_content -}}
@@ -1115,6 +1118,12 @@
           "id": "heading",
           "default": "t:sections.main-product.blocks.collapsible_tab.settings.heading.default",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label"
+        },
+        {
+          "type": "text",
+          "id": "heading_urdu",
+          "label": "Heading (Urdu / اردو)",
+          "info": "Leave blank to keep the English heading when Urdu is active"
         },
         {
           "type": "select",
