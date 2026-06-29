@@ -47,20 +47,26 @@
     }
 
     #MainProduct-{{ section.id }} .product-lang-btn {
-      padding: 5px 16px;
-      border: 1.5px solid currentColor;
+      padding: 6px 18px;
+      border: 2px solid #2563eb;
       background: transparent;
+      color: #2563eb;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 13px;
+      font-weight: 600;
       font-family: var(--font-body-family);
-      border-radius: 4px;
-      opacity: 0.45;
-      transition: opacity 0.15s;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+      transition: background 0.18s, color 0.18s;
+    }
+
+    #MainProduct-{{ section.id }} .product-lang-btn:hover {
+      background: #eff6ff;
     }
 
     #MainProduct-{{ section.id }} .product-lang-btn[aria-pressed="true"] {
-      opacity: 1;
-      font-weight: 700;
+      background: #2563eb;
+      color: #ffffff;
     }
 
     #MainProduct-{{ section.id }}[data-lang-section="en"] [data-lang="ur"],
