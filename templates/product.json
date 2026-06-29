@@ -279,6 +279,69 @@
             "review": "Finally something safe to use with a toddler and two cats in the house. The bed bug kit saved us.",
             "verified": true
           }
+        },
+        "review_3WE8z4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Asma Malik",
+            "review": "Drawer ke andar se nikal rahe thay, samajh nahi aa raha tha source kya hai. Nali wala liquid use kiya, 2 din mein band ho gaye. Kitchen finally saaf lagti hai.",
+            "verified": true
+          }
+        },
+        "review_wqQEix": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Kamran Sheikh",
+            "review": "Sote waqt khatmal ka pata hi nahi chalta. Subah uth ke daag milte thay. Spray kiya mattress pe, cover lagaaya, teen din mein sona theek ho gaya.",
+            "verified": true
+          }
+        },
+        "review_yMiktt": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Noman Bajwa",
+            "review": "Darwaze ki chaukhat mein se deemak nikli. Carpenter ne estimate diya toh dil doob gaya. WipeOut se treat kiya pehle, kafi control ho gaya. Replacement ka kaam bahut kam ho gaya.",
+            "verified": true
+          }
+        },
+        "review_iG6TGa": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Tariq Mehmood",
+            "review": "Padosan ne suggest kiya tha. Pehle trust nahi tha online product pe. Lekin kaam kiya sachchi. Ab usne bhi mangwa liya dobaara.",
+            "verified": true
+          }
+        },
+        "review_VnxrCY": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Saba Rehman",
+            "review": "Cockroach pe market spray 3 din kaam karta tha phir wapas. Ye wala alag hai. 2 hafte ho gaye.",
+            "verified": true
+          }
+        },
+        "review_eCeb8F": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Mehwish Iqbal",
+            "review": "Guest room mein khatmal tha, mehman ne shikayat ki. Bohot sharmindagi hui. WipeOut ke baad dobara sign nahi mila.",
+            "verified": true
+          }
+        },
+        "review_jxUEV8": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Rizwan Chaudhry",
+            "review": "Shelf mein deemak ghus gayi thi, kitaabein kharaab ho rahi thin. WipeOut se treat kiya, sab bach gaya.",
+            "verified": true
+          }
         }
       },
       "block_order": [
@@ -288,7 +351,14 @@
         "review_XdGJ4J",
         "review_JUtNAr",
         "review_TXRdDT",
-        "review_bnKzJ7"
+        "review_bnKzJ7",
+        "review_3WE8z4",
+        "review_wqQEix",
+        "review_yMiktt",
+        "review_iG6TGa",
+        "review_VnxrCY",
+        "review_eCeb8F",
+        "review_jxUEV8"
       ],
       "name": "WipeOut Reviews",
       "settings": {

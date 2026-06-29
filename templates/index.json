@@ -16,6 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/cockroach_desk_banner.avif",
+            "mobile_image": "shopify://shop_images/cockroch_mbl_banner.avif",
             "slide_bg_color": "#fdf4f3",
             "link": "",
             "eyebrow": "",
@@ -32,8 +33,7 @@
         "slide_kLzhiP": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/termite_killer_spray_dsk_banner.webp",
-            "mobile_image": "shopify://shop_images/termite_mbl_banner.avif",
+            "image": "shopify://shop_images/termite_desk_banner.avif",
             "slide_bg_color": "#fdf4f3",
             "link": "",
             "eyebrow": "",
@@ -50,8 +50,7 @@
         "slide_yAU4ww": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/bedbug_spray_dsk_banner.webp",
-            "mobile_image": "shopify://shop_images/BedBug_mbl_banner.avif",
+            "image": "shopify://shop_images/BedBig_desk_banner.avif",
             "slide_bg_color": "#fdf4f3",
             "link": "",
             "eyebrow": "",
