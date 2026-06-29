@@ -22,6 +22,7 @@
         },
         "custom_liquid_U6xxh4": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "<p class=\"shortDescription\">{{ product.description | strip_html | truncatewords: 25 }}</p>"
           }
@@ -121,7 +122,7 @@
         ".product-form__buttons {max-width: 100%;}",
         ".shortDescription {font-weight: 500; font-size: 14px; line-height: 24px; margin: 0 0 0px; text-align: left;}",
         ".accordion__title.inline-richtext {font-size: 16px; font-weight: 700;}",
-        "@media(max-width: 749px){.product__title h1 {font-size: 28px; }}"
+        "@media (max-width: 749px) {.product__title h1 {font-size: 28px; }}"
       ],
       "settings": {
         "enable_sticky_info": true,
