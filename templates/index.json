@@ -34,6 +34,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/termite_desk_banner.avif",
+            "mobile_image": "shopify://shop_images/termite_mbl_banner.avif",
             "slide_bg_color": "#fdf4f3",
             "link": "",
             "eyebrow": "",
@@ -51,6 +52,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/BedBig_desk_banner.avif",
+            "mobile_image": "shopify://shop_images/BedBug_mbl_banner.avif",
             "slide_bg_color": "#fdf4f3",
             "link": "",
             "eyebrow": "",
@@ -74,8 +76,8 @@
       "settings": {
         "bg_color": "#ffffff",
         "slide_height": 680,
-        "slide_height_mobile": 350,
-        "show_icons_mobile": false,
+        "slide_height_mobile": 230,
+        "show_icons_mobile": true,
         "autoplay": true,
         "autoplay_speed": 5,
         "heading_size": 68,
