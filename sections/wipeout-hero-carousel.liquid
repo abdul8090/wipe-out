@@ -164,29 +164,27 @@
     .wo-hero__arrow {
       width: 36px;
       height: 36px;
-      display: none;
     }
 
-    .wo-hero__arrow--prev {
-      left: 10px;
-    }
-
-    .wo-hero__arrow--next {
-      right: 10px;
-    }
-
+    .wo-hero__arrow--prev { left: 10px; }
+    .wo-hero__arrow--next { right: 10px; }
 
     {% unless section.settings.show_icons_mobile %}
-    #shopify-section-{{ section.id }} .wo-hero__arrow,
-    #shopify-section-{{ section.id }} .wo-hero__dots {
-      display: none;
+      #shopify-section-{{ section.id }} .wo-hero__arrow,
+      #shopify-section-{{ section.id }} .wo-hero__dots {
+        display: none;
+      }
+    {% endunless %}
+
+    .wo-hero__heading {
+      font-size: {{ section.settings.heading_size_mobile }}px;
+    }
   }
 
   @media (max-width: 480px) {
     #shopify-section-{{ section.id }} {
       --wo-hero-height: 225px;
     }
-    {% endunless %}
   }
 
   @media (max-width: 767px) {
