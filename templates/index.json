@@ -120,7 +120,7 @@
         "product_card_xFdeej": {
           "type": "product_card",
           "settings": {
-            "product": "wipeout-termite-killer-spray-copy",
+            "product": "wipeout-cockroach-killer-spray",
             "fallback_title": "Cockroach Complete Kit",
             "description": "4-way defence: spray, drainage liquid, gel & tablets. Reaches what you can't see.",
             "price": "",
@@ -191,7 +191,7 @@
       "disabled": true,
       "name": "WipeOut Featured Bundle",
       "settings": {
-        "product": "wipeout-termite-killer-spray-copy",
+        "product": "wipeout-cockroach-killer-spray",
         "eyebrow": "Complete 4-Way Defence",
         "heading": "Protect what you can't see",
         "description": "One system for visible activity, hidden corners, cracks and drains.",
