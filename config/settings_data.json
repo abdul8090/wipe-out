@@ -406,7 +406,7 @@
       ".jm-review-content__title[data-v-87900cb4] {font-size: 16px;}",
       ".jm-reviewer-avatar--with-initial[data-v-47b2f71c] {background-color: color-mix(in srgb, #ffffff 10%, transparent); border: 1px dashed;}",
       ".jm-button--primary[data-v-9640c170] {background-color: #000;}",
-      ".jm-text[data-v-6d928e9f]{color: #fff;}"
+      ".jm-pagination-controls__button .jm-text[data-v-6d928e9f] {color: #fff;}"
     ]
   }
 }
