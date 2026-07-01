@@ -18,6 +18,7 @@
         },
         "rating_RamqRa": {
           "type": "rating",
+          "disabled": true,
           "settings": {}
         },
         "judge_me_reviews_preview_badge_4exVKw": {
@@ -421,6 +422,7 @@
       "block_order": [
         "judge_me_reviews_review_widget_tAftmX"
       ],
+      "custom_css": [],
       "settings": {
         "include_margins": true
       }
