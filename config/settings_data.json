@@ -398,5 +398,11 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".jdgm-preview-badge .jdgm-star {color: #000000 !important;}",
+      ".jm-star-rating__font-icon[data-v-c7873d5c] {color: #000000 !important; font-size: large !important;}"
+    ]
   }
 }
