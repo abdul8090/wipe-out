@@ -403,7 +403,8 @@
     "custom_css": [
       ".jdgm-preview-badge .jdgm-star {color: #000000 !important;}",
       ".jm-star-rating__font-icon[data-v-c7873d5c] {color: #000000 !important; font-size: large !important;}",
-      ".jm-review-content__title[data-v-87900cb4]{font-size: 16px;}"
+      ".jm-review-content__title[data-v-87900cb4] {font-size: 16px;}",
+      ".jm-reviewer-avatar--with-initial[data-v-47b2f71c] {background-color: color-mix(in srgb, #ffffff 10%, transparent); border: 1px dashed;}"
     ]
   }
 }
