@@ -72,6 +72,9 @@
         "slide_kLzhiP",
         "slide_yAU4ww"
       ],
+      "custom_css": [
+        ".wo-hero__slide{height: auto;}"
+      ],
       "name": "WipeOut Hero Carousel",
       "settings": {
         "bg_color": "#ffffff",
