@@ -16,8 +16,13 @@
           "type": "title",
           "settings": {}
         },
+        "rating_RamqRa": {
+          "type": "rating",
+          "settings": {}
+        },
         "judge_me_reviews_preview_badge_4exVKw": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {}
         },
         "price": {
@@ -30,10 +35,6 @@
           "settings": {
             "custom_liquid": "<p class=\"shortDescription\">{{ product.description | strip_html | truncatewords: 25 }}</p>"
           }
-        },
-        "rating_RamqRa": {
-          "type": "rating",
-          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -108,10 +109,10 @@
       },
       "block_order": [
         "title",
+        "rating_RamqRa",
         "judge_me_reviews_preview_badge_4exVKw",
         "price",
         "custom_liquid_U6xxh4",
-        "rating_RamqRa",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
